@@ -123,7 +123,7 @@ if ! shopt -oq posix; then
 fi
 
 # Enable powerline if it's installed
-if [ -f `which powerline-daemon` ]; then
+if [ `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
