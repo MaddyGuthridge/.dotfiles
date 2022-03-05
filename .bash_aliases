@@ -5,6 +5,9 @@ if [ `which thefuck` ]; then
     alias please=fuck
 fi
 
+# Quick alias for SSH-ing into CSE
+alias cse="ssh z5312085@login.cse.unsw.edu.au"
+
 # Add function for combining mkdir and cd
 mkcdir ()
 {
