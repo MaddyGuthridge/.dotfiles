@@ -3,6 +3,7 @@ if [ `which thefuck` ]; then
     eval $(thefuck --alias)
     # You can use whatever you want as an alias, like for Mondays:
     alias please=fuck
+    alias oops=fuck
 fi
 
 # Quick alias for SSH-ing into CSE
