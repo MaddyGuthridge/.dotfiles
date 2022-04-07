@@ -7,6 +7,12 @@ if [ `which thefuck` ]; then
     alias oops=fuck
 fi
 
+if [ `which dolphin` ]; then
+    dolphin () {
+        /usr/bin/dolphin "$@" 2> /dev/null &
+    }
+fi
+
 if [ `which swi-prolog.swipl` ]; then
     alias prolog=swi-prolog.swipl
 fi
