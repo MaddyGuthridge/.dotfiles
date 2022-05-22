@@ -1,0 +1,6 @@
+
+$include /etc/inputrc
+
+set completion-ignore-case on
+
+"\C-h": unix-word-rubout

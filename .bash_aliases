@@ -49,3 +49,6 @@ cdl ()
       cd -P -- "$1"
       ls
 }
+
+# VC Compiler
+alias vc="java -jar ~/Tweaks/VC.jar"

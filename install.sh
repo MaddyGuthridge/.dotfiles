@@ -1,4 +1,5 @@
 #!/bin/sh
 
-ln -s ~/DotFiles/.bash_aliases      ~/.bash_aliases
-ln -s ~/DotFiles/.bashrc           ~/.bashrc
+ln -s ~/.dotfiles/.bash_aliases      ~/.bash_aliases
+ln -s ~/.dotfiles/.bashrc           ~/.bashrc
+ln -s ~/.dotfiles/.inputrc           ~/.inputrc
