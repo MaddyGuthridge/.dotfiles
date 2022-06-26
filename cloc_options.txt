@@ -1,0 +1,1 @@
+--exclude-dir=.venv,.github,.vscode,.git,htmlcov,.mypy_cache

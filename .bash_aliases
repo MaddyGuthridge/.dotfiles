@@ -52,3 +52,4 @@ cdl ()
 
 # VC Compiler
 alias vc="java -jar ~/Tweaks/VC.jar"
+alias vcc="java -jar /home/migue/.local/bin/vcc.jar"
