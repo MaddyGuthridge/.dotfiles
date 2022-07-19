@@ -3,6 +3,7 @@
 ln -s ~/.dotfiles/.bash_aliases      ~/.bash_aliases
 ln -s ~/.dotfiles/.bashrc            ~/.bashrc
 ln -s ~/.dotfiles/.zshrc             ~/.zshrc
+ln -s ~/.dotfiles/.zsh_aliases       ~/.zsh_aliases
 ln -s ~/.dotfiles/.inputrc           ~/.inputrc
 
 mkdir -p ~/.config/cloc

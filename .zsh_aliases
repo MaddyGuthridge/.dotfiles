@@ -1,0 +1,129 @@
+
+# Add Gradle to path
+if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
+    PATH="/opt/gradle/gradle-7.3/bin:$PATH"
+    GRADLE_HOME="/opt/gradle/gradle-7.3/bin"
+fi
+
+which thefuck > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    eval $(thefuck --alias)
+    # You can use whatever you want as an alias, like for Mondays:
+    alias FUCK=fuck
+    alias please=fuck
+    alias oops=fuck
+fi
+
+which dolphin > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    dolphin () {
+        /usr/bin/dolphin "$@" 2> /dev/null &
+    }
+fi
+
+# Environment variable pointing to CSE Servers
+export CSE="z5312085@login.cse.unsw.edu.au"
+
+# Quick alias for SSH-ing into CSE
+alias cse="ssh $CSE"
+# Quick function for grabbing files from CSE
+cse-get()
+{
+    if [ $# -eq 1 ]; then
+        echo "CSE: Downloading $1 -> ${1##*/}"
+        rsync "$CSE":"$1" ${1##*/}
+    elif [ $# -eq 2 ]; then
+        echo "Downloading $1 -> $2"
+        rsync "$CSE":"$1" $2
+    else
+        echo "Wrong number of arguments"
+    fi
+}
+
+# Add function for combining mkdir and cd
+mkcdir ()
+{
+    mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
+
+# Add function for combining cd and ls
+cdl ()
+{
+    cd -P -- "$1"
+    ls
+}
+
+# VC Compiler
+alias vc="java -jar ~/Tweaks/VC.jar"
+alias vcc="java -jar /home/migue/.local/bin/vcc.jar"
+
+###-begin-npm-completion-###
+#
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+
+if type complete &>/dev/null; then
+  _npm_completion () {
+    local words cword
+    if type _get_comp_words_by_ref &>/dev/null; then
+      _get_comp_words_by_ref -n = -n @ -n : -w words -i cword
+    else
+      cword="$COMP_CWORD"
+      words=("${COMP_WORDS[@]}")
+    fi
+
+    local si="$IFS"
+    if ! IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           npm completion -- "${words[@]}" \
+                           2>/dev/null)); then
+      local ret=$?
+      IFS="$si"
+      return $ret
+    fi
+    IFS="$si"
+    if type __ltrim_colon_completions &>/dev/null; then
+      __ltrim_colon_completions "${words[cword]}"
+    fi
+  }
+  complete -o default -F _npm_completion npm
+elif type compdef &>/dev/null; then
+  _npm_completion() {
+    local si=$IFS
+    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                 COMP_LINE=$BUFFER \
+                 COMP_POINT=0 \
+                 npm completion -- "${words[@]}" \
+                 2>/dev/null)
+    IFS=$si
+  }
+  compdef _npm_completion npm
+elif type compctl &>/dev/null; then
+  _npm_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    if ! IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       npm completion -- "${words[@]}" \
+                       2>/dev/null)); then
+
+      local ret=$?
+      IFS="$si"
+      return $ret
+    fi
+    IFS="$si"
+  }
+  compctl -K _npm_completion npm
+fi
+###-end-npm-completion-###
