@@ -17,7 +17,7 @@ fi
 which dolphin > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     dolphin () {
-        /usr/bin/dolphin "$@" 2> /dev/null &
+        /usr/bin/dolphin "$@" 2> /dev/null &!
     }
 fi
 
