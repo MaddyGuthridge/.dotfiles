@@ -124,3 +124,9 @@ bindkey '^H' backward-kill-word
 bindkey '^[^?' backward-delete-word
 bindkey '^[[3;5~' forward-kill-word
 bindkey '^[[3;3~' forward-delete-word
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval $(thefuck --alias)

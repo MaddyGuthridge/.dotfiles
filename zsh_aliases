@@ -1,3 +1,5 @@
+# Quick command to quit the terminal
+alias q="exit"
 
 # Add Gradle to path
 if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
@@ -21,11 +23,18 @@ if [ $? -eq 0 ]; then
     }
 fi
 
-# Environment variable pointing to CSE Servers
-export CSE="z5312085@login.cse.unsw.edu.au"
+# UNSW zID
+export ZID="z5312085"
+
+# Environment variables pointing to CSE Servers
+export CSE="${ZID}@login.cse.unsw.edu.au"
+export CSE_D2="${ZID}@d2.cse.unsw.edu.au"
 
 # Quick alias for SSH-ing into CSE
 alias cse="ssh $CSE"
+# And for the d2 server (for COMP3311)
+alias cse-d2="ssh $CSE_D2"
+
 # Quick function for grabbing files from CSE
 cse-get()
 {
@@ -33,8 +42,21 @@ cse-get()
         echo "CSE: Downloading $1 -> ${1##*/}"
         rsync "$CSE":"$1" ${1##*/}
     elif [ $# -eq 2 ]; then
-        echo "Downloading $1 -> $2"
+        echo "CSE: Downloading $1 -> $2"
         rsync "$CSE":"$1" $2
+    else
+        echo "Wrong number of arguments"
+    fi
+}
+# And for sending files up to CSE
+cse-set()
+{
+    if [ $# -eq 1 ]; then
+        echo "CSE: Uploading $1 -> ${1##*/}"
+        rsync ${1##*/} "${CSE}:/home/${ZID}/${1}"
+    elif [ $# -eq 2 ]; then
+        echo "CSE: Uploading $1 -> $2"
+        rsync $1 "$CSE":"$2"
     else
         echo "Wrong number of arguments"
     fi
@@ -53,6 +75,8 @@ cdl ()
     cd -P -- "$1"
     ls
 }
+
+alias cls=clear
 
 # VC Compiler
 alias vc="java -jar ~/Tweaks/VC.jar"
