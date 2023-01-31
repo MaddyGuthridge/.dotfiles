@@ -1,5 +1,16 @@
 # Quick command to quit the terminal
 alias q="exit"
+# And to clear the console
+alias c="clear"
+
+# Copy with Rsync
+rscp='rsync -ax --inplace --sparse --no-whole-file --protect-args'
+
+# Don't forget that I use scc now
+cloc()
+{
+    echo "Use scc instead you dummy"
+}
 
 # Add Gradle to path
 if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then

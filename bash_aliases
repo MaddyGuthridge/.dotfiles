@@ -1,5 +1,5 @@
 
-if [ `which thefuck` ]; then
+if [ `which thefuck 2> /dev/null` ]; then
     eval $(thefuck --alias)
     # You can use whatever you want as an alias, like for Mondays:
     alias FUCK=fuck
@@ -7,13 +7,13 @@ if [ `which thefuck` ]; then
     alias oops=fuck
 fi
 
-if [ `which dolphin` ]; then
+if [ `which dolphin 2> /dev/null` ]; then
     dolphin () {
         /usr/bin/dolphin "$@" 2> /dev/null &
     }
 fi
 
-if [ `which swi-prolog.swipl` ]; then
+if [ `which swi-prolog.swipl 2> /dev/null` ]; then
     alias prolog=swi-prolog.swipl
 fi
 
@@ -47,7 +47,6 @@ mkcdir ()
 cdl ()
 {
       cd -P -- "$1"
-      ls
 }
 
 # VC Compiler
