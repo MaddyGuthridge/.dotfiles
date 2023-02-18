@@ -39,14 +39,19 @@ export ZID="z5312085"
 
 # Environment variables pointing to CSE Servers
 export CSE="${ZID}@login.cse.unsw.edu.au"
-export CSE_D2="${ZID}@d2.cse.unsw.edu.au"
 
 # Quick alias for SSH-ing into CSE
 alias cse="ssh $CSE"
-# And for the d2 server (for COMP3311)
-alias cse-d2="ssh $CSE_D2"
 
 # Quick function for grabbing files from CSE
+#
+# cse-get /path/to/my/file.txt
+# Download to ./file.txt
+#
+# cse-get /path/to/my/file.txt /path/to/save/in.txt
+# Download to in.txt
+#
+# Note that using the ~ character won't work correctly on the CSE end
 cse-get()
 {
     if [ $# -eq 1 ]; then
@@ -56,10 +61,19 @@ cse-get()
         echo "CSE: Downloading $1 -> $2"
         rsync "$CSE":"$1" $2
     else
-        echo "Wrong number of arguments"
+        echo "Usage: cse-get from_file [to_file]"
     fi
 }
-# And for sending files up to CSE
+
+# Quick function for sending files to CSE
+#
+# cse-set /path/to/my/file.txt
+# Upload to your CSE home directory as file.txt
+#
+# cse-set /path/to/my/file.txt /path/to/save/in.txt
+# Upload to CSE systems under the given path
+#
+# Note that using the ~ character won't work correctly on the CSE end
 cse-set()
 {
     if [ $# -eq 1 ]; then
@@ -69,7 +83,7 @@ cse-set()
         echo "CSE: Uploading $1 -> $2"
         rsync $1 "$CSE":"$2"
     else
-        echo "Wrong number of arguments"
+        echo "Usage: cse-set from_file [to_file]"
     fi
 }
 
