@@ -25,6 +25,9 @@ if [ $? -eq 0 ]; then
     }
 fi
 
+# Quick SSH into my server
+alias ursula="ssh migue@ssh.miguelguthridge.com"
+
 # UNSW zID
 export ZID="z5312085"
 
