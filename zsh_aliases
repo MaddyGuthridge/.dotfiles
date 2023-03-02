@@ -18,15 +18,6 @@ if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
     GRADLE_HOME="/opt/gradle/gradle-7.3/bin"
 fi
 
-which thefuck > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    eval $(thefuck --alias)
-    # You can use whatever you want as an alias, like for Mondays:
-    alias FUCK=fuck
-    alias please=fuck
-    alias oops=fuck
-fi
-
 which dolphin > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     dolphin () {
