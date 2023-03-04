@@ -5,6 +5,11 @@ else
   echo ".zsh_aliases missing"
 fi
 
+# On CSE systems, we should silence the insecure directory warning
+if [ "$USER" = "$ZID" ]; then
+    export ZSH_DISABLE_COMPFIX="true"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
