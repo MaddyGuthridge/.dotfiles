@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=RmView
+Comment=ReMarkable Viewer
+Icon=\=\$HOME/.dotfiles/rmview/icon.ico
+Exec=sh -c "export RMVIEW_CONF='~/.dotfiles/rmview/config.json'; /usr/bin/python -m rmview"
+Terminal=false
+Type=Application
