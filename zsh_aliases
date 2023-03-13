@@ -25,6 +25,9 @@ if [ $? -eq 0 ]; then
     }
 fi
 
+# Remarkable stuff
+export RMVIEW_CONF="~/.dotfiles/rmconfig.json"
+
 # Quick SSH into my server
 alias ursula="ssh migue@ssh.miguelguthridge.com"
 
