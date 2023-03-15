@@ -1,6 +1,6 @@
 
 if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
+    source ~/.zsh_aliases
 else
   echo ".zsh_aliases missing"
 fi

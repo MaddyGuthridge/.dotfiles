@@ -18,10 +18,15 @@ if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
     GRADLE_HOME="/opt/gradle/gradle-7.3/bin"
 fi
 
-which dolphin > /dev/null 2>&1
-if [ $? -eq 0 ]; then
+if [[ -x /usr/bin/dolphin ]]; then
     dolphin () {
-        /usr/bin/dolphin "$@" 2> /dev/null &!
+        /usr/bin/dolphin "$@" > /dev/null 2> /dev/null &!
+    }
+fi
+
+if [[ -x /usr/bin/nautilus ]]; then
+    nautilus() {
+        /usr/bin/nautilus "$@" > /dev/null 2> /dev/null &!
     }
 fi
 
