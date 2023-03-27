@@ -123,6 +123,18 @@ alias cls=clear
 alias vc="java -jar ~/Tweaks/VC.jar"
 alias vcc="java -jar /home/migue/.local/bin/vcc.jar"
 
+# Gitignore grabber
+gitignore ()
+{
+    curl -s --fail "https://raw.githubusercontent.com/github/gitignore/main/$1.gitignore" -o .gitignore
+    if [ $? -eq 0 ]; then
+        return 0
+    else
+        echo "Lookup failed, maybe check capitalisation?"
+        return 1
+    fi
+}
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
