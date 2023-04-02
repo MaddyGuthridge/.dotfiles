@@ -135,6 +135,9 @@ gitignore ()
     fi
 }
 
+# Restart network on Yzma
+alias netrestart="sudo ifconfig wlp0s20f3 down && sudo ifconfig wlp0s20f3 up"
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
