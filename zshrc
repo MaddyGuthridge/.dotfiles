@@ -1,8 +1,15 @@
+# Read out the message of the day
+if [ -f ~/.motd ]; then
+    cat ~/.motd
+else
+    echo "Hello, Miguel!"
+fi
+
 
 if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 else
-  echo ".zsh_aliases missing"
+    echo ".zsh_aliases missing"
 fi
 
 # On CSE systems, we should silence the insecure directory warning
