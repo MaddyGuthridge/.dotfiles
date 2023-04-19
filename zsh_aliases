@@ -6,6 +6,9 @@ alias c="clear"
 # Copy with Rsync
 rscp='rsync -ax --inplace --sparse --no-whole-file --protect-args'
 
+# Copy the current time as a UNIX timestamp
+alias unixtime="date +%s | tee >(cb copy)"
+
 # Don't forget that I use scc now
 cloc()
 {
