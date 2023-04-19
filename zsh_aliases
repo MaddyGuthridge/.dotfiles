@@ -15,6 +15,13 @@ cloc()
     echo "Use scc instead you dummy"
 }
 
+# Quickly kill a process that is using a port
+# eg: portkill 8080
+portkill()
+{
+    kill $(lsof -t -i:$1)
+}
+
 # Add Gradle to path
 if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
     PATH="/opt/gradle/gradle-7.3/bin:$PATH"
