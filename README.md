@@ -33,6 +33,8 @@ My dotfiles to keep basic configuration stuff shared.
 
 * [`README.md`](./README.md): this file
 
+* [`solaar`](./solaar/): configuration for my mouse
+
 * [`Utils.md`](./utils.md): a list of programs and utilities I use.
 
 * [`zsh_aliases`](./zsh_aliases) and [`zshrc`](./zshrc): configuration for ZSH,

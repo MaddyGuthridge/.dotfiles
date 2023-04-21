@@ -1,0 +1,39 @@
+%YAML 1.3
+---
+- Feature: REPROG CONTROLS V4
+- TestBytes: [0, 2, 86, 86]
+- KeyPress:
+  - [Control_L, Tab]
+  - click
+...
+---
+- Feature: REPROG CONTROLS V4
+- TestBytes: [0, 2, 83, 83]
+- KeyPress:
+  - [Control_L, Shift_L, Tab]
+  - click
+...
+---
+- MouseGesture: Mouse Right
+- KeyPress:
+  - [Super_L, Control_L, Right]
+  - click
+...
+---
+- MouseGesture: Mouse Left
+- KeyPress:
+  - [Control_L, Super_L, Left]
+  - click
+...
+---
+- MouseGesture: Mouse Up
+- KeyPress:
+  - Super_L
+  - click
+...
+---
+- MouseGesture: Mouse Down
+- KeyPress:
+  - Escape
+  - click
+...
