@@ -14,6 +14,9 @@ them all when I inevitably distro-hop again.
 * [`dcc`](https://github.com/COMP1511UNSW/dcc) - a friendly C compiler that I
   sometimes use when teaching.
 
+* [Obsidian](https://obsidian.md/) - the only note-taking app I've found that
+  works with my brain
+
 * [Oh My Zsh](https://ohmyz.sh/) - quick and easy ZSH niceness. Kinda slow, so
   I might look into some other tools sometime -
   [Starship](https://starship.rs/) looks awesome.
