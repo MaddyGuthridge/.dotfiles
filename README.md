@@ -31,6 +31,9 @@ My dotfiles to keep basic configuration stuff shared.
 * [`keychron-setup.sh`](./keychron-setup.sh): script to make function keys of
   Keychron keyboards work correctly.
 
+* [`obsidian`](./obsidian): script to start Obsidian in its vault picker,
+  rather than opening the most recent vault.
+
 * [`README.md`](./README.md): this file
 
 * [`solaar`](./solaar/): configuration for my mouse

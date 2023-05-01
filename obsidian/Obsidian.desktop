@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Obsidian Launcher
+Comment=Custom obsidian launcher that opens vault selector
+Icon=md.obsidian.Obsidian
+Exec=sh -c "~/.local/bin/obsidian"
+Terminal=false
+Type=Application
+StartupWMClass=obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
