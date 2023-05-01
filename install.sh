@@ -15,7 +15,8 @@ ln -sf ~/.dotfiles/zsh_aliases       ~/.zsh_aliases
 ln -sf ~/.dotfiles/rmview/RmView.desktop ~/.local/share/applications/RmView.desktop
 
 # Solaar config
-ln -sf ~/.dotfiles/solaar ~/.config/solaar
+rm -f ~/.config/solaar
+ln -sfd ~/.dotfiles/solaar ~/.config/solaar
 
 # Obsidian
 ln -sf ~/.dotfiles/obsidian/launch.py ~/.local/bin/obsidian
