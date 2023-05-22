@@ -2,6 +2,7 @@
 alias q="exit"
 # And to clear the console
 alias c="clear"
+alias cls="clear"
 
 # Copy with Rsync
 rscp='rsync -ax --inplace --sparse --no-whole-file --protect-args'
@@ -135,7 +136,6 @@ cdl ()
     ls
 }
 
-alias cls=clear
 
 # VC Compiler
 alias vc="java -jar ~/Tweaks/VC.jar"
