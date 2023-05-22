@@ -15,6 +15,14 @@ cloc()
     echo "Use scc instead you dummy"
 }
 
+# Quick command to update my dot files (cd into ~/.dotfiles and git pull)
+dotfiles-update() {
+    CURR_DIR=$(pwd)
+    cd ~/.dotfiles
+    git pull
+    cd $CURR_DIR
+}
+
 # Quickly kill a process that is using a port
 # eg: portkill 8080
 portkill()
