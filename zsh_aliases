@@ -4,6 +4,9 @@ alias q="exit"
 alias c="clear"
 alias cls="clear"
 
+# Improved ll
+alias ll='ls -alF'
+
 # Copy with Rsync
 rscp='rsync -ax --inplace --sparse --no-whole-file --protect-args'
 
