@@ -12,13 +12,16 @@ ln -sf ~/.dotfiles/zshrc             ~/.zshrc
 ln -sf ~/.dotfiles/zsh_aliases       ~/.zsh_aliases
 
 # RmView shortcut
+mkdir -p ~/.local/share/applications/
 ln -sf ~/.dotfiles/rmview/RmView.desktop ~/.local/share/applications/RmView.desktop
 
 # Solaar config
-rm -f ~/.config/solaar
+mkdir -p ~/.config
+rm -rf ~/.config/solaar
 ln -sfd ~/.dotfiles/solaar ~/.config/solaar
 
 # Obsidian
+mkdir -p ~/.local/bin/
 ln -sf ~/.dotfiles/obsidian/launch.py ~/.local/bin/obsidian
 # Also the .desktop file
 ln -sf ~/.dotfiles/obsidian/Obsidian.desktop ~/.local/share/applications/Obsidian.desktop
