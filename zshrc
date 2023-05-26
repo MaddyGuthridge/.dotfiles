@@ -5,13 +5,6 @@ else
     echo "Hello, Miguel!"
 fi
 
-
-if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
-else
-    echo ".zsh_aliases missing"
-fi
-
 # On CSE systems, we should silence the insecure directory warning
 if [ "$USER" = "$ZID" ]; then
     export ZSH_DISABLE_COMPFIX="true"
@@ -90,15 +83,15 @@ ZSH_CUSTOM=~/.dotfiles/omz
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
+    # git
     git-auto-fetch
     npm
     nvm
-    pip
-    python
+    # pip
+    # python
     safe-paste
     themes
-    ubuntu
+    # ubuntu
     # virtualenv
     vscode
 )
@@ -150,3 +143,8 @@ if [ $? -eq 0 ]; then
     alias oops=fuck
 fi
 
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+else
+    echo ".zsh_aliases missing"
+fi
