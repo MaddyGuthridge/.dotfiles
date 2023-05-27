@@ -5,11 +5,6 @@ else
     echo "Hello, Miguel!"
 fi
 
-# On CSE systems, we should silence the insecure directory warning
-if [ "$USER" = "$ZID" ]; then
-    export ZSH_DISABLE_COMPFIX="true"
-fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
@@ -144,8 +139,14 @@ if [ $? -eq 0 ]; then
     alias oops=fuck
 fi
 
+# Load the aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 else
     echo ".aliases missing"
+fi
+
+# On CSE systems, we should silence the insecure directory warning
+if [ "$USER" = "$ZID" ]; then
+    export ZSH_DISABLE_COMPFIX="true"
 fi
