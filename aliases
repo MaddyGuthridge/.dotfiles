@@ -24,7 +24,9 @@ dotfiles-update() {
     CURR_DIR=$(pwd)
     cd ~/.dotfiles
     git pull
+    echo \n\n
     cd $CURR_DIR
+    source ~/.zshrc
 }
 
 # Quickly kill a process that is using a port
@@ -159,6 +161,12 @@ gitignore ()
 # Restart network on Yzma
 alias netrestart="sudo ifconfig wlp0s20f3 down && sudo ifconfig wlp0s20f3 up"
 
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+#
+###############################################################################
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
@@ -228,3 +236,8 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+# Cargo completion?
+if [[ -x "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi

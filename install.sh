@@ -9,7 +9,7 @@ ln -sf ~/.dotfiles/inputrc           ~/.inputrc
 
 # Zsh stuff
 ln -sf ~/.dotfiles/zshrc             ~/.zshrc
-ln -sf ~/.dotfiles/zsh_aliases       ~/.zsh_aliases
+ln -sf ~/.dotfiles/aliases       ~/.aliases
 
 # RmView shortcut
 mkdir -p ~/.local/share/applications/

@@ -134,6 +134,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# This needs to be here or thefuck has a bit of a hissy fit
 which thefuck > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     eval $(thefuck --alias)
@@ -143,8 +144,8 @@ if [ $? -eq 0 ]; then
     alias oops=fuck
 fi
 
-if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
 else
-    echo ".zsh_aliases missing"
+    echo ".aliases missing"
 fi
