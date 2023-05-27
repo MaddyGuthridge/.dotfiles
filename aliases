@@ -24,7 +24,7 @@ dotfiles-update() {
     CURR_DIR=$(pwd)
     cd ~/.dotfiles
     git pull
-    echo \n\n
+    echo \\n\\n
     cd $CURR_DIR
     source ~/.zshrc
 }
