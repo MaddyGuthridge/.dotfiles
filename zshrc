@@ -157,3 +157,5 @@ if [ -f ~/.aliases ]; then
 else
     echo ".aliases missing"
 fi
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env

@@ -72,9 +72,9 @@ alias cse="ssh $CSE"
 alias cs1010="ssh $CSE1010"
 
 # Run Stack through Bash to help work around https://github.com/commercialhaskell/stack/issues/6134
-stack() {
-    bash -c "stack $@"
-}
+# stack() {
+#     bash -c "stack $@"
+# }
 
 # Quick function for grabbing files from CSE
 #
