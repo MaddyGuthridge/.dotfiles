@@ -71,6 +71,11 @@ export CSE1010="cs1010@login.cse.unsw.edu.au"
 alias cse="ssh $CSE"
 alias cs1010="ssh $CSE1010"
 
+# Run Stack through Bash to help work around https://github.com/commercialhaskell/stack/issues/6134
+stack() {
+    bash -c "stack $@"
+}
+
 # Quick function for grabbing files from CSE
 #
 # cse-get /path/to/my/file.txt
