@@ -1,5 +1,9 @@
 # Read out the message of the day
-if [ -f ~/.motd ]; then
+if [ -x ~/.motd ]; then
+    # Execute a script
+    ~/.motd
+elif [ -f ~/.motd ]; then
+    # Read a file
     cat ~/.motd
 else
     echo "Hello, Miguel!"

@@ -177,7 +177,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # Other nonsense that I don't care about
 ###############################################################################
 
-# Upgrading node and npm to 1531 defaults
+# Upgrading node and npm to 1531 defaults on CSE systems
 if [[ -x "~cs1531/setup/setup.sh" ]]; then
     source ~cs1531/setup/setup.sh
 fi
