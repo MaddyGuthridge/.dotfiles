@@ -29,6 +29,11 @@ dotfiles-update() {
     source ~/.zshrc
 }
 
+dcc-update() {
+    sudo curl -l https://github.com/COMP1511UNSW/dcc/releases/latest/download/dcc -o /usr/local/bin/dcc
+    sudo chmod o+rx /usr/local/bin/dcc
+}
+
 # Quickly kill a process that is using a port
 # eg: portkill 8080
 portkill()
