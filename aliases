@@ -29,9 +29,10 @@ dotfiles-update() {
     source ~/.zshrc
 }
 
+# Download and install the latest version of DCC from the COMP1511 GitHub
 dcc-update() {
-    sudo curl -l https://github.com/COMP1511UNSW/dcc/releases/latest/download/dcc -o /usr/local/bin/dcc
-    sudo chmod o+rx /usr/local/bin/dcc
+    sudo curl -L https://github.com/COMP1511UNSW/dcc/releases/latest/download/dcc -o /usr/local/bin/dcc \
+    && sudo chmod o+rx /usr/local/bin/dcc
 }
 
 # Quickly kill a process that is using a port
