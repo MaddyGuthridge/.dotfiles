@@ -71,7 +71,7 @@ export ZID="z5312085"
 
 # Environment variables pointing to CSE Servers
 export CSE="${ZID}@login.cse.unsw.edu.au"
-export CSE1010="cs1010@login.cse.unsw.edu.au"
+export CSE1010="cs1010@nw-k17-login1.cse.unsw.edu.au"
 
 # Quick alias for SSH-ing into CSE
 alias cse="ssh $CSE"
