@@ -138,6 +138,25 @@ cse1010-set()
     fi
 }
 
+# Quick counting of zIDs for help session resourcing
+# Usage:
+# * zid-counter  # count from stdin
+# * zid-counter [filename]  # count from file
+zid-counter () {
+    if [ $# -eq 1 ]; then
+        contents=$(cat $1)
+    else
+        contents=$(cat)
+    fi
+    # Convert to lowercase
+    contents=$(echo "$contents" | awk '{print tolower($0)}')
+    # Total requests
+    number=$(echo "$contents" | wc -l)
+    # Total unique requests
+    unique=$(echo "$contents" | sort | uniq | wc -l)
+    echo "$number requests, _ resolved, $unique unique"
+}
+
 # Add function for combining mkdir and cd
 mkcdir ()
 {
