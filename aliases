@@ -147,6 +147,8 @@ zid-counter () {
         contents=$(cat $1)
     else
         contents=$(cat)
+        # Extra newline to avoid yucky output
+        echo
     fi
     # Convert to lowercase
     contents=$(echo "$contents" | awk '{print tolower($0)}')
