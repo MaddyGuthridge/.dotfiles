@@ -97,7 +97,7 @@ plugins=(
     # git
     git-auto-fetch
     npm
-    nvm
+    # nvm
     # pip
     # python
     safe-paste
