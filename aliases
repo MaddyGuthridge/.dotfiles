@@ -190,6 +190,17 @@ gitignore ()
     fi
 }
 
+# Alias for clipboard if installed through flatpak
+if command -v flatpak &> /dev/null
+then
+    # Flatpak exists
+    if flatpak list | grep app.getclipboard.Clipboard > /dev/null
+    then
+        alias cb="flatpak run app.getclipboard.Clipboard"
+    fi
+fi
+
+
 # Restart network on Yzma
 alias netrestart="sudo ifconfig wlp0s20f3 down && sudo ifconfig wlp0s20f3 up"
 
