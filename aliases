@@ -13,6 +13,16 @@ rscp='rsync -ax --inplace --sparse --no-whole-file --protect-args'
 # Copy the current time as a UNIX timestamp
 alias unixtime="date +%s | tee >(cb copy)"
 
+# whence alias
+# Tell me what something is
+if [ -n "$BASH" ]; then
+    alias what="type -a"
+elif [ -n "$ZSH_NAME" ]; then
+    alias what="whence -fva"
+else
+    echo "Not running in Bash or ZSH, no definition for 'what'"
+fi
+
 # Don't forget that I use scc now
 cloc()
 {
