@@ -3,7 +3,7 @@
 # Warning: this will erase any files in that location
 
 # Bash stuff
-ln -sf ~/.dotfiles/bash_aliases      ~/.bash_aliases
+# ln -sf ~/.dotfiles/bash_aliases      ~/.bash_aliases
 ln -sf ~/.dotfiles/bashrc            ~/.bashrc
 ln -sf ~/.dotfiles/inputrc           ~/.inputrc
 
