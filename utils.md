@@ -14,6 +14,8 @@ them all when I inevitably distro-hop again.
 * [`dcc`](https://github.com/COMP1511UNSW/dcc) - a friendly C compiler that I
   sometimes use when teaching.
 
+* [`gsudo`](https://github.com/gerardog/gsudo) - adds sudo to Windows
+
 * [Obsidian](https://obsidian.md/) - the only note-taking app I've found that
   works with my brain
 

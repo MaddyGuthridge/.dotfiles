@@ -2,6 +2,13 @@
 # Install script
 # Warning: this will erase any files in that location
 
+# If we're running on Windows, do it with CMD instead
+if [ "$OS" = "Windows_NT" ]; then
+    # Requires gsudo to be installed
+    sudo start install.bat
+    exit
+fi
+
 # Bash stuff
 # ln -sf ~/.dotfiles/bash_aliases      ~/.bash_aliases
 ln -sf ~/.dotfiles/bashrc            ~/.bashrc
