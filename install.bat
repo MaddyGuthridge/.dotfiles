@@ -8,6 +8,9 @@ attrib %USERPROFILE%\.bashrc +h /l
 mklink %USERPROFILE%\.inputrc %USERPROFILE%\.dotfiles\inputrc
 attrib %USERPROFILE%\.inputrc +h /l
 
+mklink %USERPROFILE%\.aliases %USERPROFILE%\.dotfiles\aliases
+attrib %USERPROFILE%\.aliases +h /l
+
 :: No other config necessary
 pause
 exit
