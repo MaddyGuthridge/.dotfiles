@@ -5,6 +5,9 @@
 # If we're running on Windows, do it with CMD instead
 if [ "$OS" = "Windows_NT" ]; then
     # Requires gsudo to be installed
+    # For some reason, cmd won't run the script directly, so I need to use
+    # start, which conflicts with https://stackoverflow.com/a/48303613/6335363
+    # God, Windows is horribly confusing sometimes
     sudo start install.bat
     exit
 fi
