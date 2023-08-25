@@ -34,8 +34,11 @@ dotfiles-update() {
     CURR_DIR=$(pwd)
     cd ~/.dotfiles
     git pull
-    echo \\n
     cd $CURR_DIR
+    # Two empty lines -- there is no better way to do this that also works in
+    # bash
+    echo
+    echo
     # Now reload the config
     if [ -n "$BASH" ]; then
         source ~/.bashrc
