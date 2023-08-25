@@ -36,7 +36,14 @@ dotfiles-update() {
     git pull
     echo \\n
     cd $CURR_DIR
-    source ~/.zshrc
+    # Now reload the config
+    if [ -n "$BASH" ]; then
+        source ~/.bashrc
+    elif [ -n "$ZSH_NAME" ]; then
+        source ~/.zshrc
+    else
+        echo "Not running in Bash or ZSH, no re-source of configs"
+    fi
 }
 
 # Download and install the latest version of DCC from the COMP1511 GitHub
