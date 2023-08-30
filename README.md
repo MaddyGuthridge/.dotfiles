@@ -13,6 +13,9 @@ My dotfiles to keep basic configuration stuff shared.
 
 * [`aliases`](./aliases): aliases shared between Bash and Zsh
 
+* [`autostart.md`](./autostart.md): instructions to make programs run
+  minimised.
+
 * [`backup_ignore.txt`](./backup_ignore.txt): list of folders for KDE's backup
   utility to ignore.
 
