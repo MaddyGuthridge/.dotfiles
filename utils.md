@@ -16,6 +16,9 @@ them all when I inevitably distro-hop again.
 
 * [`gsudo`](https://github.com/gerardog/gsudo) - adds sudo to Windows
 
+* [`nvm`](https://github.com/nvm-sh/nvm#installing-and-updating) - Node
+  version manager to install NodeJS projects
+
 * [Obsidian](https://obsidian.md/) - the only note-taking app I've found that
   works with my brain
 
@@ -34,3 +37,6 @@ them all when I inevitably distro-hop again.
 
 * [`thef*ck`](https://github.com/nvbn/thefuck) - Magnificent app which corrects
   your previous console command.
+
+* [`tldr`](https://github.com/tldr-pages/tldr-python-client) - Simpler docs for
+  terminal commands, using the Python client, since it is the nicest I've tried.
