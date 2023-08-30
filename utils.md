@@ -8,7 +8,7 @@ them all when I inevitably distro-hop again.
 * [`cb`](https://github.com/Slackadays/Clipboard) - universal clipboard
   manipulation from the command line.
 
-* [`cloudflared`](https://github.com/cloudflare/cloudflared) - to allow SSH to
+* [`cloudflared`](https://pkg.cloudflare.com/index.html) - to allow SSH to
   my server even though it is tunnelled.
 
 * [`dcc`](https://github.com/COMP1511UNSW/dcc) - a friendly C compiler that I
