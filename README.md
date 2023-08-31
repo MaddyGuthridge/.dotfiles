@@ -22,6 +22,8 @@ My dotfiles to keep basic configuration stuff shared.
 * [`bashrc`](./bashrc): configuration for Bash, not maintained since I don't
   use it much anymore.
 
+* [`gnome.md`](./gnome.md): documentation on tweaks I make to Gnome
+
 * [`inputrc`](./inputrc): configuration for input when using a Bash prompt
   (improves `Ctrl+[Left/Right/Backspace/Delete]` behaviour)
 

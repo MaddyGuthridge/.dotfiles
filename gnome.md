@@ -1,0 +1,30 @@
+# Gnome
+
+Tweaks I make to the Gnome desktop.
+
+## Shortcuts
+
+Some shortcuts are overridden which is yucky
+
+### Fix Ctrl+Alt+Up/Down
+
+[Source](https://stackoverflow.com/a/74408842/6335363)
+
+* `gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"`
+* `gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"`
+
+## Extensions
+
+* [App indicator support](https://extensions.gnome.org/extension/615/appindicator-support/)
+* [Blur my shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+* [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
+* [Firefox Picture-in-picture Always on Top](https://extensions.gnome.org/extension/5306/firefox-pip-always-on-top/)
+* [Gesture improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
+  (and also [X11 daemon](https://github.com/harshadgavali/gnome-x11-gesture-daemon))
+* [Grand Theft Focus](https://extensions.gnome.org/extension/5410/grand-theft-focus/)
+* [GS Connect](https://extensions.gnome.org/extension/1319/gsconnect/)
+* [Hide minimized](https://extensions.gnome.org/extension/2639/hide-minimized/)
+* [Lock keys](https://extensions.gnome.org/extension/36/lock-keys/)
+* [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
+* [Quick close in overview](https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/)
+* [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/)
