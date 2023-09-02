@@ -6,6 +6,12 @@ Tweaks I make to the Gnome desktop.
 
 Some shortcuts are overridden which is yucky
 
+### Always on top
+
+To get `Super+Space`` for always on top, run
+
+`gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Super>Space]"`
+
 ### Fix Ctrl+Alt+Up/Down
 
 [Source](https://stackoverflow.com/a/74408842/6335363)
