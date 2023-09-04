@@ -34,3 +34,4 @@ To get `Super+Space`` for always on top, run
 * [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
 * [Quick close in overview](https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/)
 * [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/)
+* [Top Panel Workspace Scroll](https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/)
