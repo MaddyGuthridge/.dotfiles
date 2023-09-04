@@ -10,7 +10,7 @@ Some shortcuts are overridden which is yucky
 
 To get `Super+Space`` for always on top, run
 
-`gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Super>Space]"`
+`gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Super>Space']"`
 
 ### Fix Ctrl+Alt+Up/Down
 
