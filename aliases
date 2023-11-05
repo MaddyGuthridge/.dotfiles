@@ -210,6 +210,13 @@ gitignore ()
     fi
 }
 
+# Command to merge PDFs
+# Usage: `pdfmerge out.pdf in1.pdf in2.pdf`
+# Source: comments of https://stackoverflow.com/a/19358402/6335363
+pdfmerge() {
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=$@ ;
+}
+
 # Alias for clipboard if installed through flatpak
 if command -v flatpak &> /dev/null
 then
@@ -305,7 +312,7 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 
-# Cargo completion?
+# Cargo completion
 if [[ -x "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi
