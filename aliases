@@ -1,5 +1,5 @@
 # Quick command to quit the terminal
-alias q="exit"
+alias q="exit 0"
 # And to clear the console
 alias c="clear"
 alias cls="clear"
