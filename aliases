@@ -113,11 +113,11 @@ export ZID="z5312085"
 
 # Environment variables pointing to CSE Servers
 export CSE="${ZID}@login.cse.unsw.edu.au"
-export CSE1010="cs1010@nw-k17-login1.cse.unsw.edu.au"
+export CS1010="cs1010@nw-k17-login1.cse.unsw.edu.au"
 
 # Quick alias for SSH-ing into CSE
 alias cse="ssh $CSE"
-alias cs1010="ssh $CSE1010"
+alias cs1010="ssh $CS1010"
 
 # Run Stack through Bash to help work around https://github.com/commercialhaskell/stack/issues/6134
 # stack() {
@@ -145,6 +145,18 @@ cse-get()
         echo "Usage: cse-get from_file [to_file]"
     fi
 }
+cs1010-get()
+{
+    if [ $# -eq 1 ]; then
+        echo "CSE: Downloading $1 -> ${1##*/}"
+        rsync "$CS1010":"$1" ${1##*/}
+    elif [ $# -eq 2 ]; then
+        echo "CSE: Downloading $1 -> $2"
+        rsync "$CS1010":"$1" $2
+    else
+        echo "Usage: cs1010-get from_file [to_file]"
+    fi
+}
 
 # Quick function for sending files to CSE
 #
@@ -167,16 +179,16 @@ cse-set()
         echo "Usage: cse-set from_file [to_file]"
     fi
 }
-cse1010-set()
+cs1010-set()
 {
     if [ $# -eq 1 ]; then
         echo "CSE: Uploading $1 -> ${1##*/}"
-        rsync ${1##*/} "${CSE1010}:/home/cs1010/${1}"
+        rsync ${1##*/} "${CS1010}:/home/cs1010/${1}"
     elif [ $# -eq 2 ]; then
         echo "CSE: Uploading $1 -> $2"
-        rsync $1 "$CSE1010":"$2"
+        rsync $1 "$CS1010":"$2"
     else
-        echo "Usage: cse-set from_file [to_file]"
+        echo "Usage: cs1010-set from_file [to_file]"
     fi
 }
 
