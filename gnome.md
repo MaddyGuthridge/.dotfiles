@@ -8,7 +8,7 @@ Some shortcuts are overridden which is yucky
 
 ### Always on top
 
-To get `Super+Space`` for always on top, run
+To get `Super+Space` for always on top, run
 
 `gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Super>Space']"`
 
