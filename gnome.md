@@ -8,7 +8,7 @@ Some shortcuts are overridden which is yucky
 
 ### Always on top
 
-To get `Super+Space`` for always on top, run
+To get `Super+Space` for always on top, run
 
 `gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Super>Space']"`
 
@@ -26,12 +26,12 @@ To get `Super+Space`` for always on top, run
 * [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 * [Firefox Picture-in-picture Always on Top](https://extensions.gnome.org/extension/5306/firefox-pip-always-on-top/)
 * [Gesture improvements](https://extensions.gnome.org/extension/4245/gesture-improvements/)
-  (and also [X11 daemon](https://github.com/harshadgavali/gnome-x11-gesture-daemon))
+  (and also [X11 daemon](https://github.com/harshadgavali/gnome-x11-gesture-daemon)) (Gnome <= 44)
 * [Grand Theft Focus](https://extensions.gnome.org/extension/5410/grand-theft-focus/)
 * [GS Connect](https://extensions.gnome.org/extension/1319/gsconnect/)
 * [Hide minimized](https://extensions.gnome.org/extension/2639/hide-minimized/)
 * [Lock keys](https://extensions.gnome.org/extension/36/lock-keys/)
 * [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
 * [Quick close in overview](https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/)
-* [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/)
+* [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/) (Gnome <= 44)
 * [Top Panel Workspace Scroll](https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/)
