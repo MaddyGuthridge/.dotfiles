@@ -21,6 +21,10 @@ if [ "$USER" = "$ZID" ]; then
     export ZSH_DISABLE_COMPFIX="true"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
@@ -96,7 +100,6 @@ ZSH_CUSTOM=~/.dotfiles/omz
 plugins=(
     # git
     git-auto-fetch
-    npm
     # nvm
     # pip
     # python
@@ -105,6 +108,7 @@ plugins=(
     # ubuntu
     # virtualenv
     vscode
+    zsh-better-npm-completion
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -140,10 +144,6 @@ bindkey '^H' backward-kill-word
 bindkey '^[^?' backward-delete-word
 bindkey '^[[3;5~' forward-kill-word
 bindkey '^[[3;3~' forward-delete-word
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # This needs to be here or thefuck has a bit of a hissy fit
 which thefuck > /dev/null 2>&1
