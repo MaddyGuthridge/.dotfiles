@@ -1,6 +1,7 @@
-- 1.1.10
+- 1.1.11
 - _NAME: MX Master 3S
-  _absent: [hi-res-scroll, lowres-scroll-mode, onboard_profiles, report_rate, pointer_speed, speed-change, backlight, backlight-timed, fn-swap, persistent-remappable-keys,
+  _absent: [hi-res-scroll, lowres-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, speed-change, backlight, backlight_level,
+    backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, fn-swap, persistent-remappable-keys,
     disable-keyboard-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert, gesture2-params,
     sidetone, equalizer, adc_power_management]
   _battery: 4100
@@ -10,13 +11,13 @@
   _unitId: D2E2558E
   _wpid: B034
   change-host: null
-  divert-keys: {82: 0, 83: 1, 86: 1, 195: 2, 196: 0}
-  dpi: 1000
+  divert-keys: {0x52: 0x0, 0x53: 0x1, 0x56: 0x1, 0xc3: 0x2, 0xc4: 0x0}
+  dpi: 0x3e8
   hires-scroll-mode: false
   hires-smooth-invert: false
   hires-smooth-resolution: false
-  reprogrammable-keys: {80: 80, 81: 81, 82: 82, 83: 83, 86: 86, 195: 195, 196: 196}
-  scroll-ratchet: 2
-  smart-shift: 20
+  reprogrammable-keys: {0x50: 0x50, 0x51: 0x51, 0x52: 0x52, 0x53: 0x53, 0x56: 0x56, 0xc3: 0xc3, 0xc4: 0xc4}
+  scroll-ratchet: 0x2
+  smart-shift: 0x14
   thumb-scroll-invert: true
   thumb-scroll-mode: false
