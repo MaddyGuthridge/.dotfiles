@@ -59,7 +59,11 @@ dcc-update() {
 # eg: portkill 8080
 portkill()
 {
-    kill $(lsof -t -i:$1)
+    if [[ $1 == "-f" ]]; then
+        kill -9 $(lsof -t -i:$2)
+    else
+        kill $(lsof -t -i:$1)
+    fi
 }
 
 # The _port_in_use and find_port functions were yoinked from some code that
