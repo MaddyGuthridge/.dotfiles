@@ -162,4 +162,7 @@ else
     echo ".aliases missing"
 fi
 
+# Don't share zsh history between open instances (it is very annoying)
+unsetopt share_history
+
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
