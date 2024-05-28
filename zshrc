@@ -6,7 +6,7 @@ elif [ -f ~/.motd ]; then
     # Read a file
     cat ~/.motd
 else
-    echo "Hello, Miguel!"
+    echo "Hello, Maddy!"
 fi
 
 # Load the aliases
@@ -108,7 +108,7 @@ plugins=(
     # ubuntu
     # virtualenv
     vscode
-    zsh-better-npm-completion
+    # zsh-better-npm-completion
 )
 
 source $ZSH/oh-my-zsh.sh

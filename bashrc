@@ -125,7 +125,7 @@ elif [ -f ~/.motd ]; then
     # Read a file
     cat ~/.motd
 else
-    echo "Hello, Miguel!"
+    echo "Hello, Maddy!"
 fi
 
 # Alias definitions.
