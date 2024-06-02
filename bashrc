@@ -131,6 +131,11 @@ else
     echo "Hello, Maddy!"
 fi
 
+# Load pipx completions
+if [ `which pipx 2> /dev/null` ]; then
+    eval "$(register-python-argcomplete pipx)"
+fi
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

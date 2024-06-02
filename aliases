@@ -217,6 +217,15 @@ zid-counter () {
     echo "$number requests, _ resolved, $unique unique"
 }
 
+# Find a student based on their name within a course, on CSE systems
+find-student () {
+    if [ $# -eq 2 ]; then
+        members "${1}_Student" | grep "${2}"
+    else
+        echo "Usage: find-student [course_code] [name]"
+    fi
+}
+
 # Activate my COMP1010 virtual environment
 1010-venv ()
 {
