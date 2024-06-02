@@ -218,6 +218,10 @@ zid-counter () {
 }
 
 # Find a student based on their name within a course, on CSE systems
+#
+# Note: this may misbehave due to term numbers, Nick suggests using
+# ${COURSE}_Student${TERM} instead, but that won't be clean until I can get the
+# current UNSW term as an environment variable.
 find-student () {
     if [ $# -eq 2 ]; then
         members "${1}_Student" | grep "${2}"
