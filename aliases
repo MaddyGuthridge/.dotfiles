@@ -96,6 +96,7 @@ fi
 
 if [[ -x /usr/bin/dolphin ]]; then
     dolphin () {
+        # FIXME: This is probably a syntax error in bash
         /usr/bin/dolphin "$@" > /dev/null 2> /dev/null &!
     }
 fi
@@ -378,3 +379,22 @@ fi
 # flicker on Wayland
 # https://github.com/Slackadays/Clipboard/issues/171#issuecomment-1759936147
 export CLIPBOARD_NOGUI=1
+
+# If Homebrew is installed
+if [ -d /opt/homebrew ]; then
+    # If we have clang, put it first in the PATH
+    if [ -d /opt/homebrew/opt/llvm/bin ]; then
+        # clang executable
+        export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+        # Fix linker errors
+        export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
+        # Help compilers find llvm
+        export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+        # Always run leak checks when using ASAN (since it doesn't run by
+        # default on MacOS)
+        export ASAN_OPTIONS="detect_leaks=1"
+    fi
+fi
+
+# Haskell (if installed)
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
