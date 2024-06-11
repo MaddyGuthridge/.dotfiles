@@ -23,6 +23,9 @@ else
     echo "Not running in Bash or ZSH, no definition for 'what'"
 fi
 
+# Dox a poor, unsuspecting UNSW student
+alias dox="acc"
+
 # Don't forget that I use scc now
 cloc()
 {
@@ -291,6 +294,9 @@ alias netrestart="sudo ifconfig wlp0s20f3 down && sudo ifconfig wlp0s20f3 up"
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Echo to stderr
+echoerr() { echo "$@" 1>&2; }
 
 # Other nonsense that I don't care about
 ###############################################################################
