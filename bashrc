@@ -144,3 +144,7 @@ fi
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+if [ -d ~/Source/COMP/2521/docker ]; then
+    export PATH="$PATH:/home/migue/Source/COMP/2521/docker/scripts"
+fi

@@ -164,3 +164,7 @@ fi
 
 # Don't share zsh history between open instances (it is very annoying)
 unsetopt share_history
+
+if [ -d ~/Source/COMP/2521/docker ]; then
+    export PATH="$PATH:/home/migue/Source/COMP/2521/docker/scripts"
+fi
