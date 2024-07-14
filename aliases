@@ -114,7 +114,7 @@ fi
 export RMVIEW_CONF="~/.dotfiles/rmview/config.json"
 
 # Quick SSH into my server
-alias ursula="ssh migue@ssh.miguelguthridge.com"
+alias ursula="ssh migue@ssh.maddyguthridge.com"
 
 # UNSW zID
 export ZID="z5312085"
