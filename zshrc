@@ -166,5 +166,5 @@ fi
 unsetopt share_history
 
 if [ -d ~/Source/COMP/2521/docker ]; then
-    export PATH="$PATH:/home/migue/Source/COMP/2521/docker/scripts"
+    export PATH="$PATH:$HOME/Source/COMP/2521/docker/scripts"
 fi
