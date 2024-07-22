@@ -1,3 +1,0 @@
-[submodule "omz/plugins/zsh-better-npm-completion"]
-	path = omz/plugins/zsh-better-npm-completion
-	url = git@github.com:lukechilds/zsh-better-npm-completion.git
