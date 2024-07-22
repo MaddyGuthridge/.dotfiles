@@ -127,6 +127,6 @@ fi
 # Source all the sources
 for file in $DOTFILES/sources/* ; do
   if [ -x "$file" ] ; then
-    . "$file"
+    source "$file"
   fi
 done

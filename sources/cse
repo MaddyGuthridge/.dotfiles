@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Fixes for CSE systems
 
-if [ $(whereami) == "cse" ]; then
+if [ $(whereami) = "cse" ]; then
     # Upgrading node and npm to 1531 defaults on CSE systems
     if [[ -x "~cs1531/setup/setup.sh" ]]; then
         source ~cs1531/setup/setup.sh
