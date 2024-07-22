@@ -21,3 +21,20 @@ cdl ()
     cd -P -- "$1"
     ls
 }
+
+# On Linux, xdg-open does a similar thing to MacOS's open command
+# Alias them to be the same
+# https://superuser.com/a/38989/1709412
+case "$OSTYPE" in
+    # Possibly also "cygwin"
+    msys*)
+        alias open="cmd /c start"
+        ;;
+    linux*)
+        alias start="xdg-open"
+        alias open="xdg-open"
+        ;;
+    darwin*)
+        alias start="open"
+        ;;
+esac
