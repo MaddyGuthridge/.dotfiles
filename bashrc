@@ -2,8 +2,16 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# Additional path things
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+# TODO: Determine this path based on the location of this file
+export DOTFILES="$HOME/.dotfiles"
+
+# Set up PATH variable
+export PATH=$DOTFILES/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+
+# Also add CSE bin if running on UNSW systems
+if [[ $(whereami) == "cse" ]]; then
+    export PATH=$DOTFILES/cse-bin:$PATH
+fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -120,32 +128,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Read out the message of the day
-if [ -x ~/.motd ]; then
-    # Execute a script
-    ~/.motd
-elif [ -f ~/.motd ]; then
-    # Read a file
-    cat ~/.motd
-else
-    echo "Hello, Maddy!"
-fi
-
 # Load pipx completions
 if [ `which pipx 2> /dev/null` ]; then
     eval "$(register-python-argcomplete pipx)"
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-# 2521 Docker Scripts
-export PATH="$PATH:/c/Users/migue/Source/COMP/2521/docker/scripts"
-# 2521 Docker Scripts
-export PATH="$PATH:/c/Users/migue/Source/COMP/2521/docker/scripts"
+# Source all the sources
+for file in $DOTFILES/sources/* ; do
+  if [ -x "$file" ] ; then
+    source "$file"
+  fi
+done
