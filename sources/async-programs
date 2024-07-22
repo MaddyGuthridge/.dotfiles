@@ -18,7 +18,7 @@ fi
 
 if command -pv firefox &> /dev/null; then
     firefox() {
-        if which firefox-aurora &> /dev/null; then
+        if command -pv firefox-aurora &> /dev/null; then
             ff='firefox-aurora'
         else
             ff='firefox'

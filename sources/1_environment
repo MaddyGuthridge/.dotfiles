@@ -16,9 +16,9 @@ else
 fi
 
 # Use Firefox Dev Edition as my preferred browser if it's on the path
-if command -pv firefox-aurora 2>&1 >/dev/null; then
+if command -pv firefox-aurora &> /dev/null; then
     export BROWSER='firefox-aurora'
-elif command -pv firefox 2>&1 2>/dev/null; then
+elif command -pv firefox &> /dev/null; then
     export BROWSER='firefox'
 fi
 
