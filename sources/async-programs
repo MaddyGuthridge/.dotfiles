@@ -2,12 +2,14 @@
 if [[ -x /usr/bin/dolphin ]]; then
     dolphin () {
         # FIXME: This is probably a syntax error in bash
-        /usr/bin/dolphin "$@" > /dev/null 2> /dev/null &!
+        /usr/bin/dolphin "$@" > /dev/null 2> /dev/null &
+        disown
     }
 fi
 
 if [[ -x /usr/bin/nautilus ]]; then
     nautilus() {
-        /usr/bin/nautilus "$@" > /dev/null 2> /dev/null &!
+        /usr/bin/nautilus "$@" > /dev/null 2> /dev/null &
+        disown
     }
 fi
