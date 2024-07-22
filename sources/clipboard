@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 # Alias for clipboard installed via flatpak
-if command -v flatpak &> /dev/null
-then
+if command -pv flatpak &> /dev/null; then
     # Flatpak exists
     if flatpak list | grep app.getclipboard.Clipboard > /dev/null; then
         # Disable Clipboard GUI since it makes the Gnome active window indicator

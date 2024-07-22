@@ -1,15 +1,29 @@
 #!/usr/bin/bash
-if [[ -x /usr/bin/dolphin ]]; then
+# Set up aliases to open common GUI programs asynchronously
+
+if command -pv dolphin &> /dev/null; then
     dolphin () {
         # FIXME: This is probably a syntax error in bash
-        /usr/bin/dolphin "$@" > /dev/null 2> /dev/null &
+        command -p dolphin "$@" > /dev/null 2> /dev/null &
         disown
     }
 fi
 
-if [[ -x /usr/bin/nautilus ]]; then
+if command -pv nautilus &> /dev/null; then
     nautilus() {
-        /usr/bin/nautilus "$@" > /dev/null 2> /dev/null &
+        command -p nautilus "$@" > /dev/null 2> /dev/null &
+        disown
+    }
+fi
+
+if command -pv firefox &> /dev/null; then
+    firefox() {
+        if which firefox-aurora &> /dev/null; then
+            ff='firefox-aurora'
+        else
+            ff='firefox'
+        fi
+        command -p "$ff" "$@" > /dev/null 2> /dev/null &
         disown
     }
 fi
