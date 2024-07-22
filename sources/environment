@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-# Remarkable stuff
-export RMVIEW_CONF="~/.dotfiles/rmview/config.json"
