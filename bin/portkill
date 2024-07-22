@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+# portkill
+#
+# Quickly kill a process that is using a port
+# eg: portkill 8080
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 [-f] <port number>"
+    echo "Eg: portkill 8080"
+    echo "  -f = force (kill -9)"
+    exit 1
+elif [[ $1 == "-f" ]]; then
+    kill -9 $(lsof -t -i:$2)
+else
+    kill $(lsof -t -i:$1)
+fi

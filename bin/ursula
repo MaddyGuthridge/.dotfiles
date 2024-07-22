@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+# ursula
+# SSH into Ursula, or warn if we're already there
+
+if [[ $(whereami) == "ursula" ]]; then
+    echo "You're already at Ursula"
+    exit 1
+fi
+
+ssh ursula

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# Add 2521 Docker scripts to PATH
+if [ -d ~/Source/COMP/2521/docker ]; then
+    export PATH="$PATH:$HOME/Source/COMP/2521/docker/scripts"
+fi

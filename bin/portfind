@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# The _port_in_use and find_port functions were yoinked from some code that
+# https://github.com/arctic-hen7 wrote
+# Check whether a port is in use
+_port_in_use() {
+    local port=$1
+    netstat -tuln | grep ":$port" > /dev/null
+}
+
+
+# Start checking from port 5001
+port=5001
+
+while port_in_use "$port"; do
+    ((port++))
+done
+
+# Print the first available port
+echo "$port"

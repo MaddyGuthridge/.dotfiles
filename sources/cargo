@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# Cargo completion
+if [[ -x "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi

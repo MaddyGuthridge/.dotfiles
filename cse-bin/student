@@ -1,0 +1,23 @@
+# student
+# Find a student based on their name within a course, on CSE systems
+#
+# Note: this may misbehave due to term numbers, Nick suggests using
+# ${COURSE}_Student${TERM} instead, but that won't be clean until I can get the
+# current UNSW term as an environment variable.
+
+if [ $# -eq 3 ]; then
+    COURSE="$1"
+    TERM="$2"
+    NAME="$3"
+elif [ $# -eq 2 ]; then
+    COURSE="$1"
+    TERM=$(unsw-term)
+    NAME="$2"
+else
+    echo "Usage:"
+    echo "  student [course_code] [name] -- search this term"
+    echo "  student [course_code] [term] [name] -- search given term"
+    exit 1
+fi
+
+members "${COURSE}_Student${TERM}" | grep "$NAME"

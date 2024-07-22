@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# Activate my COMP1010 virtual environment
+1010-venv ()
+{
+    source ~/Source/COMP/1010/.1010-venv/bin/activate
+}

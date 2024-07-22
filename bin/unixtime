@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# unixtime
+# Print the time as a unix timestamp
+date +%s

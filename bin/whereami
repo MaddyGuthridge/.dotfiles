@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+# whereami
+# Print out where I am
+# For most machines, just the hostname,
+# but for CSE machines, say "cse"
+
+if [ -d /unsw ]; then
+    echo cse
+    exit
+fi
+
+hostname

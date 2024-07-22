@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+# what alias
+# Tell me what something is
+if [ -n "$BASH" ]; then
+    alias what='type -a $@'
+elif [ -n "$ZSH_NAME" ]; then
+    alias what='whence -fva'
+else
+    echo "Not running in Bash or ZSH, no definition for 'what'"
+fi

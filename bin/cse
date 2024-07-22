@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+# cse
+# SSH into CSE systems, or warn if we're already there
+# If we give an extra argument, that is the specific machine name to connect to
+
+if [ $# -eq 1 ]; then
+    ssh "${ZID}@${1}.cse.unsw.edu.au"
+    exit $?
+fi
+
+if [[ $(whereami) == "cse" ]]; then
+    echo "You're already at CSE"
+    exit 1
+fi
+
+ssh cse

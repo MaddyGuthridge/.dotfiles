@@ -1,0 +1,18 @@
+# Quick function for grabbing files from CSE
+#
+# cse-get /path/to/my/file.txt
+# Download to ./file.txt
+#
+# cse-get /path/to/my/file.txt /path/to/save/in.txt
+# Download to in.txt
+#
+# Note that using the ~ character won't work correctly on the CSE end
+if [ $# -eq 1 ]; then
+    echo "CSE: Downloading $1 -> ${1##*/}"
+    rsync "$CSE":"$1" ${1##*/}
+elif [ $# -eq 2 ]; then
+    echo "CSE: Downloading $1 -> $2"
+    rsync "$CSE":"$1" $2
+else
+    echo "Usage: cse-get from_file [to_file]"
+fi

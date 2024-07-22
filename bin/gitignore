@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+# gitignore
+# Grab gitignore from GitHub's defaults
+
+curl -s --fail "https://raw.githubusercontent.com/github/gitignore/main/$1.gitignore" -o .gitignore
+if [ $? -eq 0 ]; then
+    return 0
+else
+    echo "Lookup failed, maybe check capitalisation?"
+    return 1
+fi

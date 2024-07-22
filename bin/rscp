@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# Copy with rsync
+rsync -ax --inplace --sparse --no-whole-file --protect-args $@

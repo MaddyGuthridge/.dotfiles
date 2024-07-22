@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+# Alias for clipboard installed via flatpak
+if command -v flatpak &> /dev/null
+then
+    # Flatpak exists
+    if flatpak list | grep app.getclipboard.Clipboard > /dev/null; then
+        # Disable Clipboard GUI since it makes the Gnome active window indicator
+        # flicker on Wayland
+        # https://github.com/Slackadays/Clipboard/issues/171#issuecomment-1759936147
+        export CLIPBOARD_NOGUI=1
+        alias cb="flatpak run app.getclipboard.Clipboard"
+    fi
+fi

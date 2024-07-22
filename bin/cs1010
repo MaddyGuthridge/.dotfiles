@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+# cs1010
+# SSH into the CS1010 course account
+
+if [[ $(whereami) == "cse" ]]; then
+    ssh cs1010
+    exit $?
+fi
+
+# Other case, ssh via my CSE account (a bit slower but better than constantly
+# needing to add my SSH key again)
+ssh cse ssh cs1010

@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+# Quick command to quit the terminal
+alias q="exit 0"
+# And to clear the console
+alias c="clear"
+alias cls="clear"
+
+# Improved ll
+alias ll='ls -alF'
+
+# Add function for combining mkdir and cd
+mkcdir ()
+{
+    mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
+
+# Add function for combining cd and ls
+cdl ()
+{
+    cd -P -- "$1"
+    ls
+}

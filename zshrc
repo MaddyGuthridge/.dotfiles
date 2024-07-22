@@ -1,32 +1,15 @@
-# Read out the message of the day
-if [ -x ~/.motd ]; then
-    # Execute a script
-    ~/.motd
-elif [ -f ~/.motd ]; then
-    # Read a file
-    cat ~/.motd
-else
-    echo "Hello, Maddy!"
-fi
+#!/usr/bin/zsh
+# .zshrc
+# ZSH config
+#  - Set up Oh My ZSH
+#  - Load aliases
 
-# Load the aliases
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-else
-    echo ".aliases missing"
-fi
-
-# On CSE systems, we should silence the insecure directory warning
-if [ "$USER" = "$ZID" ]; then
-    export ZSH_DISABLE_COMPFIX="true"
-fi
+# TODO: Determine this path based on the location of this file
+export DOTFILES="$HOME/.dotfiles"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -115,10 +98,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Don't share zsh history between open instances (it is very annoying)
+unsetopt share_history
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -126,18 +107,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Keybinds
 bindkey '^H' backward-kill-word
@@ -155,16 +124,9 @@ if [ $? -eq 0 ]; then
     alias oops=fuck
 fi
 
-# Load the aliases a second time since OMZ deletes a bunch of them
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-else
-    echo ".aliases missing"
-fi
-
-# Don't share zsh history between open instances (it is very annoying)
-unsetopt share_history
-
-if [ -d ~/Source/COMP/2521/docker ]; then
-    export PATH="$PATH:$HOME/Source/COMP/2521/docker/scripts"
-fi
+# Source all the sources
+for file in $DOTFILES/sources/* ; do
+  if [ -x "$file" ] ; then
+    . "$file"
+  fi
+done

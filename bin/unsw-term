@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+# Print the given UNSW term
+
+import sys
+from datetime import datetime
+
+
+if len(sys.argv) == 1:
+    t = datetime.now()
+elif len(sys.argv) == 2:
+    t = datetime.fromisoformat(sys.argv[1])
+elif len(sys.argv) == 4:
+    t = datetime(
+        int(sys.argv[1]),
+        int(sys.argv[2]),
+        int(sys.argv[3]),
+    )
+else:
+    print("Usage:")
+    print("  unsw-term            = print current term")
+    print("  unsw-term yyyy mm dd = print term at date")
+    exit(1)
+
+year = t.year
+
+
+term1_end = datetime(year, 5, 15)
+term2_end = datetime(year, 8, 29)
+
+if t < term1_end:
+    print(f"{year % 100}T1")
+elif t < term2_end:
+    print(f"{year % 100}T2")
+else:
+    print(f"{year % 100}T3")
+# TODO: Support term 0 if I ever need it

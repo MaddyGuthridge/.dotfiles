@@ -1,0 +1,18 @@
+# Quick function for sending files to CSE
+#
+# cse-set /path/to/my/file.txt
+# Upload to your CSE home directory as file.txt
+#
+# cse-set /path/to/my/file.txt /path/to/save/in.txt
+# Upload to CSE systems under the given path
+#
+# Note that using the ~ character won't work correctly on the CSE end
+if [ $# -eq 1 ]; then
+    echo "CSE: Uploading $1 -> ${1##*/}"
+    rsync ${1##*/} "${CS1010}:/home/cs1010/${1}"
+elif [ $# -eq 2 ]; then
+    echo "CSE: Uploading $1 -> $2"
+    rsync $1 "$CS1010":"$2"
+else
+    echo "Usage: cs1010-set from_file [to_file]"
+fi

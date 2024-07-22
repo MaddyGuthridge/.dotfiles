@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# Command to merge PDFs
+# Usage: `pdfmerge out.pdf in1.pdf in2.pdf`
+# Source: comments of https://stackoverflow.com/a/19358402/6335363
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=$@

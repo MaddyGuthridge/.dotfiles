@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# Set up editor variable
+# TODO: If terminal is running in VS Code, use it as the editor
+export EDITOR='nano'
