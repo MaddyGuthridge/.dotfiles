@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+# dotup
+# Update dotfiles
+
+dotup() {
+    CURR_DIR=$(pwd)
+    cd $DOTFILES
+    git pull
+    # Two empty lines -- there is no better way to do this that also works in
+    # bash
+    echo
+    echo
+    # Now reload the config
+    if [ -n "$BASH" ]; then
+        source ~/.bashrc
+    elif [ -n "$ZSH_NAME" ]; then
+        source ~/.zshrc
+    else
+        echo "Not running in Bash or ZSH, no re-source of configs"
+    fi
+}
