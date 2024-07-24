@@ -20,13 +20,16 @@ else:
     whereami.wait()
     assert whereami.stdout
 
-    if "cse" in str(whereami.stdout.read()) and len(sys.argv) == 1:
-        print("You're already at CSE", file=sys.stderr)
-        exit(1)
-
     machine_id = "login"
     args = sys.argv[1:]
 
+    if "cse" in str(whereami.stdout.read()):
+        if len(sys.argv) == 1:
+            print("You're already at CSE", file=sys.stderr)
+            exit(1)
+        else:
+            exit(os.system(" ".join(args)))
+
 # FIXME: The args probably get messed up by this call to os.system since quotes
 # aren't being preserved
-os.system(f'ssh "{zid}@{machine_id}.cse.unsw.edu.au" {" ".join(args)}')
+exit(os.system(f'ssh "{zid}@{machine_id}.cse.unsw.edu.au" {" ".join(args)}'))
