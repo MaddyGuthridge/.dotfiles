@@ -3,8 +3,12 @@
 # SSH into Ursula, or warn if we're already there
 
 if [[ $(whereami) == "ursula" ]]; then
-    echo "You're already at Ursula"
-    exit 1
+    if [ $# -eq 0 ]; then
+        echo "You're already at Ursula"
+        exit 1
+    else
+        command $@
+    fi
 fi
 
-ssh ursula
+ssh ursula $@
