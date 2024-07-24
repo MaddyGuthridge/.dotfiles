@@ -1,16 +1,32 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 # cse
 # SSH into CSE systems, or warn if we're already there
-# If we give an extra argument, that is the specific machine name to connect to
+#
+# Options:
+#   -m --machine [machine name] = specify which machine to connect to
+import sys
+import os
+from subprocess import Popen, PIPE
 
-if [ $# -eq 1 ]; then
-    ssh "${ZID}@${1}.cse.unsw.edu.au"
-    exit $?
-fi
+zid = os.getenv("ZID")
 
-if [[ $(whereami) == "cse" ]]; then
-    echo "You're already at CSE"
-    exit 1
-fi
+# FIXME: Should probably use proper argparsing if I want this to be remotely
+# reliable
+if len(sys.argv) >= 2 and (sys.argv[1] == "-m" or sys.argv[1] == "--machine"):
+    machine_id = sys.argv[2]
+    args = sys.argv[3:]
+else:
+    whereami = Popen(["bash", "-c", "whereami"], stdout=PIPE)
+    whereami.wait()
+    assert whereami.stdout
 
-ssh cse
+    if "cse" in str(whereami.stdout.read()) and len(sys.argv) == 1:
+        print("You're already at CSE", file=sys.stderr)
+        exit(1)
+
+    machine_id = "login"
+    args = sys.argv[1:]
+
+# FIXME: The args probably get messed up by this call to os.system since quotes
+# aren't being preserved
+os.system(f'ssh "{zid}@{machine_id}.cse.unsw.edu.au" {" ".join(args)}')
