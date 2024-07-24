@@ -11,13 +11,13 @@ if [ $# -eq 3 ]; then
     NAME="$3"
 elif [ $# -eq 2 ]; then
     COURSE="$1"
-    TERM=$(unsw-term)
+    TERM=$(unsw-term --no-year)
     NAME="$2"
 else
     echo "Usage:"
     echo "  student [course_code] [name] -- search this term"
-    echo "  student [course_code] [term] [name] -- search given term"
+    echo "  student [course_code] [term] [name] -- search given term (t1, t2, t3)"
     exit 1
 fi
 
-members "${COURSE}_Student${TERM}" | grep "$NAME"
+cse members "${COURSE}${TERM}_Student" | grep "$NAME"
