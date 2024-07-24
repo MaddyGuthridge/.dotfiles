@@ -13,12 +13,17 @@ if [ "$OS" = "Windows_NT" ]; then
 fi
 
 # Bash stuff
-# ln -sf ~/.dotfiles/bash_aliases      ~/.bash_aliases
+# ln -sf ~/.dotfiles/bash_aliases    ~/.bash_aliases
 ln -sf ~/.dotfiles/bashrc            ~/.bashrc
 ln -sf ~/.dotfiles/inputrc           ~/.inputrc
 
 # Zsh stuff
 ln -sf ~/.dotfiles/zshrc             ~/.zshrc
+
+# SSH config
+mkdir -p ~/.ssh
+ln -sf ~/.dotfiles/ssh-config        ~/.ssh/config
+
 
 # RmView shortcut
 mkdir -p ~/.local/share/applications/
