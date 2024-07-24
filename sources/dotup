@@ -6,6 +6,7 @@ dotup() {
     CURR_DIR=$(pwd)
     cd $DOTFILES
     git pull
+    cd $CURR_DIR
     # Two empty lines -- there is no better way to do this that also works in
     # bash
     echo
