@@ -1,0 +1,3 @@
+# Update ursula
+
+ursula -t 'echo "Ursula updating..." && sudo dnf update && echo "Ursula update complete, rebooting..." && sudo reboot'
