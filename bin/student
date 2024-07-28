@@ -1,9 +1,6 @@
+#!/usr/bin/bash
 # student
 # Find a student based on their name within a course, on CSE systems
-#
-# Note: this may misbehave due to term numbers, Nick suggests using
-# ${COURSE}_Student${TERM} instead, but that won't be clean until I can get the
-# current UNSW term as an environment variable.
 
 if [ $# -eq 3 ]; then
     COURSE="$1"

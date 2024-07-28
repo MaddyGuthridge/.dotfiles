@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Quick function for sending files to CSE
 #
 # cse-set /path/to/my/file.txt

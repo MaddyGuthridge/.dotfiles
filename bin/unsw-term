@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Print the given UNSW term
+# unsw-term
+# Print the current (or given) UNSW term
 
 import sys
 from datetime import datetime

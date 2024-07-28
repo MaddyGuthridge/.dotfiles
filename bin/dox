@@ -1,2 +1,3 @@
+#!/usr/bin/bash
 # Dox a poor, unsuspecting UNSW student
 cse acc $@

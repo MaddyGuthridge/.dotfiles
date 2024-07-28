@@ -3,6 +3,7 @@
 # SSH into the CS1010 course account
 
 if [[ $(whereami) == "cse" ]]; then
+    # Does this work? Cannot test until I get added to the course again
     ssh cs1010
     exit $?
 fi
