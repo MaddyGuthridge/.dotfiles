@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# py is python3
+python3 $@
