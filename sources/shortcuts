@@ -1,9 +1,10 @@
 #!/usr/bin/bash
 # Quick command to quit the terminal
 alias q="exit 0"
-# And to clear the console
-alias c="clear"
-alias cls="clear"
+# And to clear the console (as well as resetting any cursor changes)
+# https://superuser.com/a/123007/1709412
+alias c="printf '\033\143'"
+alias cls="printf '\033\143'"
 
 # Improved ll
 alias ll='ls -alF'
