@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Quick function for grabbing files from CSE
 #
 # cse-get /path/to/my/file.txt

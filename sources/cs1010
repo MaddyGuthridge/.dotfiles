@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Activate my COMP1010 virtual environment
 1010-venv ()
 {

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # echoerr
 # Echo to stderr
 echo "$@" 1>&2

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Add Gradle to path
 if [ -d "/opt/gradle/gradle-7.3/bin" ] ; then
     PATH="/opt/gradle/gradle-7.3/bin:$PATH"

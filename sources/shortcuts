@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Quick command to quit the terminal
 alias q="exit 0"
 # And to clear the console (as well as resetting any cursor changes)

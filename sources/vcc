@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # VC Compiler
 if command -pv java &>/dev/null && [ -f ~/Tweaks/VC.jar ] && [ -f ~/.local/bin/vcc.jar ]; then
     alias vc="java -jar ~/Tweaks/VC.jar"
