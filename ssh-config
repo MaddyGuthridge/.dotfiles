@@ -1,6 +1,6 @@
 # Ursula
 Host ursula
-  ProxyCommand /usr/bin/cloudflared access ssh --hostname ssh.maddyguthridge.com
+  ProxyCommand cloudflared access ssh --hostname ssh.maddyguthridge.com
   User maddy
 
 # Ursula (local network)
@@ -10,7 +10,7 @@ Host ursula.local
 
 # Ursula (using URL)
 Host ssh.maddyguthridge.com
-  ProxyCommand /usr/bin/cloudflared access ssh --hostname %h
+  ProxyCommand cloudflared access ssh --hostname %h
 
 # Remarkable
 Host remarkable
