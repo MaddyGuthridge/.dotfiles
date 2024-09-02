@@ -8,6 +8,8 @@ On Linux, run:
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
+Apparently this isn't ideal (TODO: was it better on Windows, if so how to set it up?)
+
 ## Solaar config
 
 ```sh
