@@ -18,6 +18,8 @@ rm -rf ~/.config/solaar
 ln -sfd ~/.dotfiles/solaar ~/.config/solaar
 ```
 
-## Zoho Email
+## Email configuration
 
-[Server settings](https://www.zoho.com/mail/help/imap-access.html).
+* [Zoho server settings](https://www.zoho.com/mail/help/imap-access.html)
+
+* [UNSW config](./setup/unsw-email-config.pdf)
