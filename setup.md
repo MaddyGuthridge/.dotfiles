@@ -18,7 +18,22 @@ rm -rf ~/.config/solaar
 ln -sfd ~/.dotfiles/solaar ~/.config/solaar
 ```
 
-## Email configuration
+## Emails
+
+List of emails to set up
+
+* UNSW
+* Outlook
+    * Miguel
+    * HDSQ (.com.au)
+* Gmail
+    * Miguel
+    * Miguel 2
+    * Maddy
+* Disroot
+* MaddyGuthridge.com (zoho)
+
+### Configuration
 
 * [Zoho server settings](https://www.zoho.com/mail/help/imap-access.html)
 
