@@ -15,3 +15,7 @@ mkdir -p ~/.config
 rm -rf ~/.config/solaar
 ln -sfd ~/.dotfiles/solaar ~/.config/solaar
 ```
+
+## Zoho Email
+
+[Server settings](https://www.zoho.com/mail/help/imap-access.html).
