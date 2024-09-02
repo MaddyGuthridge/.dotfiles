@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # cs1010
 # SSH into the CS1010 course account
 

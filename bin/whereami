@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # whereami
 # Print out where I am
 # For most machines, just the hostname,

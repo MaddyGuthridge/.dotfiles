@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # If Homebrew is installed
 if [ -d /opt/homebrew ]; then
     # If we have clang, put it first in the PATH

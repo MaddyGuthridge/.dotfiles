@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Fixes for CSE systems
 
 if [ $(whereami) = "cse" ]; then

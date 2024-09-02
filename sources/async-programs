@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Set up aliases to open common GUI programs asynchronously
 
 if command -pv dolphin &> /dev/null; then

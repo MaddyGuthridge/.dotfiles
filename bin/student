@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # student
 # Find a student based on their name within a course, on CSE systems
 
