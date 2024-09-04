@@ -13,22 +13,22 @@ if [ "$OS" = "Windows_NT" ]; then
 fi
 
 # Bash stuff
-ln -sf ~/.dotfiles/bashrc            ~/.bashrc
-ln -sf ~/.dotfiles/inputrc           ~/.inputrc
+ln -sf ~/.dotfiles/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/configs/inputrc ~/.inputrc
 
 # Zsh stuff
-ln -sf ~/.dotfiles/zshrc             ~/.zshrc
+ln -sf ~/.dotfiles/zshrc ~/.zshrc
 
 # SSH config
 mkdir -p ~/.ssh
-ln -sf ~/.dotfiles/ssh-config        ~/.ssh/config
+ln -sf ~/.dotfiles/configs/dot.ssh.config ~/.ssh/config
 
 # Git config
-ln -sf ~/.dotfiles/dot.gitconfig     ~/.gitconfig
+ln -sf ~/.dotfiles/configs/dot.gitconfig ~/.gitconfig
 
 # Alacritty config
 mkdir -p $HOME/.config/alacritty
-ln -sf ~/.dotfiles/alacritty.toml    $HOME/.config/alacritty/alacritty.toml
+ln -sf ~/.dotfiles/configs/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
 # Only on linux
 if [[ $OSTYPE == 'linux'* ]]; then
