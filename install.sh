@@ -30,9 +30,13 @@ ln -sf ~/.dotfiles/configs/dot.gitconfig ~/.gitconfig
 mkdir -p $HOME/.config/alacritty
 ln -sf ~/.dotfiles/configs/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
+
 # Only on linux
 if [[ $OSTYPE == 'linux'* ]]; then
     # RmView shortcut
     mkdir -p ~/.local/share/applications/
     ln -sf ~/.dotfiles/rmview/RmView.desktop ~/.local/share/applications/RmView.desktop
+
+    # Make emojis work nicely with Alacritty
+    ln -sf ~/.dotfiles/configs/fonts.conf ~/.config/fontconfig/fonts.conf
 fi
