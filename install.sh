@@ -23,6 +23,9 @@ ln -sf ~/.dotfiles/zshrc             ~/.zshrc
 mkdir -p ~/.ssh
 ln -sf ~/.dotfiles/ssh-config        ~/.ssh/config
 
+# Git config
+ln -sf ~/.dotfiles/dot.gitconfig     ~/.gitconfig
+
 # Only on linux
 if [[ $OSTYPE == 'linux'* ]]; then
     # RmView shortcut

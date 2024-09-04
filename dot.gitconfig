@@ -1,0 +1,10 @@
+[user]
+    name = "Maddy Guthridge"
+    email = "hello@maddyguthridge.com"
+
+[init]
+    defaultBranch = main
+
+[status]
+    # git status --short
+    short = true
