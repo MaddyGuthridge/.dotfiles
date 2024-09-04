@@ -26,6 +26,10 @@ ln -sf ~/.dotfiles/ssh-config        ~/.ssh/config
 # Git config
 ln -sf ~/.dotfiles/dot.gitconfig     ~/.gitconfig
 
+# Alacritty config
+mkdir -p $HOME/.config/alacritty
+ln -sf ~/.dotfiles/alacritty.toml    $HOME/.config/alacritty/alacritty.toml
+
 # Only on linux
 if [[ $OSTYPE == 'linux'* ]]; then
     # RmView shortcut

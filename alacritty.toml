@@ -1,0 +1,15 @@
+# https://alacritty.org/config-alacritty.html
+
+[window]
+padding = { x = 10, y = 5 }
+decorations = "None"
+
+[cursor]
+style.shape = "Beam"
+style.blinking = "On"
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "F11", action = "ToggleFullscreen" },
+]
