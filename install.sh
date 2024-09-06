@@ -30,6 +30,8 @@ ln -sf ~/.dotfiles/configs/dot.gitconfig ~/.gitconfig
 mkdir -p $HOME/.config/alacritty
 ln -sf ~/.dotfiles/configs/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
+# Set up public bin
+ln -sf ~/.dotfiles/public_bin $HOME/bin
 
 # Only on linux
 if [[ $OSTYPE == 'linux'* ]]; then
