@@ -31,6 +31,7 @@ mkdir -p $HOME/.config/alacritty
 ln -sf ~/.dotfiles/configs/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
 # Set up public bin
+# FIXME: If $HOME/bin already exists, this links within it, ugh
 ln -sf ~/.dotfiles/public_bin $HOME/bin
 
 # Only on linux
