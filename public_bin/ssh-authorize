@@ -4,8 +4,6 @@ file=$(realpath "$BASH_SOURCE")
 
 user=$(ls -ld "${file}" | awk '{print $3}')
 
-homedir="~$user"
-
 while true; do
     read -p "Grant $user SSH access to account $(whoami)? " yn
     case $yn in
@@ -15,7 +13,15 @@ while true; do
     esac
 done
 
+# This won't work nicely on MacOS
+files=/home/$user/.ssh/id_*.pub
+
 # Add all keys to their authorized_keys file
-for filename in "$homedir/.ssh/id_*.pub"; do
-    cat filename >> $HOME/.ssh/authorized_keys
+for filename in $files; do
+    if [[ $filename == "~$user/.ssh/id_*.pub" ]]; then
+        echo "Error: no keys found"
+        exit 1
+    fi
+    echo "Add key" $filename
+    cat $filename >> $HOME/.ssh/authorized_keys
 done
