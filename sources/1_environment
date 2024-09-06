@@ -4,14 +4,14 @@ export RMVIEW_CONF="~/.dotfiles/rmview/config.json"
 
 # Determine which terminal emulator we're using
 if [ -z "$TERM_PROGRAM" ]; then
-    if [ -n "$WINDIR" ]; then
-        # Windows doesn't support ps -o
-        if [ -n "$WT_SESSION" ]; then
-            # Windows terminal
-            export TERM_PROGRAM="wt"
-        fi
+    if [ -n "$ALACRITTY_WINDOW_ID" ]; then
+        # Alacritty
+        export TERM_PROGRAM="alacritty"
+    elif [ -n "$WT_SESSION" ]; then
+        # Windows terminal
+        export TERM_PROGRAM="wt"
     else
-        # Other systems
+        # Other systems -- note this only works on Linux
         export TERM_PROGRAM=$(basename "/"$(ps -o cmd -f -p $(cat /proc/$(echo $$)/stat | cut -d \  -f 4) | tail -1 | sed 's/ .*$//'))
     fi
 fi
