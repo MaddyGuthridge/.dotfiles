@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
 
-cat ~z5312085/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+file=$(realpath "$BASH_SOURCE")
+
+user=$(ls -ld "${file}" | awk '{print $3}')
+
+homedir="~$user"
+
+while true; do
+    read -p "Grant $user SSH access to account $(whoami)? " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit 1;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# Add all keys to their authorized_keys file
+for filename in "$homedir/.ssh/id_*.pub"; do
+    cat filename >> $HOME/.ssh/authorized_keys
+done
