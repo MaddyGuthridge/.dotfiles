@@ -4,10 +4,6 @@
 padding = { x = 10, y = 5 }
 decorations = "None"
 
-[font]
-# Use monospace, as it is overridden elsewhere
-normal = { family = "monospace" }
-
 [cursor]
 style.shape = "Beam"
 style.blinking = "On"
