@@ -12,4 +12,6 @@ style.blinking = "On"
 bindings = [
     { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
     { key = "F11", action = "ToggleFullscreen" },
+    { key = "+", mods = "Control", action = "IncreaseFontSize" },
+    { key = "_", mods = "Control", action = "DecreaseFontSize" },
 ]
