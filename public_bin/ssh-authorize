@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copies the SSH public keys for whoever owns this script into the
+# authorized_keys file for whoever runs it
 
 file=$(realpath "$BASH_SOURCE")
 
