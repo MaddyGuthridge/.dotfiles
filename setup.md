@@ -2,13 +2,9 @@
 
 ## Linux and Windows store time differently
 
-On Linux, run:
+Change Windows settings.
 
-```sh
-timedatectl set-local-rtc 1 --adjust-system-clock
-```
-
-Apparently this isn't ideal (TODO: was it better on Windows, if so how to set it up?)
+<https://www.howtogeek.com/323390/how-to-fix-windows-and-linux-showing-different-times-when-dual-booting/#make-windows-use-utc-time-by-editing-the-registry>
 
 ## Solaar config
 
