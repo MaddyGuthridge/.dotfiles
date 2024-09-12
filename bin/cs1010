@@ -10,4 +10,4 @@ fi
 
 # Other case, ssh via my CSE account (a bit slower but better than constantly
 # needing to add my SSH key again)
-ssh cse ssh cs1010
+ssh cse -t ssh cs1010

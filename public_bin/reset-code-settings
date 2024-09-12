@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Reset VS Code settings to their default
+
+while true; do
+    read -p "Reset VS Code settings to defaults? " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit 1;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+echo "{}" > ~/.config/Code/User/settings.json
