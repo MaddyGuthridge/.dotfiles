@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+zid=$1
+
+term="24T3"
+
+lab="lab01"
+
+clone_url="git@nw-syd-gitlab.cseunsw.tech:COMP2511/${term}/students/${zid}/${lab}.git"
+
+marking_dir=$(mktemp)
+
+git clone -b marking --single-branch $clone_url $marking_dir
+
+code -w $marking_dir
