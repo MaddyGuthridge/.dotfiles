@@ -8,3 +8,6 @@
 [status]
     # git status --short
     short = true
+
+[pull]
+	rebase = false
