@@ -3,7 +3,7 @@
 
 if [ $(whereami) = "cse" ]; then
     # Upgrading node and npm to 1531 defaults on CSE systems
-    if [[ -x "~cs1531/setup/setup.sh" ]]; then
+    if [[ -x ~cs1531/setup/setup.sh ]]; then
         source ~cs1531/setup/setup.sh
     fi
 
