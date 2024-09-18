@@ -8,11 +8,6 @@ export DOTFILES="$HOME/.dotfiles"
 # Set up PATH variable
 export PATH=$DOTFILES/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
-# Also add CSE bin if running on UNSW systems
-if [[ $(whereami) == "cse" ]]; then
-    export PATH=$DOTFILES/cse-bin:$PATH
-fi
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

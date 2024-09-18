@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+# Path additions
+# Add CSE bin if running on UNSW systems
+if [[ $(whereami) == "cse" ]]; then
+    export PATH="$DOTFILES/cse-bin:$PATH"
+fi
+
+# Cargo bin
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 # Remarkable stuff
 export RMVIEW_CONF="~/.dotfiles/rmview/config.json"
 
