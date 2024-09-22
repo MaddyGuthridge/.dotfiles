@@ -23,6 +23,9 @@ cdl ()
     ls
 }
 
+# Git commit
+alias gcm="git commit -m"
+
 # On Linux, xdg-open does a similar thing to MacOS's open command
 # Alias them to be the same
 # https://superuser.com/a/38989/1709412
