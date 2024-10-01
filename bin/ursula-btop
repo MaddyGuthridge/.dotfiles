@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Update ursula
+
+ursula -t btop --utf-force
