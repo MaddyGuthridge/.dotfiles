@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# If Homebrew is installed
+# Homebrew on MacOS
 if [ -d /opt/homebrew ]; then
     # If we have clang, put it first in the PATH
     if [ -d /opt/homebrew/opt/llvm/bin ]; then
@@ -13,4 +13,9 @@ if [ -d /opt/homebrew ]; then
         # default on MacOS)
         export ASAN_OPTIONS="detect_leaks=1"
     fi
+fi
+
+# Homebrew on Linux
+if [ -d /home/linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
