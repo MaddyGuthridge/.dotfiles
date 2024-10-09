@@ -1,6 +1,7 @@
 [user]
     name = "Maddy Guthridge"
     email = "hello@maddyguthridge.com"
+	signingkey = 7E0BC9B633D9B2D9
 
 [init]
     defaultBranch = main
@@ -8,6 +9,9 @@
 [status]
     # git status --short
     short = true
+
+[commit]
+	gpgsign = true
 
 [pull]
 	rebase = false
