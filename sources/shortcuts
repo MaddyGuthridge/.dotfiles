@@ -25,10 +25,17 @@ cdl ()
 
 # Git aliases
 # ===========
+function git-aliases() {
+    echo "Git aliases"
+    echo "    gst  => git status"
+    echo "    gad  => git add ."
+    echo "    gcm  => git commit -m"
+    echo "    gcmp => git commit -m <message> && git push"
+}
 # Git status
 alias gst="git status"
 # Git add current directory
-alias gac="git add ."
+alias gad="git add ."
 # Git commit with message
 alias gcm="git commit -m"
 # Git commit with message, then push
