@@ -23,8 +23,18 @@ cdl ()
     ls
 }
 
-# Git commit
+# Git aliases
+# ===========
+# Git status
+alias gst="git status"
+# Git add current directory
+alias gac="git add ."
+# Git commit with message
 alias gcm="git commit -m"
+# Git commit with message, then push
+function gcmp() {
+    git commit -m "$1" && git push
+}
 
 # On Linux, xdg-open does a similar thing to MacOS's open command
 # Alias them to be the same
