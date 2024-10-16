@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# time-sync
+# Sync the current date and time.
+sudo timedatectl set-ntp yes
