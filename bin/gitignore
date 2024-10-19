@@ -4,8 +4,8 @@
 
 curl -s --fail "https://raw.githubusercontent.com/github/gitignore/main/$1.gitignore" -o .gitignore
 if [ $? -eq 0 ]; then
-    return 0
+    exit 0
 else
     echo "Lookup failed, maybe check capitalisation?"
-    return 1
+    exit 1
 fi
