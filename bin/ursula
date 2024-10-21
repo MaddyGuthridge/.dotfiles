@@ -7,8 +7,9 @@ if [[ $(whereami) == "ursula" ]]; then
         echo "You're already at Ursula"
         exit 1
     else
-        command $@
+        command "$@"
+        exit $?
     fi
 fi
 
-ssh ursula $@
+ssh ursula "$@"
