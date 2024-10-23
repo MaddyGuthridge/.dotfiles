@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # time-sync
-# Sync the current date and time.
-sudo timedatectl set-ntp yes
+# Sync the current date and time with a time server.
+# For some reason, Yzma keeps on getting her time out-of-sync after updates,
+# and until I fix it, I'll be using this command.
+
+sudo timedatectl set-ntp no && sudo timedatectl set-ntp yes
