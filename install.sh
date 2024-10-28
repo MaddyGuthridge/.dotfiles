@@ -30,6 +30,9 @@ ln -sf ~/.dotfiles/configs/dot.gitconfig ~/.gitconfig
 mkdir -p $HOME/.config/alacritty
 ln -sf ~/.dotfiles/configs/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
+# Hyfetch config
+ln -sf ~/.dotfiles/configs/hyfetch.json $HOME/.config/hyfetch.json
+
 # Set up public bin
 # FIXME: If $HOME/bin already exists, this links within it, ugh
 ln -sf ~/.dotfiles/public_bin $HOME/bin
