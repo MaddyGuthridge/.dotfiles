@@ -12,6 +12,9 @@ if [ "$OS" = "Windows_NT" ]; then
     exit $?
 fi
 
+# Main profile
+ln -sf ~/.dotfiles/profile ~/.profile
+
 # Bash stuff
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/configs/inputrc ~/.inputrc
