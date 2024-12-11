@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Nim (if installed)
+if [ -d "$HOME/.nimble" ] ; then
+    export PATH=/home/maddy/.nimble/bin:$PATH
+fi
+
