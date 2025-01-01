@@ -1,0 +1,41 @@
+#!/usr/bin/env zsh
+# This contains the setup for all programming languages that I use
+
+# Cargo completion
+if [[ -x "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
+
+# GHC (Haskell)
+[ -f "/home/maddy/.ghcup/env" ] && . "/home/maddy/.ghcup/env" # ghcup-env
+
+# Fast Node Manager
+# https://github.com/Schniz/fnm
+FNM_PATH="/home/maddy/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+    export PATH="/home/maddy/.local/share/fnm:$PATH"
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+# Bun
+if [ -d "$HOME/.bun" ] ; then
+    # completions
+    [ -s "/home/maddy/.bun/_bun" ] && source "/home/maddy/.bun/_bun"
+    # bun
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# Nim
+if [ -d "$HOME/.nimble" ] ; then
+    export PATH=/home/maddy/.nimble/bin:$PATH
+fi
+
+# Add Gradle to path
+GRADLE_VERSION="8.8"
+# Disable Gradle daemons, since they are RAM hogs which outlive most of the
+# projects I open (which are just for marking)
+GRADLE_OPTS="-Dorg.gradle.daemon=false"
+if [ -d "/opt/gradle/gradle-${GRADLE_VERSION}/bin" ] ; then
+    PATH="/opt/gradle/gradle-${GRADLE_VERSION}/bin:$PATH"
+fi

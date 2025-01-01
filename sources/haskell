@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Haskell (if installed)
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
