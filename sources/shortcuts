@@ -30,7 +30,9 @@ function git-aliases() {
     echo "    gst  => git status"
     echo "    gad  => git add ."
     echo "    gcm  => git commit -m"
+    echo "    gcam  => git add . && git commit -m"
     echo "    gcmp => git commit -m <message> && git push"
+    echo "    gcamp => git add . && git commit -m <message> && git push"
 }
 # Git status
 alias gst="git status"
@@ -38,9 +40,15 @@ alias gst="git status"
 alias gad="git add ."
 # Git commit with message
 alias gcm="git commit -m"
+# Git commit all with message
+alias gcm="git add . && git commit -m"
 # Git commit with message, then push
 function gcmp() {
     git commit -m "$1" && git push
+}
+# Git commit all with message, then push
+function gcamp() {
+    git add . && git commit -m "$1" && git push
 }
 
 # On Linux, xdg-open does a similar thing to MacOS's open command
