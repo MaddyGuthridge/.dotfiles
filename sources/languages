@@ -15,6 +15,12 @@ FNM_PATH="/home/maddy/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
     export PATH="/home/maddy/.local/share/fnm:$PATH"
     eval "$(fnm env --use-on-cd --shell zsh)"
+
+    # Make `nvm` give an error so I learn to use fnm instead
+    nvm() {
+        echo "Use \`fnm\` instead, silly!"
+        return 1
+    }
 fi
 
 # Bun
