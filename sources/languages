@@ -41,7 +41,7 @@ fi
 GRADLE_VERSION="8.8"
 # Disable Gradle daemons, since they are RAM hogs which outlive most of the
 # projects I open (which are just for marking)
-GRADLE_OPTS="-Dorg.gradle.daemon=false"
+export GRADLE_OPTS="-Dorg.gradle.daemon=false"
 if [ -d "/opt/gradle/gradle-${GRADLE_VERSION}/bin" ] ; then
     PATH="/opt/gradle/gradle-${GRADLE_VERSION}/bin:$PATH"
 fi
