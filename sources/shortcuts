@@ -53,7 +53,7 @@ function gcamp() {
 }
 function git-main-branch-name() {
     # https://stackoverflow.com/a/55448881/6335363
-    git branch -vv | grep -Po \
+    git branch -vv | grep -Po --color=never \
   "^[\s\*]*\K[^\s]*(?=.*$(git branch -rl '*/HEAD' | grep -o '[^ ]\+$'))"
 }
 function git-to-main() {
