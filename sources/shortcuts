@@ -33,6 +33,7 @@ function git-aliases() {
     echo "    gcam  => git add . && git commit -m"
     echo "    gcmp => git commit -m <message> && git push"
     echo "    gcamp => git add . && git commit -m <message> && git push"
+    echo "    git-to-main => git reset --hard HEAD && git switch [main] && git pull"
 }
 # Git status
 alias gst="git status"
@@ -49,6 +50,17 @@ function gcmp() {
 # Git commit all with message, then push
 function gcamp() {
     git add . && git commit -m "$1" && git push
+}
+function git-main-branch-name() {
+    # https://stackoverflow.com/a/55448881/6335363
+    git branch -vv | grep -Po \
+  "^[\s\*]*\K[^\s]*(?=.*$(git branch -rl '*/HEAD' | grep -o '[^ ]\+$'))"
+}
+function git-to-main() {
+    confirm "Discard all local changes?" \
+    && git reset --hard HEAD \
+    && git switch $(git-main-branch-name) \
+    && git pull
 }
 
 # On Linux, xdg-open does a similar thing to MacOS's open command
