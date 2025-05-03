@@ -33,6 +33,7 @@ function git-aliases() {
     echo "    gcam  => git add . && git commit -m"
     echo "    gcmp => git commit -m <message> && git push"
     echo "    gcamp => git add . && git commit -m <message> && git push"
+    echo "    git-to => git reset --hard HEAD && git switch <branch> && git pull"
     echo "    git-to-main => git reset --hard HEAD && git switch [main] && git pull"
 }
 # Git status
@@ -56,10 +57,18 @@ function git-main-branch-name() {
     git branch -vv | grep -Po --color=never \
   "^[\s\*]*\K[^\s]*(?=.*$(git branch -rl '*/HEAD' | grep -o '[^ ]\+$'))"
 }
-function git-to-main() {
-    confirm "Discard all local changes?" \
+function git-to() {
+    confirm "Discard all local changes and switch to $1?" \
     && git reset --hard HEAD \
-    && git switch $(git-main-branch-name) \
+    && git fetch \
+    && git switch $1 \
+    && git pull
+}
+function git-to-main() {
+    main_branch=$(git-main-branch-name)
+    confirm "Discard all local changes and switch to ${main_branch}?" \
+    && git reset --hard HEAD \
+    && git switch $main_branch \
     && git pull
 }
 
