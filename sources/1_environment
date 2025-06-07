@@ -35,8 +35,7 @@ if [[ $TERM_PROGRAM = "vscode" ]]; then
 else
     export EDITOR='nano'
 fi
-# VISUAL => graphical editor
-export VISUAL='code --wait'
+
 
 # Use Firefox Dev Edition as my preferred browser if it's on the path
 if command -pv firefox-aurora &> /dev/null; then
