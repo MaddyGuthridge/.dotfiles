@@ -1,0 +1,128 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# dependencies = ["platformdirs", "click", "colorama"]
+# ///
+"""
+code-filter-history
+
+Access VS Code's state database, in order to remove temporary items from
+the data.
+
+Adapted from https://stackoverflow.com/a/74933036/6335363.
+
+Note that annoyingly, the history won't be applied unless VS Code is
+entirely closed during this step.
+"""
+
+import json
+import sqlite3
+from pathlib import Path
+from shutil import copyfile
+
+from typing import Callable, Literal, TypedDict, NotRequired
+import urllib.parse
+
+import click
+import platformdirs
+from colorama import Fore
+
+
+class VsCodeHistoryEntry(TypedDict):
+    folderUri: NotRequired[str]
+    fileUri: NotRequired[str]
+    label: NotRequired[str]
+    remoteAuthority: NotRequired[str]
+
+
+FilterFn = Callable[[Path], Literal[True] | tuple[Literal[False], str]]
+
+
+def make_paths_filter(paths_to_remove: list[Path]):
+    def filter_fn(uri: Path):
+        for rem in paths_to_remove:
+            if Path(uri).is_relative_to(rem):
+                return (
+                    False,
+                    f"Remove {Fore.CYAN}{uri}{Fore.RESET} as it is within {Fore.CYAN}{rem}{Fore.RESET}",
+                )
+        return True
+
+    return filter_fn
+
+
+def filter_if_not_exist(uri: Path):
+    if not uri.exists():
+        return False, f"Remove {Fore.CYAN}{uri}{Fore.RESET} as it does not exist"
+    return True
+
+
+def keep_entry(filters: list[FilterFn], entry: VsCodeHistoryEntry) -> bool:
+    uri = entry.get("folderUri", entry.get("fileUri"))
+    if uri is None:
+        return True
+    uri = Path(urllib.parse.unquote(uri.removeprefix("file://")))
+
+    for filter in filters:
+        result = filter(uri)
+        if isinstance(result, tuple):
+            result, msg = result
+        else:
+            msg = f"Remove {Fore.CYAN}{uri}{Fore.RESET}"
+        if not result:
+            print(msg)
+            return False
+
+    return True
+
+
+def filter_history(filters: list[FilterFn], db_path: Path):
+    db = sqlite3.connect(db_path)
+    # Open the db, get the value and parse it
+    history_raw = db.execute(
+        "SELECT [value] FROM ItemTable WHERE  [key] = 'history.recentlyOpenedPathsList'"
+    ).fetchone()[0]
+    history: list[VsCodeHistoryEntry] = json.loads(history_raw)["entries"]
+
+    history = [entry for entry in history if keep_entry(filters, entry)]
+
+    # Stringify and update
+    history_raw = json.dumps({"entries": history})
+    # ? used as placeholder to avoid accidental SQL injection
+    db.execute(
+        "UPDATE ItemTable SET [value] = ? WHERE key = 'history.recentlyOpenedPathsList'",
+        (history_raw,),
+    )
+    db.commit()
+    db.close()
+
+
+@click.command("code-filter-history")
+@click.option("--remove-missing", is_flag=True)
+@click.argument("paths", nargs=-1, type=click.Path(exists=True, path_type=Path))
+def main(paths: list[Path], remove_missing: bool):
+    filters: list[FilterFn] = []
+
+    if len(paths) == 0:
+        paths = [Path("/tmp")]
+
+    filters.append(make_paths_filter(paths))
+
+    if remove_missing:
+        filters.append(filter_if_not_exist)
+
+    vscode_state_path = (
+        platformdirs.user_config_path() / "Code/User/globalStorage/state.vscdb"
+    )
+    backup_path = vscode_state_path.parent / "state-backup.vscdb"
+    copyfile(vscode_state_path, backup_path)
+    try:
+        filter_history(filters, vscode_state_path)
+    except BaseException as e:
+        print(e)
+        print("Reverting to backup")
+        copyfile(backup_path, vscode_state_path)
+    backup_path.unlink()
+
+
+if __name__ == "__main__":
+    main()
