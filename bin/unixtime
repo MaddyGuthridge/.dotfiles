@@ -1,4 +1,26 @@
-#!/usr/bin/env bash
-# unixtime
-# Print the time as a unix timestamp
-date +%s
+#!/usr/bin/env python3
+"""
+unixtime
+
+Print the time as a unix timestamp, or given a timestamp, print it as date
+info.
+"""
+import sys
+from datetime import datetime
+import dateutil.parser as date_parser
+
+
+def main(argv: list[str]):
+    if len(argv) == 1:
+        print(int(datetime.now().timestamp()))
+        return 0
+    else:
+        for t in argv[1:]:
+            if t.isnumeric():
+                print(datetime.fromtimestamp(float(t)))
+            else:
+                print(int(date_parser.parse(t).timestamp()))
+
+
+if __name__ == '__main__':
+    exit(main(sys.argv))
