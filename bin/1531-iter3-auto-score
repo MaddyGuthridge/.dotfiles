@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# Given a mark summary in gitrun format, print the total mark
+
+import sys
+
+
+def calculate_mark(
+    eslint: float,
+    tsc: float,
+    cov: float,
+    g_test: float,
+    c_test: float,
+) -> float:
+    cov += 1
+    cov = min(cov, 100)
+
+    eslint /= 100
+    tsc /= 10
+    cov /= 100
+    g_test /= 100
+    c_test /= 100
+
+    return (
+        # Main
+        90 * (cov**3 * g_test * c_test**2)
+        # Linting
+        + 5 * eslint
+        + 5 * tsc
+    )
+
+
+def is_mark(val: str) -> bool:
+    return val.replace(".", "").isnumeric()
+
+
+def main(arg: str):
+    values = [float(val) for val in arg.split(",") if is_mark(val)]
+
+    print(calculate_mark(*values))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1])
