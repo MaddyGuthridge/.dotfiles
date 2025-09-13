@@ -28,3 +28,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
 
     # End of SSH agent loading
 fi
+
+if [[ $(whereami) == "ursula" ]]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
