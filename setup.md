@@ -1,5 +1,15 @@
 # Setup things
 
+## Ghostty may not have a terminfo definition
+
+Copy it across over SSH using:
+
+```sh
+infocmp -x xterm-ghostty | ssh YOUR-SERVER -- tic -x -
+```
+
+<https://ghostty.org/docs/help/terminfo#copy-ghostty's-terminfo-to-a-remote-machine>
+
 ## Linux and Windows store time differently
 
 Change Windows settings.
