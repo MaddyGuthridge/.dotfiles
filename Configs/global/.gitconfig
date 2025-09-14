@@ -15,3 +15,8 @@
 
 [pull]
     rebase = false
+
+[include]
+    # This will silently fail if no local config exists, which is what we want
+    # here.
+    path = .gitconfig.local
