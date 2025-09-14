@@ -6,7 +6,13 @@ dotup() {
     CURR_DIR=$(pwd)
     cd $DOTFILES
     git pull
-    tuckr add global $(whereami)
+
+    # Eventually, I want to auto-add all new dotfiles, but currently, Tuckr
+    # has some bugs with symlinking, which are not ideal. I'll wait for them to
+    # be resolved before uncommenting here.
+    # https://github.com/RaphGL/Tuckr/issues/85
+    # tuckr add global $(whereami)
+
     cd $CURR_DIR
     # Two empty lines -- there is no better way to do this that also works in
     # bash
