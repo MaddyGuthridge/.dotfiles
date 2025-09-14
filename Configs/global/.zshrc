@@ -73,7 +73,7 @@ ZSH_THEME="fortissimo"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/.dotfiles/omz
+ZSH_CUSTOM=~/.dotfiles/Other/omz
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -125,7 +125,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # Source all the sources
-for file in $DOTFILES/sources/* ; do
+for file in $DOTFILES/Sources/* ; do
   if [ -x "$file" ] ; then
     source "$file"
   fi

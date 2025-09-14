@@ -125,7 +125,7 @@ if [ `which pipx 2> /dev/null` ]; then
 fi
 
 # Source all the sources
-for file in $DOTFILES/sources/* ; do
+for file in $DOTFILES/Sources/* ; do
   if [ -x "$file" ] ; then
     source "$file"
   fi

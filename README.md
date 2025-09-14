@@ -1,13 +1,13 @@
 # .dotfiles
 
-My dotfiles to keep basic configuration stuff shared.
+Become Maddy by stealing her dotfiles.
 
 ## Installation
 
 1. `git clone` the repo to your `$HOME` directory
-2. Run the install script `./.dotfiles/install.sh`
-3. Run any other things you need (eg the `keychron-setup.sh`) script.
-4. Restart your terminal.
+2. Use [`tuckr`](https://github.com/RaphGL/Tuckr) to install the desired components.
+
+For example, to set up `yzma`, you can run `tuckr add global yzma`.
 
 ## What's what
 
