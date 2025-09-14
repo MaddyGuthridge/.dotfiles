@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# For each student, get their email address
+
+while read -r zid; do
+    acc $zid | sed -n -e 's/^.*UNSW Mail : //p'
+done
