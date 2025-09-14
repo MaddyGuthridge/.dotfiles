@@ -1,0 +1,2 @@
+0 6 * * * rclone copy -v /mnt/nextcloud-backup pcloud:nextcloud-backup
+
