@@ -11,7 +11,7 @@ node = "20"
 "pipx:comp1010" = "latest"
 
 # Others
-"go:github.com/boyter/scc" = "latest"
+"github:boyter/scc" = "latest"
 "pipx:slides-xp" = "latest"
 "pipx:transdoc" = "latest"
 poetry = "latest"
