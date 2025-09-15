@@ -14,8 +14,3 @@ if [ -d /opt/homebrew ]; then
         export ASAN_OPTIONS="detect_leaks=1"
     fi
 fi
-
-# Homebrew on Linux
-if [ -d /home/linuxbrew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi

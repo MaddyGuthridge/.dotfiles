@@ -1,0 +1,25 @@
+[tools]
+
+# COMP2511
+gradle = "8.8"
+java = "17"
+
+# COMP1531
+node = "20"
+
+# COMP1010
+"pipx:comp1010" = "latest"
+
+# Others
+"go:github.com/boyter/scc" = "latest"
+"pipx:slides-xp" = "latest"
+"pipx:transdoc" = "latest"
+poetry = "latest"
+rust = "latest"
+"cargo:tuckr" = "latest"
+typst = "latest"
+uv = "latest"
+"github:Slackadays/Clipboard" = "latest"
+
+[settings]
+experimental = true

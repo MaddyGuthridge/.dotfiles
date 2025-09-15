@@ -5,7 +5,10 @@ Become Maddy by stealing her dotfiles.
 ## Installation
 
 1. `git clone` the repo to your `$HOME` directory
-2. Use [`tuckr`](https://github.com/RaphGL/Tuckr) to install the desired targets.
+2. Install [`mise`](https://mise.jdx.dev/), which will allow you to install all
+   other required tools.
+3. `mise use cargo:tuckr` to install `tuckr`
+4. `tuckr set global $(hostname)`
 
 For example, to set up `yzma`, you can run `tuckr set global yzma`.
 
@@ -15,6 +18,11 @@ For example, to set up `yzma`, you can run `tuckr set global yzma`.
 | `yzma`   | Laptop          |
 | `ursula` | Server          |
 | `cse`    | CSE servers     |
+
+## Development setup
+
+I manage most tooling using [`mise`](https://mise.jdx.dev/). After setting up
+configurations, it should be trivial to install Mise and run `mise install` to download and install all the tools I use.
 
 ## What's what
 
