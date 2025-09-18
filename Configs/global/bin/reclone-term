@@ -3,6 +3,11 @@
 # For example, if I have `cse-gitlab:COMP1531/25T2/some/repo`, this will delete
 # the old version and re-clone `cse-gitlab:COMP1531/25T3/some/repo` (ie
 # updating the term to 25T3)
+#
+# Author: Maddy Guthridge
+# Date: 2025-09-18
+# This seems to work with my testing, but as always, you should be careful with
+# any scripts that run rm -rf
 
 usage() {
     echo "Usage:"
@@ -33,6 +38,14 @@ main() {
     NEW_ORIGIN=$(echo $ORIGIN | sed -nE -e "s/\\/([0-9][0-9]T[0-3])\\//\\/$NEW_TERM\\//p")
 
     confirm "Reclone $REPO: $OLD_TERM -> $NEW_TERM?"
+
+    # Check for uncommitted changes
+    # https://unix.stackexchange.com/a/155077/161355
+    if [ -n "$(git -C $REPO status --porcelain)" ]; then
+        # Uncommitted changes
+        confirm "You have uncommitted changes in $REPO! Continue?"
+    fi
+
 
     # Back up
     mv "$REPO" "$REPO.bak"
