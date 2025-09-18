@@ -39,13 +39,17 @@ main() {
 
     confirm "Reclone $REPO: $OLD_TERM -> $NEW_TERM?"
 
-    # Check for uncommitted changes
-    # https://unix.stackexchange.com/a/155077/161355
+    # Check for uncommitted/pushed changes
     if [ -n "$(git -C $REPO status --porcelain)" ]; then
         # Uncommitted changes
+        # https://unix.stackexchange.com/a/155077/161355
         confirm "You have uncommitted changes in $REPO! Continue?"
+    elif [ -n "$(git -C $REPO log --branches --not --remotes)" ]; then
+        # Un-pushed changes
+        # This checks even on other branches!
+        # https://stackoverflow.com/a/3338774/6335363
+        confirm "You have un-pushed changes in $REPO! Continue?"
     fi
-
 
     # Back up
     mv "$REPO" "$REPO.bak"
