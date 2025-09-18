@@ -37,6 +37,12 @@ main() {
     OLD_TERM=$(echo $ORIGIN | sed -nE -e 's/.*\/([0-9][0-9]T[0-3])\/.*/\1/p')
     NEW_ORIGIN=$(echo $ORIGIN | sed -nE -e "s/\\/([0-9][0-9]T[0-3])\\//\\/$NEW_TERM\\//p")
 
+    if [ -z "$OLD_TERM" ]; then
+        echo "Given git repo does not have term number in origin URL"
+        echo "Origin is: $ORIGIN"
+        exit 3
+    fi
+
     confirm "Reclone $REPO: $OLD_TERM -> $NEW_TERM?"
 
     # Check for uncommitted/pushed changes
@@ -54,7 +60,7 @@ main() {
     # Back up
     mv "$REPO" "$REPO.bak"
     # Attempt to clone new repo, but restore backup if it failed
-    git clone "$NEW_ORIGIN" "$REPO" || (mv "$REPO.bak" "$REPO" && exit 3)
+    git clone "$NEW_ORIGIN" "$REPO" || (mv "$REPO.bak" "$REPO" && exit 4)
     # If it succeeded, remove the backup
     rm -rf "$REPO.bak"
 }
