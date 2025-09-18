@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# Re-clone the given git repository updating the term from the git URL.
+# For example, if I have `cse-gitlab:COMP1531/25T2/some/repo`, this will delete
+# the old version and re-clone `cse-gitlab:COMP1531/25T3/some/repo` (ie
+# updating the term to 25T3)
+
+usage() {
+    echo "Usage:"
+    echo "  reclone-term [repo] [new-term] -- reclone given repo"
+    exit 1
+}
+
+main() {
+    # Pipefail
+    set -e
+
+    # Repo root
+    # https://stackoverflow.com/a/957978/6335363
+    REPO=$(git -C $1 rev-parse --show-toplevel)
+
+    # Convert term to uppercase
+    NEW_TERM=${2^^}
+
+    if [[ $PWD/* = $REPO/* ]]; then
+        echo "Working directory is within $REPO, cannot reclone"
+        exit 2
+    fi
+
+    ORIGIN=$(git -C "$REPO" remote get-url origin)
+
+    # I love sed expressions this totally doesn't melt my brain
+    OLD_TERM=$(echo $ORIGIN | sed -nE -e 's/.*\/([0-9][0-9]T[0-3])\/.*/\1/p')
+    NEW_ORIGIN=$(echo $ORIGIN | sed -nE -e "s/\\/([0-9][0-9]T[0-3])\\//\\/$NEW_TERM\\//p")
+
+    confirm "Reclone $REPO: $OLD_TERM -> $NEW_TERM?"
+
+    # Back up
+    mv "$REPO" "$REPO.bak"
+    # Attempt to clone new repo, but restore backup if it failed
+    git clone "$NEW_ORIGIN" "$REPO" || (mv "$REPO.bak" "$REPO" && exit 3)
+    # If it succeeded, remove the backup
+    rm -rf "$REPO.bak"
+}
+
+if [ $# -eq 2 ]; then
+    main $@
+else
+    usage
+fi
