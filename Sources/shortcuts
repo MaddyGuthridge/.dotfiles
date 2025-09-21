@@ -27,7 +27,7 @@ cdl ()
 # ===========
 function git-aliases() {
     echo "Git aliases"
-    echo "    gst  => git status"
+    echo "    gst  => git status --short"
     echo "    gad  => git add ."
     echo "    gcm  => git commit -m"
     echo "    gcam  => git add . && git commit -m"
@@ -37,7 +37,7 @@ function git-aliases() {
     echo "    git-to-main => git reset --hard HEAD && git switch [main] && git pull"
 }
 # Git status
-alias gst="git status"
+alias gst="git status --short"
 # Git add current directory
 alias gad="git add ."
 # Git commit with message

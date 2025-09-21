@@ -8,7 +8,7 @@
 
 [status]
     # git status --short
-    short = true
+    # short = true
 
 [commit]
     #gpgsign = true
