@@ -7,6 +7,10 @@ if [ $(whereami) = "cse" ]; then
         source ~cs1531/setup/setup.sh
     fi
 
+    if [[ -d "~/.cargo/bin" ]]; then
+        export PATH="$PATH:$HOME/.cargo/bin"
+    fi
+
     # On CSE systems, we should silence the insecure directory warning
     export ZSH_DISABLE_COMPFIX="true"
 fi
