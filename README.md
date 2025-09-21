@@ -7,8 +7,8 @@ Become Maddy by stealing her dotfiles.
 1. `git clone` the repo to your `$HOME` directory
 2. Install [`mise`](https://mise.jdx.dev/), which will allow you to install all
    other required tools.
-3. `mise use cargo:tuckr` to install `tuckr`
-4. `tuckr set global $(hostname)`
+3. `mise x cargo:tuckr set --only-files global $(hostname)` to set up all
+   dotfiles.
 
 For example, to set up `yzma`, you can run `tuckr set global yzma`.
 
