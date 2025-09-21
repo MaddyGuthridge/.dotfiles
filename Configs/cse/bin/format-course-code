@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# Given a COMP course code, convert it to the requested form
+import re
+import sys
+
+def usage():
+    print("Given a COMP course code, convert it to the requested form")
+    print()
+    print("Usage: course-code [format] [code]")
+    print("Example: `course-code cs COMP1531`, which would produce `cs1531`")
+    exit(1)
+
+
+def cs_form(code: str, kind: str):
+    prefix = "cs" if kind == "comp" else "en"
+    return f"{prefix}{code}"
+
+
+def comp_form(code: str, kind: str):
+    return f"{kind.upper()}{code}"
+
+
+def course_kind(text: str) -> str | None:
+    mappings = {
+        "engg": ["en", "engg"],
+        "comp": ["cs", "comp"],
+    }
+    for kind, prefixes in mappings.items():
+        for prefix in prefixes:
+            if text.lower().startswith(prefix):
+                return kind
+
+    # If only numbers, assume a comp course
+    if text.isnumeric():
+        return "comp"
+    else:
+        return None
+
+
+
+def main(format: str, text: str):
+    kind = course_kind(text)
+    number = re.search(r"\d\d\d\d", text)
+    format = format.upper()
+
+    if kind is None or number is None:
+        print(f"Unable to parse course code '{text}'")
+        exit(2)
+
+    if format == "COMP":
+        print(comp_form(number.group(), kind))
+    elif format == "CS":
+        print(cs_form(number.group(), kind))
+
+
+if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        usage()
+    else:
+        main(*sys.argv[1:])

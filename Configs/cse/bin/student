@@ -2,15 +2,22 @@
 # student
 # Find a student based on their name within a course, on CSE systems
 
+# Add my bin to path to allow for executing other commands
+file=$(realpath "$BASH_SOURCE")
+user=$(ls -ld "${file}" | awk '{print $3}')
+export PATH="$PATH:$(echo ~$user)/bin"
+
 if [ $# -eq 3 ]; then
-    COURSE="$1"
-    TERM="$2"
+    COURSE="${1^^}"  # Upper case
+    TERM="${2,,}"  # Lower case
     NAME="$3"
 elif [ $# -eq 2 ]; then
-    COURSE="$1"
+    COURSE="${1^^}"
     TERM=$(unsw-term --no-year)
     NAME="$2"
 else
+    echo "Find a student based on their name within a course, on CSE systems"
+    echo
     echo "Usage:"
     echo "  student [course_code] [name] -- search this term"
     echo "  student [course_code] [term] [name] -- search given term (t1, t2, t3)"
@@ -20,5 +27,11 @@ else
     echo "Student's name is passed to 'grep' so if no results are found, try searching for a partial name"
     exit 1
 fi
+
+# Pipefail
+set -e
+
+# Make course code be in the format "COMP1234"
+COURSE=$(format-course-code comp $COURSE)
 
 members "${COURSE}${TERM}_Student" | grep "$NAME"
