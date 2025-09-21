@@ -7,11 +7,9 @@ dotup() {
     cd $DOTFILES
     git pull
 
-    # Eventually, I want to auto-add all new dotfiles, but currently, Tuckr
-    # has some bugs with symlinking, which are not ideal. I'll wait for them to
-    # be resolved before uncommenting here.
-    # https://github.com/RaphGL/Tuckr/issues/85
-    # tuckr add global $(whereami)
+    # Potentially buggy with symlinking but seems ok when the `--only-files`
+    # flag is used.
+    tuckr set --only-files global $(whereami)
 
     cd $CURR_DIR
     # Two empty lines -- there is no better way to do this that also works in
