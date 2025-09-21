@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# pip is pipthon3
+# pip is pip3
 pip3 "$@"

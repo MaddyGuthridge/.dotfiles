@@ -21,4 +21,4 @@ else
     exit 1
 fi
 
-cse members "${COURSE}${TERM}_Student" | grep "$NAME"
+members "${COURSE}${TERM}_Student" | grep "$NAME"
