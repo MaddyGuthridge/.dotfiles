@@ -10,4 +10,9 @@ set -e
 
 confirm "Are you sure you want to reset your VS Code settings to their default values?"
 
+mv ~/.config/Code/User/settings.json ~/.config/Code/User/settings.backup.json
 echo "{}" > ~/.config/Code/User/settings.json
+
+echo "Your VS Code settings have been cleared."
+echo "If you wish to restore your previous settings, you can run:"
+echo "    mv ~/.config/Code/User/settings.backup.json ~/.config/Code/User/settings.json"
