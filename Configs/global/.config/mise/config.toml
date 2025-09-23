@@ -10,6 +10,9 @@ node = "20"
 # COMP1010
 "pipx:comp1010" = "latest"
 
+# DCC (COMP1511 compiler)
+"github:COMP1511UNSW/dcc" = { version = "latest", asset_pattern = "dcc" }
+
 # Others
 "github:boyter/scc" = "latest"
 "pipx:slides-xp" = "latest"
@@ -20,6 +23,3 @@ rust = "latest"
 typst = "latest"
 uv = "latest"
 "github:Slackadays/Clipboard" = "latest"
-
-[settings]
-experimental = true
