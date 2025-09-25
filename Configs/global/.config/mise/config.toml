@@ -30,3 +30,7 @@ rust = "latest"
 "pipx:transdoc" = "latest"
 "cargo:tuckr" = "latest"
 "github:Slackadays/Clipboard" = "latest"
+
+[settings]
+# Detect node version from .nvmrc
+idiomatic_version_file_enable_tools = ["node"]
