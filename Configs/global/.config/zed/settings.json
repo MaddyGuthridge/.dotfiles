@@ -7,21 +7,75 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // Disable AI
+  "disable_ai": true,
+
+  // Autosave
+  "autosave": { "after_delay": { "milliseconds": 500 } },
+
+  // UI style
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 14,
+  "buffer_font_family": "Hack",
+  "ui_font_family": "Hack",
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "Synthwave Alpha"
   },
   "icon_theme": "Catppuccin Latte",
-  "ui_font_family": "Hack",
-  "middle_click_paste": false,
-  "autosave": { "after_delay": { "milliseconds": 500 } },
   "terminal": {
-    "cursor_shape": "bar"
+    "cursor_shape": "bar",
+    "dock": "right"
+  },
+  // Hide sign in prompt on title bar
+  "title_bar": {
+    "show_sign_in": false
+  },
+  // Hide collaboration panel
+  "collaboration_panel": {
+    "button": false
   },
 
-  // Disable AI
-  "disable_ai": true,
+  // Startup
+  "restore_on_startup": "none",
+
+  // Disable annoying mouse features
+  "middle_click_paste": false,
+  "drag_and_drop_selection": {
+    "enabled": false
+  },
+
+  // Tab settings
+  "tab_bar": {
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+    "show_close_button": "hidden",
+    "activate_on_close": "neighbour",
+    "show_diagnostics": "errors"
+  },
+
+  // Editor: inlay hints
+  "inlay_hints": {
+    // Show on Ctrl+Alt
+    "toggle_on_modifiers_press": {
+      "control": true,
+      "alt": true
+    }
+  },
+
+  "git": {
+    // Inline git blame only shows after a second
+    // to avoid distractions
+    "inline_blame": {
+      "delay_ms": 1000,
+      "padding": 20
+    },
+    // Unstaged changes are given a hollow highlight
+    "hunk_style": "unstaged_hollow"
+  }
 }
