@@ -19,7 +19,9 @@
       ],
       "ctrl-n": ["workspace::SendKeystrokes", "ctrl-shift-e ctrl-n"],
       // Global "back to editor" button
-      "ctrl-alt-enter": "workspace::ActivateNextPane"
+      "ctrl-alt-enter": "workspace::ActivateNextPane",
+      // Open recent
+      "ctrl-r": "projects::OpenRecent",
     }
   },
   // Editor keybinds
@@ -29,6 +31,8 @@
       // alt-left/right to move within words
       "alt-left": "editor::MoveToPreviousSubwordStart",
       "alt-right": "editor::MoveToNextSubwordEnd",
+      "alt-shift-left": "editor::SelectToPreviousSubwordStart",
+      "alt-shift-right": "editor::SelectToNextSubwordEnd",
       "alt-backspace": "editor::DeleteToPreviousSubwordStart",
       "alt-delete": "editor::DeleteToNextSubwordEnd",
       // Multi-cursor with ctrl-alt-up/down
