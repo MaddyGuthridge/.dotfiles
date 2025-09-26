@@ -40,6 +40,8 @@
   // Startup
   "restore_on_startup": "none",
 
+  // keybinds
+
   // Disable annoying mouse features
   "middle_click_paste": false,
   "drag_and_drop_selection": {
