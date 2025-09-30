@@ -24,6 +24,13 @@ For example, to set up `yzma`, you can run `tuckr set global yzma`.
 I manage most tooling using [`mise`](https://mise.jdx.dev/). After setting up
 configurations, it should be trivial to install Mise and run `mise install` to download and install all the tools I use.
 
+## Dotfile management
+
+I manage my dotfiles using [`tuckr`](https://github.com/RaphGL/Tuckr). After
+the bootstrapping process (which uses `mise` to execute `tuckr` without
+installing it), `tuckr` should be added just by running `mise install`. From
+there, you can refer to its documentation to make any changes you desire.
+
 ## What's what
 
 * [`Sources`](./Sources): Sourced files for Bash and ZSH
