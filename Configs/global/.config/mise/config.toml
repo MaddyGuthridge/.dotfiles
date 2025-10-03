@@ -30,6 +30,8 @@ rust = "latest"
 "pipx:transdoc" = "latest"
 "cargo:tuckr" = "latest"
 "github:Slackadays/Clipboard" = "latest"
+"pipx:concussion" = "latest"
+"pipx:git+https://github.com/MaddyGuthridge/pyqtprotractor.git" = "master"
 
 [settings]
 # Detect node version from .nvmrc
