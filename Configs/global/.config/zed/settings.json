@@ -26,7 +26,8 @@
   "icon_theme": "Catppuccin Latte",
   "terminal": {
     "cursor_shape": "bar",
-    "dock": "right"
+    "dock": "right",
+    "max_scroll_history_lines": 100000
   },
   // Hide sign in prompt on title bar
   "title_bar": {
@@ -82,7 +83,7 @@
     // Unstaged changes are given a hollow highlight
     "hunk_style": "unstaged_hollow"
   },
-  
+
   // Language-specific settings
   "languages": {
     "Python": {
