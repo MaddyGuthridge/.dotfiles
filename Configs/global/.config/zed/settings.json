@@ -50,6 +50,9 @@
   "drag_and_drop_selection": {
     "enabled": false
   },
+  
+  // Swap multi-cursor keybind
+  "multi_cursor_modifier": "cmd_or_ctrl",
 
   // Tab settings
   "tab_bar": {
@@ -90,10 +93,26 @@
       "wrap_guides": [79]
     },
     "JavaScript": {
-      "wrap_guides": [100]
+      "wrap_guides": [100],
+      "formatter": {
+        "code_actions": {
+          // Use ESLint's --fix:
+          "source.fixAll.eslint": true,
+          // Organize imports on save:
+          "source.organizeImports": true
+        }
+      }
     },
     "TypeScript": {
-      "wrap_guides": [100]
+      "wrap_guides": [100],
+      "formatter": {
+        "code_actions": {
+          // Use ESLint's --fix:
+          "source.fixAll.eslint": true,
+          // Organize imports on save:
+          "source.organizeImports": true
+        }
+      }
     },
     "Java": {
       // Java moment
