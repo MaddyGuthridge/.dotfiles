@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Trans coded? Many such cases,,,
+#
+# This script uses handbrake to transcode the given Blu-ray into a format
+# that is better for media streaming on Jellyfin.
+#
+# It specifically uses fewer threads to avoid hurting the responsiveness of
+# the machine, but this does significantly reduce the performance, meaning it
+# will take far longer than it ordinarily would.
+
+set -e
+
+usage() {
+    echo "Usage: transcoded [input file] [output directory]"
+    exit 1
+}
+
+
+main() {
+    IN_FILE="$1"
+    OUT_DIR="$2"
+
+    echo "In:  $IN_FILE"
+    echo "Out: $OUT_DIR"
+    echo "==========================="
+
+    # Create output directory
+    mkdir -p "$OUT_DIR"
+
+    HandBrakeCLI \
+        -x threads=2 \
+        --input "$IN_FILE" \
+        --preset-import-file "$DOTFILES/Other/handbrake/blu-ray-to-1080p.json" \
+        -Z "Jellyfin 1080p Surround" \
+        --output "$OUT_DIR/1080p.mp4"
+
+    exit 0
+}
+
+if [ $# -eq 2 ]; then
+    main "$1" "$2"
+else
+    usage
+fi
