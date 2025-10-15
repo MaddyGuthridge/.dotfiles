@@ -41,7 +41,10 @@
   "wrap_guides": [80],
 
   // Startup
-  "restore_on_startup": "none",
+  // Annoyed that this also impacts the "reload workspace" command, meaning that
+  // having this setting enabled causes Zed to discard all my workspaces if I
+  // have to reload due to glitches and the like.
+  // "restore_on_startup": "none",
 
   // keybinds
 
@@ -50,7 +53,7 @@
   "drag_and_drop_selection": {
     "enabled": false
   },
-  
+
   // Swap multi-cursor keybind
   "multi_cursor_modifier": "cmd_or_ctrl",
 
@@ -120,6 +123,20 @@
     },
     "Svelte": {
       "wrap_guides": [100]
+    }
+  },
+
+  // Language server settings
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticSeverityOverrides": {
+            // I like implicit string concatenation when formatting long strings
+            "reportImplicitStringConcatenation": "none"
+          }
+        }
+      }
     }
   }
 }
