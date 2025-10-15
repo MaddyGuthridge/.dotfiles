@@ -36,6 +36,7 @@ deno = "latest"
 "github:Slackadays/Clipboard" = "latest"
 "pipx:concussion" = "latest"
 "pipx:git+https://github.com/MaddyGuthridge/pyqtprotractor.git" = "master"
+"pipx:tldr" = "latest"
 
 [settings]
 # Detect node version from .nvmrc
