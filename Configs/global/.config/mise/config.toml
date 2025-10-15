@@ -39,4 +39,4 @@ deno = "latest"
 
 [settings]
 # Detect node version from .nvmrc
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["node", "python"]
