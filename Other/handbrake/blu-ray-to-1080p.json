@@ -103,12 +103,14 @@
             "PresetDisabled": false,
             "PresetName": "Jellyfin 1080p Surround",
             "SubtitleAddCC": false,
-            "SubtitleAddForeignAudioSearch": true,
+            "SubtitleAddForeignAudioSearch": false,
             "SubtitleAddForeignAudioSubtitle": false,
-            "SubtitleBurnBDSub": true,
+            "SubtitleBurnBDSub": false,
             "SubtitleBurnBehavior": "none",
-            "SubtitleBurnDVDSub": true,
-            "SubtitleLanguageList": [],
+            "SubtitleBurnDVDSub": false,
+            "SubtitleLanguageList": [
+                "eng"
+            ],
             "SubtitleTrackSelectionBehavior": "none",
             "Type": 1,
             "UsesPictureFilters": true,
