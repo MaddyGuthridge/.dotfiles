@@ -28,6 +28,9 @@ rust = { version = "latest", targets="x86_64-unknown-linux-gnu,wasm32-unknown-un
 # JS -- the eternal struggle to decide between Deno and Bun
 bun = "latest"
 deno = "latest"
+# And PNPM, which is worse, but potentially useful when I want it to be 
+# NPM-alike
+pnpm = "latest"
 
 # Others
 "github:boyter/scc" = "latest"
