@@ -53,8 +53,8 @@ main() {
     HandBrakeCLI \
         -x threads=2 \
         --input "$IN_FILE" \
-        --preset-import-file $PRESET_FILE \
-        -Z $PRESET_NAME \
+        --preset-import-file "$PRESET_FILE" \
+        -Z "$PRESET_NAME" \
         --output "$OUT_DIR/$OUT_FILE"
 
     exit 0
