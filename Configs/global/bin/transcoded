@@ -11,14 +11,37 @@
 set -e
 
 usage() {
-    echo "Usage: transcoded [input file] [output directory]"
+    echo "Usage: transcoded [encode-type] [input file] [output directory]"
+    echo "  Where encode-type is one of:"
+    echo "    dvd : 576p DVD"
+    echo "    blu-ray : 1080p Blu-Ray"
+    echo "    uhd : 4K Blu-Ray"
     exit 1
 }
 
 
 main() {
-    IN_FILE="$1"
-    OUT_DIR="$2"
+    ENCODE_TYPE="$1"
+    IN_FILE="$2"
+    OUT_DIR="$3"
+
+    case $ENCODE_TYPE in
+        dvd)
+            PRESET_FILE="$DOTFILES/Other/handbrake/dvd-to-576p.json"
+            PRESET_NAME="Jellyfin 576p Stereo"
+            OUT_FILE="576p.mp4"
+            ;;
+
+        blu-ray)
+            PRESET_FILE="$DOTFILES/Other/handbrake/blu-ray-to-1080p.json"
+            PRESET_NAME="Jellyfin 1080p Surround"
+            OUT_FILE="1080p.mp4"
+            ;;
+
+        *)
+            usage
+            ;;
+    esac
 
     echo "In:  $IN_FILE"
     echo "Out: $OUT_DIR"
@@ -30,15 +53,15 @@ main() {
     HandBrakeCLI \
         -x threads=2 \
         --input "$IN_FILE" \
-        --preset-import-file "$DOTFILES/Other/handbrake/blu-ray-to-1080p.json" \
-        -Z "Jellyfin 1080p Surround" \
-        --output "$OUT_DIR/1080p.mp4"
+        --preset-import-file $PRESET_FILE \
+        -Z $PRESET_NAME \
+        --output "$OUT_DIR/$OUT_FILE"
 
     exit 0
 }
 
-if [ $# -eq 2 ]; then
-    main "$1" "$2"
+if [ $# -eq 3 ]; then
+    main "$1" "$2" "$3"
 else
     usage
 fi
