@@ -44,6 +44,7 @@ def instagram(url: Url, opts: Options) -> Url:
     if url.hostname not in [
         "instagram.com",
         "www.instagram.com",
+        # Also keep kkinstagram.com links to remove tracking
         "kkinstagram.com",
         "www.kkinstagram.com",
     ]:
@@ -69,6 +70,7 @@ def twitter(url: Url, opts: Options) -> Url:
     ]:
         return url
     host = "fixupx.com" if opts.fix_embeds else url.hostname
+    # Alternatives include vxtwitter.com, girlcockx.com
     return Url(
         url.scheme,
         host,
@@ -78,7 +80,6 @@ def twitter(url: Url, opts: Options) -> Url:
         url.fragment,
     )
     
-
 
 matchers: list[Callable[[Url, Options], Url]] = [
     youtube,
@@ -116,7 +117,6 @@ def main(urls: Iterable[str], opts: Options):
 
 
 if __name__ == "__main__":
-    # readline.
     if "-h" in sys.argv or "--help" in sys.argv:
         usage()
     opts = Options(sys.argv)
