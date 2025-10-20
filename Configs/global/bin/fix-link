@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""
+fix-link
+
+Fix the given link, removing tracking and enabling embedding.
+
+Reads URLs from stdin and prints them to stdout
+"""
+
+from collections.abc import Callable, Iterable
+import sys
+import readline as readline
+
+from urllib.parse import urlparse, urlunparse, parse_qs, urlencode, ParseResult as Url
+
+
+class Options:
+    def __init__(self, argv: list[str]) -> None:
+        self.remove_tracking = True
+        if "--allow-tracking" in argv:
+            self.remove_tracking = False
+        self.fix_embeds = True
+        if "--no-embeds" in argv:
+            self.fix_embeds = False
+
+
+def youtube(url: Url, opts: Options) -> Url:
+    if url.hostname not in ["youtu.be", "youtube.com"]:
+        return url
+    qs = parse_qs(url.query)
+    if opts.remove_tracking:
+        _ = qs.pop("si", None)
+    return Url(
+        url.scheme,
+        url.netloc,
+        url.path,
+        url.params,
+        urlencode(qs),
+        url.fragment,
+    )
+
+
+def instagram(url: Url, opts: Options) -> Url:
+    if url.hostname not in [
+        "instagram.com",
+        "www.instagram.com",
+        "kkinstagram.com",
+        "www.kkinstagram.com",
+    ]:
+        return url
+    qs = parse_qs(url.query)
+    if opts.remove_tracking:
+        _ = qs.pop("igsh", None)
+    host = "kkinstagram.com" if opts.fix_embeds else url.hostname
+    return Url(
+        url.scheme,
+        host,
+        url.path,
+        url.params,
+        urlencode(qs),
+        url.fragment,
+    )
+
+
+def twitter(url: Url, opts: Options) -> Url:
+    if url.hostname not in [
+        "x.com",
+        "twitter.com",
+    ]:
+        return url
+    host = "fixupx.com" if opts.fix_embeds else url.hostname
+    return Url(
+        url.scheme,
+        host,
+        url.path,
+        url.params,
+        url.query,
+        url.fragment,
+    )
+    
+
+
+matchers: list[Callable[[Url, Options], Url]] = [
+    youtube,
+    instagram,
+    twitter,
+]
+
+
+def usage():
+    print("fix-link [options]")
+    print("URLs are read from stdin")
+    print()
+    print("Options:")
+    print("  --allow-tracking : disable removal of tracking snippets")
+    print("  --embeds : rewrite social media URLs to enable embedding")
+    print("  --help : print this message and exit")
+    exit(1)
+
+
+def stdin_lines():
+    """Lazy iterate over lines of stdin"""
+    try:
+        while True:
+            yield input()
+    except (EOFError, KeyboardInterrupt):
+        return
+
+
+def main(urls: Iterable[str], opts: Options):
+    for url in urls:
+        parsed = urlparse(url)
+        for matcher in matchers:
+            parsed = matcher(parsed, opts)
+        print(urlunparse(parsed))
+
+
+if __name__ == "__main__":
+    # readline.
+    if "-h" in sys.argv or "--help" in sys.argv:
+        usage()
+    opts = Options(sys.argv)
+    main(stdin_lines(), opts)
