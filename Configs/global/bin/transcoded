@@ -43,15 +43,14 @@ main() {
             ;;
     esac
 
-    TEMP_FILE=$(mktemp)
+    # Mark encoding as partial, and only move it to the regular file once 
+    # complete
+    TEMP_FILE="$OUT_DIR/$OUT_FILE.part"
 
     echoerr "In:   $IN_FILE"
     echoerr "Temp: $TEMP_FILE"
     echoerr "Out:  $OUT_DIR/$OUT_FILE"
     echoerr "==========================="
-
-    # Create output directory
-    mkdir -p "$OUT_DIR"
 
     HandBrakeCLI \
         -x threads=2 \
