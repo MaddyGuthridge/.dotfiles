@@ -96,26 +96,16 @@
       "wrap_guides": [79]
     },
     "JavaScript": {
-      "wrap_guides": [100],
-      "formatter": {
-        "code_actions": {
-          // Use ESLint's --fix:
-          "source.fixAll.eslint": true,
-          // Organize imports on save:
-          "source.organizeImports": true
-        }
-      }
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "wrap_guides": [100]
     },
     "TypeScript": {
-      "wrap_guides": [100],
-      "formatter": {
-        "code_actions": {
-          // Use ESLint's --fix:
-          "source.fixAll.eslint": true,
-          // Organize imports on save:
-          "source.organizeImports": true
-        }
-      }
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "wrap_guides": [100]
     },
     "Java": {
       // Java moment
