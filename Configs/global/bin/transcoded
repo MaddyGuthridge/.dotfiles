@@ -43,6 +43,8 @@ main() {
             ;;
     esac
 
+    mkdir -p "$OUT_DIR"
+
     # Mark encoding as partial, and only move it to the regular file once 
     # complete
     TEMP_FILE="$OUT_DIR/$OUT_FILE.part"
