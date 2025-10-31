@@ -9,6 +9,8 @@
 # This seems to work with my testing, but as always, you should be careful with
 # any scripts that run rm -rf
 
+set -euo pipefail
+
 usage() {
     echo "Usage:"
     echo "  reclone-term [repo] [new-term] -- reclone given repo"
@@ -16,9 +18,6 @@ usage() {
 }
 
 main() {
-    # Pipefail
-    set -e
-
     # Repo root
     # https://stackoverflow.com/a/957978/6335363
     REPO=$(git -C $1 rev-parse --show-toplevel)

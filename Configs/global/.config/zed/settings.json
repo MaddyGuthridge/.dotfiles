@@ -99,20 +99,29 @@
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       },
-      "wrap_guides": [100]
+      "formatter": [],
+      "wrap_guides": [100],
+      "tab_size": 2
     },
     "TypeScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       },
-      "wrap_guides": [100]
+      "formatter": [],
+      "wrap_guides": [100],
+      "tab_size": 2
     },
     "Java": {
       // Java moment
       "wrap_guides": [120]
     },
     "Svelte": {
-      "wrap_guides": [100]
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "formatter": [],
+      "wrap_guides": [100],
+      "tab_size": 2
     }
   },
 

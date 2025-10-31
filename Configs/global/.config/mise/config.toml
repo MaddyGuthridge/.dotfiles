@@ -40,6 +40,8 @@ pnpm = "latest"
 "pipx:concussion" = "latest"
 "pipx:git+https://github.com/MaddyGuthridge/pyqtprotractor.git" = "master"
 "pipx:tldr" = "latest"
+"github:ktock/buildg" = "latest"
+"npm:tsx" = "latest"
 
 [settings]
 # Detect node version from .nvmrc

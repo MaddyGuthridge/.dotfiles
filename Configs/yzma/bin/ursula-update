@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Update ursula
 
+set -euo pipefail
+
 ursula -t 'echo "Ursula updating..." && sudo dnf update && echo "Ursula update complete, rebooting..." && sudo reboot'

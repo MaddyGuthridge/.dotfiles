@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # echoerr
 # Echo to stderr
+
+set -euo pipefail
+
 echo "$@" 1>&2

@@ -2,6 +2,9 @@
 # The _port_in_use and find_port functions were yoinked from some code that
 # https://github.com/arctic-hen7 wrote
 # Check whether a port is in use
+
+set -euo pipefail
+
 _port_in_use() {
     local port=$1
     netstat -tuln | grep ":$port" > /dev/null

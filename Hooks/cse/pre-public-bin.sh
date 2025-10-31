@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 dotfiles=$(realpath "$(dirname $BASH_SOURCE)/../..")
 cd $dotfiles
 

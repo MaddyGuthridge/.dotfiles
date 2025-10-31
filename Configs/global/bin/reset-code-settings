@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Reset VS Code settings to their default
 
+set -euo pipefail
+
 # Add my bin to path to allow for executing other commands
 file=$(realpath "$BASH_SOURCE")
 user=$(ls -ld "${file}" | awk '{print $3}')
 export PATH="$PATH:$(echo ~$user)/bin"
-
-set -e
 
 confirm "Are you sure you want to reset your VS Code settings to their default values?"
 

@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # pip is pip3
+
+set -euo pipefail
+
 pip3 "$@"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Open dotfiles in VS Code
-code -n ~/.dotfiles
 
+set -euo pipefail
 
 if command -v zed &> /dev/null; then
     zed -n $DOTFILES

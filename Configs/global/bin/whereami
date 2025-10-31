@@ -4,6 +4,8 @@
 # For most machines, just the hostname,
 # but for CSE machines, say "cse"
 
+set -euo pipefail
+
 if [ -d /unsw ]; then
     echo cse
     exit

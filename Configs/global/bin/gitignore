@@ -2,6 +2,8 @@
 # gitignore
 # Grab gitignore from GitHub's defaults
 
+set -euo pipefail
+
 curl -s --fail "https://raw.githubusercontent.com/github/gitignore/main/$1.gitignore" -o .gitignore
 if [ $? -eq 0 ]; then
     exit 0

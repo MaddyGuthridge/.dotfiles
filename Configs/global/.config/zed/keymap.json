@@ -56,5 +56,11 @@
       "ctrl-delete": "git::RestoreTrackedFiles",
       "ctrl-s": "git::Fetch"
     }
+  },
+  {
+    "context": "(Editor && showing_completions)",
+    "bindings": {
+      "enter": "editor::Newline"
+    }
   }
 ]

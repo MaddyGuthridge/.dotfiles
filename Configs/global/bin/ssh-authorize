@@ -2,15 +2,14 @@
 # Copies the SSH public keys for whoever owns this script into the
 # authorized_keys file for whoever runs it
 
+set -euo pipefail
+
 # Add my bin to path to allow for executing other commands
 file=$(realpath "$BASH_SOURCE")
 authorized_user=$(ls -ld "${file}" | awk '{print $3}')
 export PATH="$PATH:$(echo ~$authorized_user)/bin"
 
 authorizer=$USER
-
-# Pipefail
-set -e
 
 echo "This script will authorize the user $authorized_user to access the user $authorizer using SSH."
 echo "DO NOT RUN THIS SCRIPT UNLESS YOU TRUST $authorized_user with full access to the account $authorizer!!!"

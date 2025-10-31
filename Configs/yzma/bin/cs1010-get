@@ -8,6 +8,9 @@
 # Download to in.txt
 #
 # Note that using the ~ character won't work correctly on the CSE end
+
+set -euo pipefail
+
 if [ $# -eq 1 ]; then
     echo "CSE: Downloading $1 -> ${1##*/}"
     rsync "$CS1010":"$1" ${1##*/}

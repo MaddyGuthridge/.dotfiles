@@ -8,7 +8,7 @@
 # the machine, but this does significantly reduce the performance, meaning it
 # will take far longer than it ordinarily would.
 
-set -e
+set -euo pipefail
 
 usage() {
     echoerr "Usage: transcoded [encode-type] [input file] [output directory]"

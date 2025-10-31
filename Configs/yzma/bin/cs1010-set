@@ -8,6 +8,9 @@
 # Upload to CSE systems under the given path
 #
 # Note that using the ~ character won't work correctly on the CSE end
+
+set -euo pipefail
+
 if [ $# -eq 1 ]; then
     echo "CSE: Uploading $1 -> ${1##*/}"
     rsync ${1##*/} "${CS1010}:/home/cs1010/${1}"

@@ -4,6 +4,8 @@
 # Quickly kill a process that is using a port
 # eg: portkill 8080
 
+set -euo pipefail
+
 if [ $# -eq 0 ]; then
     echo "Usage: $0 [-f] <port number>"
     echo "Eg: portkill 8080"

@@ -2,6 +2,8 @@
 # ursula
 # SSH into Ursula, or warn if we're already there
 
+set -euo pipefail
+
 if [[ $(whereami) == "ursula" ]]; then
     if [ $# -eq 0 ]; then
         echo "You're already at Ursula"
