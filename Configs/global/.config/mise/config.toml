@@ -1,48 +1,91 @@
+# Mise config
+# ===========
+
+[settings]
+# Detect node version from .nvmrc
+idiomatic_version_file_enable_tools = ["node", "python"]
+
 [tools]
 
 # Dotfile management
-typst = "latest"
+# ------------------
+
+"cargo:tuckr" = "latest"
 
 # Teaching
+# --------
+
 "pipx:markten" = "latest"
 "pipx:slides-xp" = "latest"
 
 # COMP1531
+# --------
+
 node = "20"
+"npm:tsx" = "latest"
 # DCC (COMP1511 compiler)
 "github:COMP1511UNSW/dcc" = { version = "latest", asset_pattern = "dcc" }
 
 # COMP2511
+# --------
+
 gradle = "8.8"
 java = "17"
+# Jdtls (Java language server)
+# This also requires Java 21, but I have not figured out how to do that yet
+# Also the download URL has a date which makes things super annoying.
+# Maybe I will make a proper Mise plugin for this some time...
+"http:jdtls" = { version = "1.52.0", url = "https://download.eclipse.org/jdtls/milestones/{version}/jdt-language-server-{version}-202510301627.tar.gz" }
 
 # Python
+# ------
+
 "pipx:comp1010" = "latest"
 poetry = "latest"
 uv = "latest"
 
 # Rust
-rust = { version = "latest", targets="x86_64-unknown-linux-gnu,wasm32-unknown-unknown" }
+# ----
+
+rust = { 
+    version = "latest", 
+    # Add WASM target
+    targets="x86_64-unknown-linux-gnu,wasm32-unknown-unknown",
+}
 "cargo:bacon" = "latest"
 
-# JS -- the eternal struggle to decide between Deno and Bun
+# JavaScript
+# ----------
+
+# The eternal struggle to decide between Deno and Bun
 bun = "latest"
 deno = "latest"
+
 # And PNPM, which is worse, but potentially useful when I want it to be 
 # NPM-alike
 pnpm = "latest"
 
-# Others
+# Docker
+# ------
+
+# Debug Docker builds
+"github:ktock/buildg" = "latest"
+
+# Writing
+# -------
+
+typst = "latest"
+
+# CLI tools
+# ---------
+
 "github:boyter/scc" = "latest"
 "pipx:transdoc" = "latest"
-"cargo:tuckr" = "latest"
 "github:Slackadays/Clipboard" = "latest"
 "pipx:concussion" = "latest"
-"pipx:git+https://github.com/MaddyGuthridge/pyqtprotractor.git" = "master"
 "pipx:tldr" = "latest"
-"github:ktock/buildg" = "latest"
-"npm:tsx" = "latest"
 
-[settings]
-# Detect node version from .nvmrc
-idiomatic_version_file_enable_tools = ["node", "python"]
+# Others
+# ------
+
+"pipx:git+https://github.com/MaddyGuthridge/pyqtprotractor.git" = "master"
