@@ -113,7 +113,7 @@
     },
     "Java": {
       // Java moment
-      "wrap_guides": [120],
+      "wrap_guides": [120]
     },
     "Svelte": {
       "code_actions_on_format": {
@@ -138,11 +138,9 @@
       }
     },
     "jdtls": {
-      "initialization_options": {
-        "settings": {
-          "java": {
-            "home": "/home/maddy/.local/share/mise/installs/java/21.0.2"
-          }
+      "settings": {
+        "java": {
+          "home": "/home/maddy/.local/share/mise/installs/java/21.0.2"
         }
       }
     }
