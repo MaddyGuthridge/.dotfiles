@@ -5,6 +5,9 @@
 # Detect node version from .nvmrc
 idiomatic_version_file_enable_tools = ["node", "python"]
 
+# For the love of god please don't compile Node from source
+node.compile = false
+
 [tools]
 
 # Dotfile management
