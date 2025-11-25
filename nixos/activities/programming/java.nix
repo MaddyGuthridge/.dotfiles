@@ -7,7 +7,7 @@
     # relative path, even though accessing a flake in the same repo is still
     # pure: https://github.com/NixOS/nix/issues/6353
     # This is INSANITY!
-    (builtins.getFlake "path:///home/maddy/Source/nix-experiment/config/activities/programming/gradle")
+    (builtins.getFlake "path:///home/maddy/.dotfiles/nixos/activities/programming/gradle")
     .packages.x86_64-linux.default
   ];
 }
