@@ -154,6 +154,15 @@ in
     zip
     mission-center
   ];
+  
+  # Ibus input methods
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      # Your engines here
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
