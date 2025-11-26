@@ -3,11 +3,7 @@
   imports = [
     ./c.nix
     ./docker.nix
-    ./java.nix
-    ./js.nix
     ./nix.nix
-    ./python.nix
-    ./rust.nix
     ./zsh.nix
   ];
   environment.systemPackages = with pkgs; [
