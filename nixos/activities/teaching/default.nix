@@ -6,6 +6,7 @@
 
     input-remapper
     unstable.gaphor
+    tigervnc
   ];
 
   # BRO WHY DOES THIS NOT WORK
