@@ -152,7 +152,7 @@ in
     hack-font
     unstable.cloudflared
     zip
-    mission-center
+    unstable.mission-center
   ];
   
   # Ibus input methods
