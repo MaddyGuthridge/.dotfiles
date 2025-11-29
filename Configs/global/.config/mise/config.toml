@@ -5,8 +5,9 @@
 # Detect node version from .nvmrc
 idiomatic_version_file_enable_tools = ["node", "python"]
 
-# For the love of god please don't compile Node from source
+# For the love of god please don't compile Node and Python from source
 node.compile = false
+python.compile = false
 
 [tools]
 
@@ -41,6 +42,7 @@ java = "17"
 "pipx:comp1010" = "latest"
 poetry = "latest"
 uv = "latest"
+python = "latest"
 
 # Rust
 # ----
