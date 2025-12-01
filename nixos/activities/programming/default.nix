@@ -4,7 +4,6 @@
     ./c.nix
     ./docker.nix
     ./nix.nix
-    ./ruby.nix
     ./zsh.nix
   ];
   environment.systemPackages = with pkgs; [
