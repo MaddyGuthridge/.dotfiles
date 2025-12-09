@@ -15,5 +15,6 @@
     unstable.typst
     android-tools
     unstable.mise
+    jdt-language-server
   ];
 }
