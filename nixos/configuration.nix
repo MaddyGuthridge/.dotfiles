@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   # Add the unstable channel declaratively
@@ -158,7 +163,7 @@ in
     zip
     unstable.mission-center
   ];
-  
+
   # Ibus input methods
   i18n.inputMethod = {
     enable = true;
@@ -166,6 +171,22 @@ in
     ibus.engines = with pkgs.ibus-engines; [
       # Your engines here
     ];
+  };
+
+  # Nix rebuilds like to use 100% CPU if something compiles from source.
+  # This at least stops the system from locking up.
+  systemd.services.nix-daemon.serviceConfig = {
+    # Nice Nix daemon
+    Nice = lib.mkForce 15;
+    CPUWeight = 5;
+    IOSchedulingClass = lib.mkForce "idle";
+    IOSchedulingPriority = lib.mkForce 7;
+  };
+  
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 10";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
