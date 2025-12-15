@@ -20,8 +20,15 @@ in
   environment.systemPackages = with pkgs; [
     unstable.makemkv
     vlcBd
-    jellyfin-media-player
+    # If we don't use jellyfin-media-player from 25.05,
+    # it will compile chromium from source. AAAAAAAAAAAAAAAAAAAAA!
+    nixos2505.jellyfin-media-player
     mkvtoolnix
     handbrakeBd
   ];
+  
+  # # Jellyfin Media Player v1 requires qtwebengine 5
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "qtwebengine-5.15.19"
+  # ];
 }

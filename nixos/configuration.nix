@@ -6,7 +6,8 @@
 
 let
   # Add the unstable channel declaratively
-  unstableTarball = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+  nixosUnstable = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+  nixos2505 = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-25.05.tar.gz";
 in
 {
   imports = [
@@ -22,7 +23,10 @@ in
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
-      unstable = import unstableTarball {
+      unstable = import nixosUnstable {
+        config = config.nixpkgs.config;
+      };
+      nixos2505 = import nixos2505 {
         config = config.nixpkgs.config;
       };
     };
@@ -89,8 +93,8 @@ in
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.displayManager.defaultSession = "gnome";
 
   # Configure keymap in X11
