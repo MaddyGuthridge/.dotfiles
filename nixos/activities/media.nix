@@ -26,9 +26,4 @@ in
     mkvtoolnix
     handbrakeBd
   ];
-  
-  # # Jellyfin Media Player v1 requires qtwebengine 5
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "qtwebengine-5.15.19"
-  # ];
 }
