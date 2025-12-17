@@ -20,9 +20,8 @@ in
   environment.systemPackages = with pkgs; [
     unstable.makemkv
     vlcBd
-    # If we don't use jellyfin-media-player from 25.05,
-    # it will compile chromium from source. AAAAAAAAAAAAAAAAAAAAA!
-    nixos2505.jellyfin-media-player
+    # Unstable -> get v2.0.0, which isn't backported to 25.11 yet
+    unstable.jellyfin-media-player
     mkvtoolnix
     handbrakeBd
   ];
