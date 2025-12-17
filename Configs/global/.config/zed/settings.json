@@ -90,6 +90,18 @@
     "hunk_style": "unstaged_hollow"
   },
 
+  "ssh_connections": [
+    {
+      "host": "cse",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/import/kamen/5/z5312085"]
+        }
+      ]
+    }
+  ],
+
   // Language-specific settings
   "languages": {
     "Python": {
@@ -139,8 +151,15 @@
     },
     "jdtls": {
       "settings": {
-        "java": {
-          "home": "/home/maddy/.local/share/mise/installs/java/21.0.2"
+        // "java": {
+        //   "home": "/home/maddy/.local/share/mise/installs/java/21.0.2"
+        // }
+      }
+    },
+    "nil": {
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"]
         }
       }
     }

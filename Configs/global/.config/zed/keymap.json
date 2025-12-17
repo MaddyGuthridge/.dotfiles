@@ -21,7 +21,15 @@
       // Global "back to editor" button
       "ctrl-alt-enter": "workspace::ActivateNextPane",
       // Open recent
-      "ctrl-r": "projects::OpenRecent",
+      "ctrl-r": "projects::OpenRecent"
+    }
+  },
+  // Tab ordering
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+      "ctrl-tab": "pane::ActivateNextItem"
     }
   },
   // Editor keybinds
