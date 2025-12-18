@@ -7,5 +7,6 @@
     ./documents.nix
     ./gaming.nix
     ./media.nix
+    ./streaming.nix
   ];
 }
