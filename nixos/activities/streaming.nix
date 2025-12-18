@@ -5,6 +5,8 @@
     gphoto2
     ffmpeg
     v4l-utils
+    # Video editing
+    kdePackages.kdenlive
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
