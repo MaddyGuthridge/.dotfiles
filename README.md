@@ -4,10 +4,17 @@ Become Maddy by stealing her dotfiles.
 
 ## Installation
 
+### NixOS
+
+1. `git clone` the repo to your `$HOME` directory
+2. `just rebuild`
+
+### Other systems
+
 1. `git clone` the repo to your `$HOME` directory
 2. Install [`mise`](https://mise.jdx.dev/), which will allow you to install all
    other required tools.
-3. `mise x cargo:tuckr -- tuckr set --only-files global $(hostname)` 
+3. `mise x cargo:tuckr -- tuckr set --only-files global $(hostname)`
    to set up all dotfiles.
 
 Once this is done, you can use `tuckr add global $(hostname)` to update dotfiles. (actually don't do this Tuckr is broken currently).

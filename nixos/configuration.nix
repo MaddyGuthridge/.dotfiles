@@ -162,6 +162,8 @@ in
     unstable.cloudflared
     zip
     unstable.mission-center
+    # Just editor to build the system
+    just
   ];
 
   # Ibus input methods
@@ -182,7 +184,7 @@ in
     IOSchedulingClass = lib.mkForce "idle";
     IOSchedulingPriority = lib.mkForce 7;
   };
-  
+
   programs.nh = {
     enable = true;
     clean.enable = true;
