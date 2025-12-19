@@ -78,6 +78,8 @@
       "alt": true
     }
   },
+  
+  "remove_trailing_whitespace_on_save": true,
 
   "git": {
     // Inline git blame only shows after a second
