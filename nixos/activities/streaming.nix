@@ -7,6 +7,7 @@
     v4l-utils
     # Video editing
     kdePackages.kdenlive
+    shotcut
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
