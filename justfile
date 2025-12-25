@@ -6,11 +6,10 @@ default:
 copy-config:
     sudo cp -r ./nixos/* /etc/nixos
 
+# -f  =>  use whatever channel is configured for "nixos"
+# -a  =>  prompt for confirmation
+# -t  =>  show traces
 rebuild: copy-config
-    # -f  =>  use whatever channel is configured for "nixos"
-    # -a  =>  prompt for confirmation
-    # -t  =>  show traces
-    # $@  =>  additional args
     nh os switch -f '<nixpkgs/nixos>' -a -t
 
 update: && rebuild

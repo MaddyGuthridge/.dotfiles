@@ -9,6 +9,6 @@
     input-remapper
   ];
 
-  # BRO WHY DOES THIS NOT WORK
-  # services.input-remapper.enable = true;
+  services.input-remapper.enable = true;
+  services.input-remapper.enableUdevRules = true;
 }
