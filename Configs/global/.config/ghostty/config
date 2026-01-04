@@ -45,3 +45,6 @@
 font-feature = -calt
 cursor-style = bar
 theme = dark:Synthwave Alpha,light:Adwaita
+
+# Fix sudo integration
+shell-integration-features = sudo,ssh-terminfo
