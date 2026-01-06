@@ -17,5 +17,6 @@
     unstable.mise
     jdt-language-server
     eyedropper
+    nasm
   ];
 }
