@@ -162,6 +162,7 @@ in
     unstable.cloudflared
     zip
     unstable.mission-center
+    file
     # Just editor to build the system
     just
   ];
