@@ -80,7 +80,7 @@ typst = "latest"
 "pipx:transdoc" = "latest"
 "github:Slackadays/Clipboard" = "latest"
 "pipx:concussion" = "latest"
-"pipx:tldr" = "latest"
+"pipx:tldr" = { version = "latest", uvx_args = "--with pip-system-certs" }
 
 # Others
 # ------
