@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diagnostics": {
+    // Only show inline diagnostics for errors
+    "inline": {
+      "enabled": true,
+      "max_severity": "error",
+    },
+  },
+
   // Disable AI
   "disable_ai": true,
 
@@ -25,21 +33,21 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Synthwave Alpha"
+    "dark": "Synthwave Alpha",
   },
   "icon_theme": "Catppuccin Latte",
   "terminal": {
     "cursor_shape": "bar",
     "dock": "right",
-    "max_scroll_history_lines": 100000
+    "max_scroll_history_lines": 100000,
   },
   // Hide sign in prompt on title bar
   "title_bar": {
-    "show_sign_in": false
+    "show_sign_in": false,
   },
   // Hide collaboration panel
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   // Wrap guides
   "wrap_guides": [80],
@@ -55,7 +63,7 @@
   // Disable annoying mouse features
   "middle_click_paste": false,
   "drag_and_drop_selection": {
-    "enabled": false
+    "enabled": false,
   },
 
   // Swap multi-cursor keybind
@@ -64,14 +72,14 @@
   // Tab settings
   "tab_bar": {
     "show_tab_bar_buttons": false,
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "tabs": {
     "git_status": true,
     "file_icons": true,
     "show_close_button": "hidden",
     "activate_on_close": "neighbour",
-    "show_diagnostics": "errors"
+    "show_diagnostics": "errors",
   },
 
   // Editor: inlay hints
@@ -79,10 +87,10 @@
     // Show on Ctrl+Alt
     "toggle_on_modifiers_press": {
       "control": true,
-      "alt": true
-    }
+      "alt": true,
+    },
   },
-  
+
   "remove_trailing_whitespace_on_save": true,
 
   "git": {
@@ -90,10 +98,10 @@
     // to avoid distractions
     "inline_blame": {
       "delay_ms": 1000,
-      "padding": 20
+      "padding": 20,
     },
     // Unstaged changes are given a hollow highlight
-    "hunk_style": "unstaged_hollow"
+    "hunk_style": "unstaged_hollow",
   },
 
   "ssh_connections": [
@@ -102,72 +110,87 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/import/kamen/5/z5312085"]
-        }
-      ]
-    }
+          "paths": ["/import/kamen/5/z5312085"],
+        },
+      ],
+    },
   ],
 
   // Language-specific settings
   "languages": {
     "Python": {
-      "wrap_guides": [79]
+      "wrap_guides": [79],
     },
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
       },
       "formatter": [],
       "wrap_guides": [100],
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TypeScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
       },
       "formatter": [],
       "wrap_guides": [100],
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Java": {
       // Java moment
-      "wrap_guides": [120]
+      "wrap_guides": [120],
     },
     "Svelte": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
       },
       "formatter": [],
       "wrap_guides": [100],
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
   },
 
   // Language server settings
   "lsp": {
+    "vtsls": {
+      // @see https://github.com/yioneko/vtsls/blob/main/packages/service/configuration.schema.json
+      "settings": {
+        "typescript": {
+          "tsserver": {
+            "experimental": {
+              "enableProjectDiagnostics": true,
+            },
+          },
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+    },
     "basedpyright": {
       "settings": {
         "basedpyright.analysis": {
           "diagnosticSeverityOverrides": {
             // I like implicit string concatenation when formatting long strings
-            "reportImplicitStringConcatenation": "none"
-          }
-        }
-      }
+            "reportImplicitStringConcatenation": "none",
+          },
+        },
+      },
     },
     "jdtls": {
       "settings": {
         // "java": {
         //   "home": "/home/maddy/.local/share/mise/installs/java/21.0.2"
         // }
-      }
+      },
     },
     "nil": {
       "initialization_options": {
         "formatting": {
-          "command": ["nixfmt"]
-        }
-      }
-    }
-  }
+          "command": ["nixfmt"],
+        },
+      },
+    },
+  },
 }
