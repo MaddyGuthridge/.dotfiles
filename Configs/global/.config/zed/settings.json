@@ -17,6 +17,10 @@
   "ui_font_size": 18,
   "buffer_font_size": 16,
   "buffer_font_family": "Hack",
+  "buffer_font_features": {
+    // Disable ligatures -- doesn't work on Linux :(
+    "calt": false,
+  },
   "ui_font_family": "Hack",
   "theme": {
     "mode": "system",
