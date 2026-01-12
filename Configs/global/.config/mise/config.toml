@@ -33,8 +33,8 @@ node = "20"
 # COMP2511
 # --------
 
-gradle = "8.8"
-java = "17"
+gradle = "9.2"
+java = "21"
 
 # Python
 # ------
