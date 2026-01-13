@@ -142,7 +142,12 @@ in
 
   # Allow running arbitrary executables
   # https://nix.dev/guides/faq#how-to-run-non-nix-executables
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      glibc.static
+    ];
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -153,7 +158,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix!
+    # The Nano editor is also installed by default.
     wget
     zsh
     usbutils
