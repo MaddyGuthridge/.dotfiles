@@ -57,6 +57,18 @@ in
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Plymouth boot animation
+  boot.plymouth = {
+    enable = true;
+    theme = "rings_2";
+    themePackages = with pkgs; [
+      # By default we would install all themes
+      (adi1090x-plymouth-themes.override {
+        selected_themes = [ "rings_2" ];
+      })
+    ];
+  };
+
   # Additional file systems
   fileSystems."/media/yzma" = {
     device = "/dev/disk/by-uuid/26d0f537-4884-4344-bd85-04a20a610b41";
