@@ -181,6 +181,7 @@ in
     zip
     unstable.mission-center
     file
+    iperf
     # Just editor to build the system
     just
   ];
