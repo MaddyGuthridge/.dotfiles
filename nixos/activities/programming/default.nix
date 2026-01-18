@@ -7,17 +7,24 @@
     ./zsh.nix
   ];
   environment.systemPackages = with pkgs; [
+    # Software management
+    unstable.mise
+    # Terminal emulators
     ghostty
+    # Text editors
     unstable.vscode
     unstable.zed-editor
-    unstable.nushell
+    # API clients
     insomnia
+    unstable.bruno
+    # Programming languages
+    unstable.nushell
     unstable.typst
-    android-tools
-    unstable.mise
-    jdt-language-server
-    eyedropper
     nasm
+    # Additional tools
+    jdt-language-server
+    android-tools
+    eyedropper
   ];
 
   # Fix uv python ssl.SSLCertVerificationError
