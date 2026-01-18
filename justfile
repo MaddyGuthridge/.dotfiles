@@ -13,7 +13,7 @@ rebuild: copy-config
     nh os switch -f '<nixpkgs/nixos>' -a -t
 
 # Update nix-channel both for root and for my user
-update: && rebuild && mise-update
+update: && rebuild mise-update
     nix-channel --update
     sudo nix-channel --update
 
