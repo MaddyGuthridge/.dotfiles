@@ -70,5 +70,10 @@
     "bindings": {
       "enter": "editor::Newline"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-o": "workspace::Open"
+    }
   }
 ]
