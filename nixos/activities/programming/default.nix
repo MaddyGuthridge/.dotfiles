@@ -25,6 +25,7 @@
     jdt-language-server
     android-tools
     eyedropper
+    bat
   ];
 
   # Fix uv python ssl.SSLCertVerificationError
