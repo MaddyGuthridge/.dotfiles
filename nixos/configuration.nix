@@ -109,10 +109,14 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+  # GDM login screen
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
   services.displayManager.defaultSession = "gnome";
+
+  # Enable the GNOME Desktop Environment.
+  services.desktopManager.gnome.enable = true;
+  # Amd also Cosmic
+  services.desktopManager.cosmic.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
