@@ -182,7 +182,6 @@ in
     unstable.mission-center
     file
     iperf
-    plocate
     # Just editor to build the system
     just
   ];
@@ -216,6 +215,12 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+
+  # plocate
+  services.locate = {
+    enable = true;
+    interval = "daily";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
