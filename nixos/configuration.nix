@@ -182,6 +182,7 @@ in
     unstable.mission-center
     file
     iperf
+    plocate
     # Just editor to build the system
     just
   ];
