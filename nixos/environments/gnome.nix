@@ -7,7 +7,6 @@
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
     gnomeExtensions.pip-on-top
-    gnomeExtensions.gsconnect
     gnomeExtensions.hide-minimized
     gnomeExtensions.lock-keys
     gnomeExtensions.just-perfection
@@ -18,4 +17,10 @@
     gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     wl-clipboard
   ];
+
+  # Enable KDE Connect
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 }
