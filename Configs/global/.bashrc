@@ -119,11 +119,6 @@ if [ `which powerline-daemon 2> /dev/null` ]; then
   . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-# Load pipx completions
-if [ `which pipx 2> /dev/null` ]; then
-    eval "$(register-python-argcomplete pipx)"
-fi
-
 # Source all the sources
 for file in $DOTFILES/Sources/* ; do
   if [ -x "$file" ] ; then
