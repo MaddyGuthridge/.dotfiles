@@ -5,6 +5,8 @@ set -euo pipefail
 
 if command -v zed &> /dev/null; then
     zed -n $DOTFILES
+elif command -v zeditor &> /dev/null; then
+    zeditor -n $DOTFILES
 else
     code -n $DOTFILES
 fi
