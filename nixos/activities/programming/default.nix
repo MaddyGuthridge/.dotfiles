@@ -26,6 +26,7 @@
     android-tools
     eyedropper
     bat
+    gh # GitHub CLI
   ];
 
   # Fix uv python ssl.SSLCertVerificationError
