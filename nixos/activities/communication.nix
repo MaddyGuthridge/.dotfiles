@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  zenBrowser = builtins.getFlake "github:youwen5/zen-browser-flake";
+in
 {
   environment.systemPackages = with pkgs; [
     thunderbird-esr
@@ -8,5 +11,6 @@
     zoom-us
     signal-desktop
     nextcloud-client
+    zenBrowser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser
   ];
 }
