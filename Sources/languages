@@ -8,6 +8,6 @@
 # projects I open (which are just for marking)
 export GRADLE_OPTS="-Dorg.gradle.daemon=false"
 
-if [ `which mise 2> /dev/null` ] ; then
+if command -pv mise &> /dev/null; then
     eval "$(mise activate zsh)"
 fi
