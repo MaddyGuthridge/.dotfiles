@@ -15,6 +15,7 @@
     gnomeExtensions.middle-click-to-close-in-overview
     gnomeExtensions.pano
     gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
+    gnomeExtensions.astra-monitor
     wl-clipboard
   ];
 
