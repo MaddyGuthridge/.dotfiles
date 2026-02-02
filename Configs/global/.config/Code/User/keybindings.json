@@ -50,19 +50,52 @@
         "command": "-workbench.action.files.openFolder",
         "when": "openFolderWorkspaceSupport"
     },
-    // On-save
+    // Git panel shortcuts
     // =============================================
-    // In git panel, Ctrl+S => git sync
+    // Show git panel
     {
-        "key": "ctrl+s",
-        "command": "git.sync",
+        "key": "ctrl+shift+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    // Undo commit
+    {
+        "key": "ctrl+shift+z",
+        "command": "git.undoCommit",
         "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
     },
-    // Global git sync: Ctrl+Shift+G S
+    // Clean all uncommitted changes
     {
-        "key": "ctrl+shift+g s",
-        "command": "git.sync"
+        "key": "ctrl+delete",
+        "command": "git.cleanAll",
+        "when": "sideBarFocus && !(inputFocus) && activeViewlet == 'workbench.view.scm'"
     },
+    // Git graph
+    {
+        "key": "ctrl+l",
+        "command": "git-graph.view",
+        "when": "sideBarFocus && !(inputFocus) && activeViewlet == 'workbench.view.scm'"
+    },
+    // Fetch
+    {
+        "key": "ctrl+s",
+        "command": "git.fetch",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    // Push
+    {
+        "key": "ctrl+g up",
+        "command": "git.push",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    // Pull
+    {
+        "key": "ctrl+g down",
+        "command": "git.pull",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    // On-save
+    // =============================================
     // If document can't be formatted, just keep editor open and save
     {
         "key": "ctrl+s",
@@ -233,36 +266,6 @@
         "key": "ctrl+backspace",
         "command": "notifications.clearAll",
         "when": "notificationCenterVisible"
-    },
-    // Git panel shortcuts
-    // =============================================
-    // Undo commit: Ctrl+Shift+Z
-    {
-        "key": "ctrl+shift+z",
-        "command": "git.undoCommit",
-        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
-    },
-    // Clean all uncommitted changes: Ctrl+Delete
-    {
-        "key": "ctrl+delete",
-        "command": "git.cleanAll",
-        "when": "sideBarFocus && !(inputFocus) && activeViewlet == 'workbench.view.scm'"
-    },
-    // Git graph: Ctrl+Shift+G, L
-    {
-        "key": "ctrl+shift+g l",
-        "command": "git-graph.view"
-    },
-    // Open git panel: Ctrl+Shift+G G, or double Ctrl+Shift+G
-    {
-        "key": "ctrl+shift+g g",
-        "command": "-workbench.view.scm",
-        "when": "workbench.scm.active"
-    },
-    {
-        "key": "ctrl+shift+g ctrl+shift+g",
-        "command": "workbench.view.scm",
-        "when": "workbench.scm.active"
     },
     // Testing panel shortcuts
     // =============================================
