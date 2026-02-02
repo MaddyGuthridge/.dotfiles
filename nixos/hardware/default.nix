@@ -7,10 +7,13 @@
       builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }
     }/dell/xps/15-9500/nvidia"
   ];
-  
+
   # Solaar -- Logitech mouse adapter
   hardware.logitech.wireless.enable = true;
   environment.systemPackages = with pkgs; [
     solaar
+    # Tools for debugging docking issues
+    tbtools
+    pciutils
   ];
 }
