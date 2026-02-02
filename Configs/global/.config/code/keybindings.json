@@ -1,0 +1,372 @@
+// Place your key bindings in this file to override the defaults
+[
+    // New file commands
+    // =============================================
+    // New file command in explorer by default
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile"
+    },
+    // New directory in explorer: Ctrl+Shift+N
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder"
+    },
+    // Open a new file not saved to the explorer: Ctrl+Alt+N
+    {
+        "key": "ctrl+alt+n",
+        "command": "openEditors.newUntitledFile"
+    },
+    // New window: Ctrl+Shift+Alt+N
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    // Open folder with Ctrl+O (rather than Ctrl+K Ctrl+O)
+    // =============================================
+    // since I never open individual files from VS Code, swap open file and
+    // open folder
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "workbench.action.files.openFile",
+        "when": "true"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "true"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    // On-save
+    // =============================================
+    // In git panel, Ctrl+S => git sync
+    {
+        "key": "ctrl+s",
+        "command": "git.sync",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    // Global git sync: Ctrl+Shift+G S
+    {
+        "key": "ctrl+shift+g s",
+        "command": "git.sync"
+    },
+    // If document can't be formatted, just keep editor open and save
+    {
+        "key": "ctrl+s",
+        "command": "runCommands",
+        "when": "editorTextFocus",
+        "args": {
+            "commands": [
+                "workbench.action.keepEditor",
+                "workbench.action.files.save",
+            ]
+        }
+    },
+    // Otherwise, also format it
+    {
+        "key": "ctrl+s",
+        "command": "runCommands",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
+        "args": {
+            "commands": [
+                "workbench.action.keepEditor",
+                "workbench.action.files.save",
+                "editor.action.formatDocument",
+            ]
+        }
+    },
+    // In-text navigation
+    // =============================================
+    // Alt+Arrow keys moves cursors through partial words
+    {
+        "key": "alt+left",
+        "command": "cursorWordPartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "cursorWordPartRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "cursorWordPartRightSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "cursorWordPartLeftSelect",
+        "when": "textInputFocus"
+    },
+    // Same for deleting words (Alt+Backspace deletes partial word backwards
+    // and Alt+Delete deletes partial word backwards)
+    {
+        "key": "alt+backspace",
+        "command": "deleteWordPartLeft"
+    },
+    {
+        "key": "alt+delete",
+        "command": "deleteWordPartRight"
+    },
+    // Ctrl+Alt+Up/Down adds cursors above and below
+    {
+        "key": "ctrl+alt+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "textInputFocus"
+    },
+    // Ctrl+Shift+Up/Down moves cursor normally
+    {
+        "key": "ctrl+shift+down",
+        "command": "cursorDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "cursorUp",
+        "when": "textInputFocus"
+    },
+    // Nice preview toggling in markdown documents and git diffs
+    // =============================================
+    {
+        "key": "ctrl+shift+enter",
+        "command": "markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "markdown.showSource",
+        "when": "editorTextFocus && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "gl.openMrFile",
+        "when": "isInDiffEditor && resourceScheme == 'gl-review' && resourceFilename != ''"
+    },
+    // Also remove the yucky default shortcut
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // Ctrl+Tab to cycle tabs, rather than Ctrl+Pageup/down
+    // =============================================
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.previousEditor"
+    },
+    // Editor management
+    // =============================================
+    // Split editor: Ctrl+Alt+/
+    {
+        "key": "ctrl+alt+/",
+        "command": "workbench.action.splitEditorDown"
+    },
+    // Return to text editor from anywhere: Ctrl+Alt+Enter
+    {
+        "key": "ctrl+alt+enter",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    // Show file within file explorer: Ctrl+Alt+Shift+Enter
+    {
+        "key": "ctrl+alt+shift+enter",
+        "command": "revealFileInOS",
+    },
+    // Swap text with clipboard
+    // =============================================
+    {
+        "key": "ctrl+shift+x",
+        "command": "extension.swap",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+s",
+        "command": "-extension.swap",
+        "when": "editorTextFocus"
+    },
+    // Notifications management
+    // =============================================
+    {
+        "key": "alt+n",
+        "command": "notifications.showList"
+    },
+    {
+        "key": "ctrl+delete",
+        "command": "notifications.clearAll",
+        "when": "notificationCenterVisible"
+    },
+    {
+        "key": "backspace",
+        "command": "notification.clear",
+        "when": "notificationFocus"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "notifications.clearAll",
+        "when": "notificationCenterVisible"
+    },
+    // Git panel shortcuts
+    // =============================================
+    // Undo commit: Ctrl+Shift+Z
+    {
+        "key": "ctrl+shift+z",
+        "command": "git.undoCommit",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    // Clean all uncommitted changes: Ctrl+Delete
+    {
+        "key": "ctrl+delete",
+        "command": "git.cleanAll",
+        "when": "sideBarFocus && !(inputFocus) && activeViewlet == 'workbench.view.scm'"
+    },
+    // Git graph: Ctrl+Shift+G, L
+    {
+        "key": "ctrl+shift+g l",
+        "command": "git-graph.view"
+    },
+    // Open git panel: Ctrl+Shift+G G, or double Ctrl+Shift+G
+    {
+        "key": "ctrl+shift+g g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+shift+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    // Testing panel shortcuts
+    // =============================================
+    // Run all tests: Ctrl+Shift+Enter
+    {
+        "key": "ctrl+shift+enter",
+        "command": "testing.runAll",
+        "when": "focusedView == 'workbench.view.testing'"
+    },
+    // Run tests at cursor: Ctrl+Enter
+    {
+        "key": "ctrl+enter",
+        "command": "testing.runAtCursor",
+        "when": "focusedView == 'workbench.view.testing'"
+    },
+    // Open testing panel
+    {
+        "key": "ctrl+; ctrl+;",
+        "command": "workbench.view.extension.test"
+    },
+    // Terminal improvements
+    // =============================================
+    // Maximise terminal: Alt+Shift+Up
+    {
+        "key": "shift+alt+up",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    // New terminal tab: Ctrl+Shift+T
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    // Clear terminal: Ctrl+K K
+    {
+        "key": "ctrl+k k",
+        "command": "workbench.action.terminal.clear"
+    },
+    // Misc improvements
+    // =============================================
+    // Show both documentation and suggestions when pressing Ctrl+Space
+    {
+        "key": "ctrl+space",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "editor.action.triggerSuggest",
+                "editor.action.showHover"
+            ]
+        }
+    },
+    // Find in any list: Ctrl+F
+    {
+        "key": "ctrl+f",
+        "command": "list.find",
+        "when": "listFocus && listSupportsFind"
+    },
+    // Settings JSON file: Ctrl+Alt+,
+    {
+        "key": "ctrl+alt+,",
+        "command": "workbench.action.openSettingsJson"
+    },
+    // Keyboard shortcuts JSON file: Ctrl+K Ctrl+Shift+S
+    {
+        "key": "ctrl+k ctrl+shift+s",
+        "command": "workbench.action.openGlobalKeybindingsFile"
+    },
+    // Get rid of bad overtype shortcut
+    {
+        "key": "ctrl+shift+i",
+        "command": "-overtype.toggle",
+        "when": "editorFocus"
+    },
+    // Don't accidentally execute Python code on Shift+Enter
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    // Rust docs (this is neat)
+    {
+        "key": "ctrl+alt+d",
+        "command": "rust-analyzer.openDocs",
+        "when": "inRustProject"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+g d",
+        "command": "git.openChange"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+numpad0",
+        "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+shift+l",
+        "command": "workbench.view.extension.gitlab-workflow"
+    },
+]

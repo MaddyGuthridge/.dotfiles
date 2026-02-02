@@ -1,0 +1,523 @@
+{
+    "[cpp]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.autopep8",
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[svelte]": {
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "svelte.svelte-vscode",
+        "editor.tabSize": 2,
+        "editor.rulers": [
+            100
+        ],
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "[mips]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 8,
+        "editor.autoIndent": "advanced",
+        "editor.rulers": [
+            8,
+            40,
+            80
+        ]
+    },
+    "[tex]": {
+        "editor.bracketPairColorization.enabled": false
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced"
+    },
+    "[markdown]": {
+        "editor.tabSize": 4,
+    },
+    "[latex]": {
+        "editor.autoClosingBrackets": "always",
+        "editor.autoClosingQuotes": "always",
+        "editor.language.brackets": [
+            [
+                "$",
+                "$"
+            ]
+        ],
+    },
+    "emmet.syntaxProfiles": {
+        "html": {
+            "compactBooleanAttributes": true
+        },
+        "javascriptreact": {
+            // Does this work?
+            "compactBooleanAttributes": true
+        },
+        "typescriptreact": {
+            // Does this work?
+            "compactBooleanAttributes": true
+        },
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "latex-workshop-pdf-hook",
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    "window.newWindowDimensions": "maximized",
+    "workbench.startupEditor": "none",
+    "editor.acceptSuggestionOnEnter": "off",
+    "cSpell.language": "en-GB",
+    "window.restoreWindows": "none",
+    "editor.rulers": [
+        79
+    ],
+    "python.languageServer": "Pylance",
+    "editor.autoClosingOvertype": "always",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "workbench.editor.focusRecentEditorAfterClose": false,
+    "files.insertFinalNewline": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "smooth",
+    "editor.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "#FFFFFF",
+        "background": "#00000000"
+    },
+    "todo-tree.highlights.useColourScheme": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "FIXME",
+        "BROKEN",
+        "KNOWN ISSUE",
+        "KNOWN ISSUES",
+        "HACK",
+        "TODO",
+        "TODO(migue)",
+        "INVESTIGATE",
+        "[ ]",
+        "[x]",
+        "[X]",
+        "WARNING",
+        "NOTE",
+        "NOTES",
+        "HELP WANTED",
+        "CHECK THIS",
+        "CHECK",
+        "REMARK",
+        "IDEA",
+        "HINT",
+        "BRUH MOMENT",
+    ],
+    "todo-tree.general.tagGroups": {
+        "BUG": [
+            "BUG",
+            "FIXME",
+            "BROKEN",
+            "KNOWN ISSUE",
+            "KNOWN ISSUES",
+        ],
+        "HACK": [
+            "HACK",
+        ],
+        "TODO": [
+            "TODO",
+            "TODO(migue)",
+            "[ ]",
+            "INVESTIGATE",
+        ],
+        "DONE": [
+            "[x]",
+            "[X]",
+        ],
+        "WARNING": [
+            "WARNING",
+            "BRUH MOMENT",
+        ],
+        "NOTE": [
+            "NOTE",
+            "NOTES",
+        ],
+        "HELP WANTED": [
+            "HELP WANTED",
+        ],
+        "CHECK": [
+            "CHECK THIS",
+            "CHECK",
+        ],
+        "REMARK": [
+            "REMARK",
+        ],
+        "IDEA": [
+            "IDEA",
+            "HINT",
+        ]
+    },
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "foreground": "#ff0000",
+            "icon": "bug",
+            "iconColour": "#ff0000",
+            "gutterIcon": true,
+            "rulerLane": "center",
+            "rulerColour": "#ff0000"
+        },
+        "HACK": {
+            "foreground": "#ffff00",
+            "icon": "zap",
+            "iconColour": "#ffff00",
+            "rulerLane": "center",
+            "rulerColour": "#ffff00"
+        },
+        "TODO": {
+            "foreground": "#ff00ff",
+            "icon": "check",
+            "iconColour": "#ff00ff",
+            "gutterIcon": true,
+            "rulerLane": "center",
+            "rulerColour": "#ff00ff",
+        },
+        "DONE": {
+            "foreground": "#29f500",
+            "icon": "check",
+            "iconColour": "#29f500",
+            "gutterIcon": true,
+        },
+        "NOTE": {
+            "foreground": "#29f500",
+            "icon": "note",
+            "iconColour": "#29f500",
+        },
+        "WARNING": {
+            "foreground": "#ff7300",
+            "icon": "alert",
+            "iconColour": "#ff7300",
+            "gutterIcon": true,
+            "rulerLane": "center",
+            "rulerColour": "#ff7300"
+        },
+        "HELP WANTED": {
+            "foreground": "#2cd5ff",
+            "icon": "people",
+            "iconColour": "#2cd5ff",
+        },
+        "CHECK": {
+            "foreground": "#ff7300",
+            "icon": "zap",
+            "iconColour": "#ff7300",
+            "gutterIcon": true,
+            "rulerLane": "center",
+            "rulerColour": "#ff7300"
+        },
+        "REMARK": {
+            "foreground": "#ff28e2",
+            "icon": "comment",
+            "iconColour": "#ff28e2",
+            "gutterIcon": true,
+        },
+        "IDEA": {
+            "foreground": "#FFFFFF",
+            "icon": "heart",
+            "iconColour": "#FFFFFF",
+            "gutterIcon": true,
+        }
+    },
+    "todo-tree.tree.hideIconsWhenGroupedByTag": true,
+    "todo-tree.highlights.highlightDelay": 10,
+    "todo-tree.highlights.backgroundColourScheme": [
+        "#00000000"
+    ],
+    "todo-tree.highlights.foregroundColourScheme": [
+        "white"
+    ],
+    "todo-tree.filtering.scopes": [],
+    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "todo-tree.regex.regex": "(//|//!|\\*|#|<!--|;|%|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)(\\s|:)",
+    "autoDocstring.generateDocstringOnEnter": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.*_cache": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.venv": true,
+        "**/*.class": true,
+        "**/*.egg-info": true,
+        "**/node_modules": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.settings.url": "C:\\Users\\migue\\java_settings.prefs",
+    "python.analysis.typeCheckingMode": "basic",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "java.codeGeneration.generateComments": true,
+    "latex-workshop.view.pdf.viewer": "browser",
+    "editor.emptySelectionClipboard": false,
+    "explorer.confirmDelete": false,
+    "java.import.gradle.wrapper.enabled": false,
+    "settingsSync.ignoredSettings": [
+        "terminal.integrated.fontFamily",
+        "discord.enabled"
+    ],
+    "git.enableSmartCommit": true,
+    "autoDocstring.includeExtendedSummary": true,
+    "editor.comments.ignoreEmptyLines": false,
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "*.pl": "prolog",
+        "*.vc": "java",
+        "*.pyscript": "python",
+        ".flaskenv": "shellscript",
+        "*.h": "c"
+    },
+    "gitlens.statusBar.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.toggleMode": "window",
+    "gitlens.blame.format": "${author|15} ${message|50?} ${agoOrDate|14-}",
+    "workbench.editor.tabCloseButton": "off",
+    "prolog.executablePath": "/snap/bin/swi-prolog.swipl",
+    "prolog.linter.run": "onSave",
+    "terminal.integrated.cursorStyle": "line",
+    "editor.fontFamily": "'hack', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "eslint.format.enable": true,
+    "cSpell.userWords": [
+        "AEDT",
+        "anymore",
+        "Beanz",
+        "betterer",
+        "boop",
+        "BRUH",
+        "bsts",
+        "builtins",
+        "capybaras",
+        "catgirl",
+        "chdir",
+        "color",
+        "consts",
+        "craftable",
+        "curr",
+        "denom",
+        "deque",
+        "Deques",
+        "deserialise",
+        "dryrun",
+        "elmt",
+        "fract",
+        "funcs",
+        "Gotchas",
+        "guthridge",
+        "HDSQ",
+        "hissy",
+        "icecream",
+        "isinstance",
+        "isprintable",
+        "itertools",
+        "jank",
+        "janky",
+        "Joinable",
+        "KASSERT",
+        "Kelpie",
+        "kwargs",
+        "Liskov",
+        "Listall",
+        "localtest",
+        "Maddy",
+        "Mautner",
+        "migue",
+        "NOLINTNEXTLINE",
+        "numberified",
+        "nums",
+        "paramiko",
+        "Patrikeos",
+        "prevs",
+        "pytest",
+        "qualname",
+        "Rani",
+        "repr",
+        "rickrolled",
+        "shortener",
+        "Smoooooooooooth",
+        "Smooooooth",
+        "Smort",
+        "sorta",
+        "spacetime",
+        "stdscr",
+        "stringification",
+        "stringifying",
+        "strs",
+        "sympify",
+        "sympy",
+        "sysex",
+        "testbook",
+        "timeframe",
+        "trackpads",
+        "Tuplet",
+        "tute",
+        "unintuitively",
+        "unsw",
+        "unterminated",
+        "vals",
+        "visitable",
+        "Zdravkovic"
+    ],
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.currentLine.enabled": false,
+    "auto-comment-blocks.disabledLanguages": [
+        "JavaScript"
+    ],
+    "window.menuBarVisibility": "visible",
+    "workbench.preferredLightColorTheme": "Quiet Light",
+    "git.branchPrefix": "maddy-",
+    "editor.selectionClipboard": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.highlightActiveBracketPair": false,
+    "redhat.telemetry.enabled": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "jest.runMode": "on-demand",
+    "editor.minimap.enabled": false,
+    "screencastMode.fontSize": 32,
+    "screencastMode.onlyKeyboardShortcuts": true,
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "python.testing.pytestEnabled": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "githubPullRequests.pullBranch": "never",
+    "explorer.autoRevealExclude": {
+        "**/.env": true,
+        "**/.venv": true
+    },
+    "jupyter.askForKernelRestart": false,
+    "todo-tree.tree.scanMode": "open files",
+    "git.ignoreMissingGitWarning": true,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.linkedEditing": true,
+    "flake8.severity": {
+        "E": "Warning",
+        "F": "Warning"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "lldb.suppressUpdateNotifications": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "jest.outputConfig": {
+        "revealOn": "error",
+        "revealWithFocus": "test-results",
+        "clearOnRun": "none"
+    },
+    "bookmarks.saveBookmarksInProject": true,
+    "svn.autorefresh": false,
+    "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
+    "cSpell.suggestionMenuType": "quickFix",
+    "workbench.colorCustomizations": {
+        // Disable infos in the ruler
+        "editorOverviewRuler.infoForeground": "#00000000"
+    },
+    "git.ignoreRebaseWarning": true,
+    "C_Cpp.intelliSenseUpdateDelay": 500,
+    "discord.detailsDebugging": "Debugging {git_repo_name}",
+    "discord.detailsEditing": "Working on {git_repo_name}",
+    "discord.suppressNotifications": true,
+    "scrollFaster.cursorFollowsScroll": true,
+    "githubPullRequests.createOnPublishBranch": "never",
+    "gitblame.inlineMessageFormat": "Blame ${author.name}: ${commit.summary} (${time.ago})",
+    "gitblame.statusBarMessageClickAction": "Open tool URL",
+    "gitblame.statusBarMessageFormat": "Blame ${author.name}: ${commit.summary} (${time.ago})",
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "testing.automaticallyOpenPeekView": "never",
+    "testing.openTesting": "openOnTestFailure",
+    "testExplorer.useNativeTesting": true,
+    "window.titleBarStyle": "custom",
+    "mypy-type-checker.preferDaemon": true,
+    "mypy-type-checker.reportingScope": "workspace",
+    "python.analysis.inlayHints.variableTypes": true,
+    "workbench.editor.tabActionCloseVisibility": false,
+    "workbench.activityBar.location": "top",
+    "python.analysis.autoFormatStrings": true,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "markdownlint.config": {
+        "MD007": {
+            "indent": 4
+        },
+    },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "eslint.codeActionsOnSave.mode": "problems",
+    "eslint.run": "onSave",
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "SynthWave '84",
+    "svelte.enable-ts-plugin": true,
+    "eslint.validate": [
+        "js",
+        "ts",
+        "svelte",
+    ],
+    "workbench.colorTheme": "SynthWave '84",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.scrollback": 10000,
+    "javascript.preferences.autoImportFileExcludePatterns": [
+        "node:test"
+    ],
+    "window.customTitleBarVisibility": "auto",
+    "diffEditor.renderSideBySide": true,
+    "svelte.plugin.svelte.format.config.singleQuote": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "cSpell.enableFiletypes": [
+        "typst"
+    ],
+    "diffEditor.maxComputationTime": 0,
+    "chat.disableAIFeatures": true
+    // "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, DerivePointerAlignment: true, BreakBeforeBraces: BS_Attach }",
+}
