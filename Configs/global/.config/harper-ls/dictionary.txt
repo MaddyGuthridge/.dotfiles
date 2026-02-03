@@ -1,0 +1,6 @@
+Maddy
+python3
+usr
+env
+stdin
+stdout
