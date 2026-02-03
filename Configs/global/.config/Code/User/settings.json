@@ -518,6 +518,5 @@
         "typst"
     ],
     "diffEditor.maxComputationTime": 0,
-    "chat.disableAIFeatures": true
-    // "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, DerivePointerAlignment: true, BreakBeforeBraces: BS_Attach }",
+    "chat.disableAIFeatures": true,
 }
