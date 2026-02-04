@@ -1,6 +1,8 @@
 Maddy
-python3
-usr
+comparator
 env
+python3
 stdin
 stdout
+usr
+zID
