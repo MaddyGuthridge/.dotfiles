@@ -520,4 +520,5 @@
     "diffEditor.maxComputationTime": 0,
     "chat.disableAIFeatures": true,
     "testing.automaticallyOpenTestResults": "openOnTestFailure",
+    "harper.dialect": "Australian",
 }
