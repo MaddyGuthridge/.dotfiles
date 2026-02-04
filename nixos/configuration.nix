@@ -186,6 +186,7 @@ in
     unstable.mission-center
     file
     iperf
+    jq
     # Just editor to build the system
     just
   ];
