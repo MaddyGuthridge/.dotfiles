@@ -189,6 +189,7 @@ in
     jq
     # Just editor to build the system
     just
+    just-lsp
   ];
 
   # Ibus input methods
