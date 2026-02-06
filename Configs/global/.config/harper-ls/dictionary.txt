@@ -1,4 +1,8 @@
+COMP1010
 Maddy
+PyHTML
+Supercalifragilisticexpialidocious
+UNSW
 comparator
 env
 python3
