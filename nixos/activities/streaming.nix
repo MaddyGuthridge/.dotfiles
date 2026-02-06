@@ -8,6 +8,7 @@
     # Video editing
     kdePackages.kdenlive
     shotcut
+    davinci-resolve
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
