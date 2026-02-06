@@ -192,6 +192,12 @@ in
     just-lsp
   ];
 
+  # Make AppImages runnable
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Ibus input methods
   i18n.inputMethod = {
     enable = true;
