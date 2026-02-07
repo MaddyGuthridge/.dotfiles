@@ -69,16 +69,10 @@ in
     ];
   };
 
-  # Additional file systems
-  fileSystems."/media/yzma" = {
-    device = "/dev/disk/by-uuid/26d0f537-4884-4344-bd85-04a20a610b41";
-    fsType = "btrfs";
-  };
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "kronk"; # Define your hostname.
+  networking.hostName = "yzma"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
