@@ -46,14 +46,6 @@ in
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 10;
-    extraEntries = {
-      "Fedora.conf" = ''
-        title Fedora
-        efi /EFI/fedora/grubx64.efi
-        options root=9A09-B0A7 rootfstype=fat32 add_efi_memmap rw
-        sort-key fedora
-      '';
-    };
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -72,7 +64,6 @@ in
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "yzma"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
