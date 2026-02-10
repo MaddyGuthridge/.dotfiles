@@ -29,7 +29,8 @@ in
     # Windows 11 mount
     fileSystems."/media/kronk" = {
       device = "/dev/disk/by-uuid/3204BB1604BADC53";
-      fsType = "ntfs3";
+      fsType = "ntfs";
+      options = ["nofail"];
     };
 
     # Fingerprint sensor
