@@ -172,6 +172,9 @@ in
     file
     iperf
     jq
+    wineWowPackages.stableFull
+    fastfetch
+    hyfetch
     # Just editor to build the system
     just
     just-lsp
