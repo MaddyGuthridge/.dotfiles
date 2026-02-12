@@ -25,7 +25,7 @@ python.compile = false
 # COMP1531
 # --------
 
-node = "20"
+node = "24"
 "npm:tsx" = "latest"
 # DCC (COMP1511 compiler)
 "github:COMP1511UNSW/dcc" = { version = "latest", asset_pattern = "dcc" }
