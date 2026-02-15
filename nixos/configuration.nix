@@ -61,8 +61,9 @@ in
     ];
   };
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Currently pinning to 6.18 until Nvidia driver issues are resolved.
+  # https://github.com/NixOS/nixpkgs/issues/489947
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
