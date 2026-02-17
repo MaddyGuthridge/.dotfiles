@@ -33,14 +33,6 @@ in
       options = ["nofail"];
     };
 
-    # Fingerprint sensor
-    # While I wait for https://github.com/NixOS/nixos-hardware/pull/1761
-    services.fprintd = {
-      enable = true;
-      tod.enable = true;
-      tod.driver = pkgs.libfprint-2-tod1-goodix;
-    };
-
     # Disable fingerprint for sudo and Gnome Polkit, as they mean I cannot enter a
     # password unless I first fail the fingerprint scan 3 times. Very annoying.
     # https://github.com/NixOS/nixpkgs/issues/171136
