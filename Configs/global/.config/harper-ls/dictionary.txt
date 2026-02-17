@@ -1,8 +1,11 @@
 COMP1010
+COMP2511
 Maddy
+Maddy's
 PyHTML
 Supercalifragilisticexpialidocious
 UNSW
+UNSW's
 comparator
 env
 python3
