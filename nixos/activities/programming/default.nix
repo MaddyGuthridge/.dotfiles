@@ -29,6 +29,8 @@
     eyedropper
     bat
     gh # GitHub CLI
+    # Firefox webdriver
+    geckodriver
   ];
 
   # Fix uv python ssl.SSLCertVerificationError
