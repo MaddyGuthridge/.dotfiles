@@ -37,6 +37,9 @@
   },
   "icon_theme": "Catppuccin Latte",
   "terminal": {
+    // "shell": {
+    //   "program": "nu"
+    // },
     "cursor_shape": "bar",
     "dock": "right",
     "max_scroll_history_lines": 100000,
