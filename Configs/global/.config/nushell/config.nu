@@ -16,12 +16,12 @@
 # You can also pretty-print and page through the documentation for configuration
 # options using:
 #     config nu --doc | nu-highlight | less -R
-#
-use ~/.dotfiles/nu/motd.nu
+
+use ~/.dotfiles/shell/nu/motd.nu
 # Editor config
-use ~/.dotfiles/nu/apps.nu
+use ~/.dotfiles/shell/nu/apps.nu
 # Git aliases
-use ~/.dotfiles/nu/g.nu
+use ~/.dotfiles/shell/nu/g.nu *
 
 $env.config.show_banner = false
 
@@ -31,3 +31,7 @@ apps editor configure
 # Common aliases
 alias c = clear
 $env.GCC_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+
+# Mise integration
+mkdir ($nu.data-dir | path join "vendor/autoload")
+^mise activate nu | save -f ($nu.data-dir | path join "vendor/autoload/mise.nu")

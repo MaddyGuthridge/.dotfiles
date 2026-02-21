@@ -125,8 +125,6 @@ if [ $? -eq 0 ]; then
 fi
 
 # Source all the sources
-for file in $DOTFILES/Sources/* ; do
-  if [ -x "$file" ] ; then
-    source "$file"
-  fi
+for file in $DOTFILES/shell/sh/* ; do
+  source "$file"
 done
