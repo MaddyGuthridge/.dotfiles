@@ -8,6 +8,8 @@ Become Maddy by stealing her dotfiles.
 
 1. `git clone` the repo to your `$HOME` directory
 2. `just rebuild`
+3. `mise x cargo:tuckr -- tuckr set --only-files global $(hostname)`
+   to set up all dotfiles.
 
 ### Other systems
 
@@ -40,13 +42,15 @@ there, you can refer to its documentation to make any changes you desire.
 
 ## What's what
 
-* [`Sources`](./Sources): Sourced files for Bash and ZSH
+* [`shell`](./shell): Shell configurations
 
 * [`Docs`](./Docs): Documentation and setup instructions for various things.
 
 * [`Configs`](./Configs): Configuration files, organised by install target.
 
 * [`Hooks`](./Hooks): Setup hooks.
+
+* [`nixos`](./nixos): My NixOS config.
 
 * [`Other`](./Other): Other stuff, mostly old configs which I don't use
   currently.
