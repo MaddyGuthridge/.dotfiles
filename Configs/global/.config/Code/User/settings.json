@@ -53,6 +53,12 @@
     "[json]": {
         "editor.tabSize": 2,
     },
+    "[java]": {
+        "editor.rulers": [
+            // Java moment
+            120
+        ],
+    },
     "[mips]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 8,
