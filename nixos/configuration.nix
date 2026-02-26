@@ -8,12 +8,6 @@
   lib,
   ...
 }:
-
-let
-  # Add the unstable channel declaratively
-  nixosUnstable = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-  nixos2505 = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-25.05.tar.gz";
-in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -28,10 +22,7 @@ in
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
-      unstable = import nixosUnstable {
-        config = config.nixpkgs.config;
-      };
-      nixos2505 = import nixos2505 {
+      unstable = import <nixos-unstable> {
         config = config.nixpkgs.config;
       };
     };
