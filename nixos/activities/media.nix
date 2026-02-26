@@ -18,7 +18,13 @@ in
     "sg"
   ];
   environment.systemPackages = with pkgs; [
-    unstable.makemkv
+    # Currently, MakeMKV servers are down, meaning that rebuilds would fail due
+    # to attempting to download the makemkv-bin-1.18.3.tar.gz file, and
+    # receiving an incomplete and corrupted copy. As such, I am directly
+    # referencing the installed package in order to avoid rebuilding the
+    # existing package.
+    # makemkv
+    (builtins.storePath "/nix/store/7rr30kilhbac4s86zy27s5xc756a5dm9-makemkv-1.18.3/")
     vlcBd
     # Unstable -> get v2.0.0, which isn't backported to 25.11 yet
     unstable.jellyfin-media-player
