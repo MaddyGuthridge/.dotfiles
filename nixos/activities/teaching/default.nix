@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     # UML and C4 modelling
-    unstable.gaphor
+    gaphor
     # Remote access to CSE
     tigervnc
     # Presentations
