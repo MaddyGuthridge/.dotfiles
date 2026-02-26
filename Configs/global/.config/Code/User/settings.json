@@ -441,4 +441,14 @@
     "chat.disableAIFeatures": true,
     "testing.automaticallyOpenTestResults": "openOnTestFailure",
     "harper.dialect": "Australian",
+    "sshfs.configs": [
+        {
+            "name": "cse",
+            "host": "login.cse.unsw.edu.au",
+            "username": "maddyg",
+            "privateKeyPath": "$HOME/.ssh/id_ed25519",
+            "root": "/home/maddyg"
+        }
+    ],
+    "window.confirmSaveUntitledWorkspace": false,
 }
