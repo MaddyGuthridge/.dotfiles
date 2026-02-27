@@ -31,6 +31,8 @@
     gh # GitHub CLI
     # Firefox webdriver
     geckodriver
+    # Chromium for testing websites
+    ungoogled-chromium
   ];
 
   # Fix uv python ssl.SSLCertVerificationError

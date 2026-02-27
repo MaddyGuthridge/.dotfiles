@@ -8,6 +8,7 @@ UNSW
 UNSW's
 comparator
 env
+js
 python3
 stdin
 stdout
