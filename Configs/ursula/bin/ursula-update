@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+sudo dnf upgrade
+
+# Update docker containers
+cd ~/Harbour && git pull
+cd ~/Harbour/beszel && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/bnuuy-time && git pull && docker compose build && docker compose down && docker compose up -d
+cd ~/Harbour/comp1010 && git pull && docker compose build && docker compose down && docker compose up -d
+# cd ~/Harbour/first-mate && git pull && docker compose build && docker compose down && docker compose up -d
+cd ~/Harbour/Jellyfin && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/MaddyGuthridge.com && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/Minecraft && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/Minifolio-Docs && docker compose pull && docker compose down && docker compose up -d
+# cd ~/Harbour/Nextcloud && docker compose pull && docker compose down && docker compose up -d=
+cd ~/Harbour/transcoded && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/Uptime && docker compose pull && docker compose down && docker compose up -d
+cd ~/Harbour/uuid && git pull && docker compose build && docker compose down && docker compose up -d
+
+echo "\n\n\n"
+echo "Update complete! Rebooting..."
+
+sudo reboot
