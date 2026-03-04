@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # cse
 # SSH into CSE systems, or warn if we're already there
 #
