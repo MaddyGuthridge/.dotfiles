@@ -170,6 +170,8 @@
     # Just editor to build the system
     just
     just-lsp
+    # VPN
+    protonvpn-gui
   ];
 
   # Make AppImages runnable
