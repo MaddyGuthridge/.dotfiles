@@ -130,6 +130,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      # I am specifically not in the "docker" group, as that is equivalent to
+      # being root.
     ];
   };
 

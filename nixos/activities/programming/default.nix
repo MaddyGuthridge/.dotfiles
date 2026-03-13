@@ -2,7 +2,7 @@
 {
   imports = [
     ./c.nix
-    ./docker.nix
+    ./containers.nix
     ./nix.nix
     ./zsh.nix
   ];
