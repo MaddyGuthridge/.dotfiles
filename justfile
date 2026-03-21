@@ -15,8 +15,8 @@ rebuild: copy-config
 
 # Update nix-channel both for root and for my user
 update: && rebuild mise-update
-    nix-channel --update
     sudo nix-channel --update
+    nix-channel --update
 
 # Repair the nix store if things break
 repair:
