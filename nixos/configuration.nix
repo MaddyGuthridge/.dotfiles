@@ -141,6 +141,7 @@
     enable = true;
     libraries = with pkgs; [
       glibc.static
+      libxext
     ];
   };
 
@@ -157,18 +158,20 @@
     # The Nano editor is also installed by default.
     wget
     zsh
-    usbutils
     git
     hack-font
     unstable.cloudflared
     zip
-    unstable.mission-center
-    file
-    iperf
     jq
     wineWowPackages.stableFull
     fastfetch
     hyfetch
+    # Debugging tools
+    dig
+    file
+    iperf
+    unstable.mission-center
+    usbutils
     # Just editor to build the system
     just
     just-lsp

@@ -116,6 +116,7 @@
         79
     ],
     "python.languageServer": "Pylance",
+    "python-envs.terminal.autoActivationType": "shellStartup",
     "editor.autoClosingOvertype": "always",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "workbench.editor.focusRecentEditorAfterClose": false,
