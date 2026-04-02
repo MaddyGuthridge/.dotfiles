@@ -52,9 +52,7 @@
     ];
   };
 
-  # Currently pinning to 6.18 until Nvidia driver issues are resolved.
-  # https://github.com/NixOS/nixpkgs/issues/489947
-  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -142,6 +140,11 @@
     libraries = with pkgs; [
       glibc.static
       libxext
+      libx11
+      libxrender
+      libxtst
+      libxi
+      libxft
     ];
   };
 
