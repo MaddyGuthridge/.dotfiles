@@ -174,6 +174,7 @@
     unstable.cloudflared
     zip
     jq
+    ripgrep
     wineWowPackages.stableFull
     fastfetch
     hyfetch
