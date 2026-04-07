@@ -145,6 +145,15 @@
       libxtst
       libxi
       libxft
+      freetype
+    ];
+  };
+
+  fonts = {
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+    packages = with pkgs; [
+      hack-font
     ];
   };
 
@@ -162,13 +171,13 @@
     wget
     zsh
     git
-    hack-font
     unstable.cloudflared
     zip
     jq
     wineWowPackages.stableFull
     fastfetch
     hyfetch
+    gnome-power-manager
     # Debugging tools
     dig
     file

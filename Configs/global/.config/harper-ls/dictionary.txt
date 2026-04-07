@@ -15,6 +15,7 @@ UNIX
 UNSW
 UNSW's
 Zelda
+cardinalities
 comparator
 comparators
 cse
@@ -27,6 +28,7 @@ python3
 slopsquatting
 stdin
 stdout
+subclasses
 todo
 unrepresentable
 usr

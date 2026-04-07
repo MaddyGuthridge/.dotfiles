@@ -54,9 +54,11 @@
         "editor.tabSize": 2,
     },
     "[java]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
         "editor.rulers": [
             // Java moment
-            120
+            130
         ],
     },
     "[mips]": {
@@ -343,7 +345,6 @@
     "auto-comment-blocks.disabledLanguages": [
         "JavaScript"
     ],
-    "window.menuBarVisibility": "visible",
     "workbench.preferredLightColorTheme": "Quiet Light",
     "git.branchPrefix": "maddy-",
     "editor.selectionClipboard": false,
@@ -421,7 +422,6 @@
     "eslint.codeActionsOnSave.mode": "problems",
     "eslint.run": "onSave",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "SynthWave '84",
     "svelte.enable-ts-plugin": true,
     "eslint.validate": [
         "js",
@@ -452,4 +452,9 @@
         }
     ],
     "window.confirmSaveUntitledWorkspace": false,
+    "workbench.preferredDarkColorTheme": "SynthWave '84",
+    "cSpell.userWords": [
+        "Guthridge",
+        "Maddy"
+    ],
 }
