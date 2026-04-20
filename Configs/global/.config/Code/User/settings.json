@@ -458,4 +458,5 @@
         "Maddy"
     ],
     "cSpell.language": "en-GB",
+    "autoDocstring.docstringFormat": "numpy",
 }
