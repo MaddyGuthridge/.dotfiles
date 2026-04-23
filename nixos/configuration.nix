@@ -188,7 +188,7 @@
     dig
     file
     iperf
-    unstable.mission-center
+    resources
     usbutils
     # Just editor to build the system
     just
