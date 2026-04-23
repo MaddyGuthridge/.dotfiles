@@ -19,14 +19,15 @@ cd ~/Harbour/transcoded && docker compose pull && docker compose down && docker 
 cd ~/Harbour/Uptime && docker compose pull && docker compose down && docker compose up -d
 cd ~/Harbour/uuid && git pull && docker compose build && docker compose down && docker compose up -d
 
-echo "\n\n\n"
+echo -e "\n\n\n"
 echo "Waiting for systemd-inhibit tasks to finish..."
 
 while systemd-inhibit --list --mode=block --what=shutdown | grep "block"; do
     echo "."
+    sleep 1
 done
 
-echo "\n\n\n"
+echo -e "\n\n\n"
 echo "Update complete!"
 
 sudo reboot
