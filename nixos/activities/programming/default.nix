@@ -29,10 +29,12 @@
     eyedropper
     bat
     gh # GitHub CLI
-    # Firefox webdriver
-    geckodriver
-    # Chromium for testing websites
+    # Additional web browsers for testing
     ungoogled-chromium
+    ladybird
+    # Webdrivers
+    geckodriver
+    chromedriver
   ];
 
   # Fix uv python ssl.SSLCertVerificationError
