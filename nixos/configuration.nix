@@ -240,6 +240,9 @@
     interval = "daily";
   };
 
+  # Enable debuginfod to get stack traces on crash
+  environment.enableDebugInfo = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
