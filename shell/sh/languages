@@ -8,6 +8,12 @@
 # projects I open (which are just for marking)
 export GRADLE_OPTS="-Dorg.gradle.daemon=false"
 
-if command -pv mise &> /dev/null; then
-    eval "$(mise activate zsh)"
+if command -v mise &> /dev/null; then
+    if [ -n "$BASH" ]; then
+        eval "$(mise activate bash)"
+    elif [ -n "$ZSH_NAME" ]; then
+        eval "$(mise activate zsh)"
+    else
+        echo "Not running in Bash or ZSH, cannot activate mise"
+    fi
 fi
