@@ -24,5 +24,4 @@ repair:
 
 # Update tools installed using mise
 mise-update:
-    export MISE_GITHUB_TOKEN=$(gh auth token)
-    mise upgrade
+    MISE_GITHUB_TOKEN=$(gh auth token) mise upgrade
