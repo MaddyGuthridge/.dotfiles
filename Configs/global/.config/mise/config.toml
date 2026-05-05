@@ -60,7 +60,7 @@ deno = "latest"
 
 # And PNPM, which is worse, but potentially useful when I want it to be
 # NPM-alike
-pnpm = "latest"
+"github:pnpm/pnpm" = "latest"
 
 # Docker
 # ------
