@@ -459,4 +459,5 @@
     ],
     "cSpell.language": "en-GB",
     "autoDocstring.docstringFormat": "numpy",
+    "workbench.editor.useModal": "off",
 }
