@@ -13,6 +13,7 @@
     ghostty
     # Text editors
     unstable.vscode
+    unstable.vscodium
     unstable.zed-editor
     # zed is zeditor
     (pkgs.writeShellScriptBin "zed" "exec -a $0 ${unstable.zed-editor}/bin/zeditor $@")
