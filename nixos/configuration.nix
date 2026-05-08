@@ -181,6 +181,7 @@
     unstable.cloudflared
     zip
     jq
+    tree
     ripgrep
     wineWowPackages.stableFull
     fastfetch
