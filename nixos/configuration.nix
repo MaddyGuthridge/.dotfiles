@@ -18,6 +18,8 @@
     ./environments/gnome.nix
     # Include activities
     ./activities
+    # Mitigate dirtyfrag vulnerability
+    ./dirtyfrag.nix
   ];
 
   nixpkgs.config = {
