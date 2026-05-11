@@ -1,30 +1,76 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 # Copies the SSH public keys for whoever owns this script into the
 # authorized_keys file for whoever runs it
 
-set -euo pipefail
+import os
+import sys
+from glob import glob
+from pathlib import Path
 
-# Add my bin to path to allow for executing other commands
-file=$(realpath "$BASH_SOURCE")
-authorized_user=$(ls -ld "${file}" | awk '{print $3}')
-export PATH="$PATH:$(echo ~$authorized_user)/bin"
+this_file = Path(__file__)
+user_to_authorize = this_file.owner()
+whoami = os.getlogin()
 
-authorizer=$USER
 
-echo "This script will authorize the user $authorized_user to access the user $authorizer using SSH."
-echo "DO NOT RUN THIS SCRIPT UNLESS YOU TRUST $authorized_user with full access to the account $authorizer!!!"
-echo
+def help():
+    print(__file__)
+    print(f"Grants SSH access to user {user_to_authorize}")
+    print()
+    print("Options:")
+    print("  --dryrun -d   Don't perform the operation, instead print what")
+    print("                would have happened.")
+    print("  --help -h     Display this message.")
+    exit(1)
 
-confirm "Grant $authorized_user SSH access to account $authorizer? "
 
-files=~$authorized_user/.ssh/id_*.pub
+if "--help" in sys.argv or "-h" in sys.argv:
+    help()
 
-# Add all keys to their authorized_keys file
-for filename in $files; do
-    if [[ $filename == "~$authorized_user/.ssh/id_*.pub" ]]; then
-        echo "Error: no keys found"
-        exit 1
-    fi
-    echo "Add key" $filename
-    cat $filename >> $HOME/.ssh/authorized_keys
-done
+dryrun = user_to_authorize == whoami or "-d" in sys.argv or "--dryrun" in sys.argv
+
+if not dryrun:
+    print(f"""
+    
+                                WARNING!!!
+                                ==========
+    
+    This script will grant the user '{user_to_authorize}' access to user 
+    '{whoami}' over SSH.
+    
+    Do not run this script unless you trust {user_to_authorize} with full 
+    access to the account {whoami}!
+    
+    """)
+    
+    if input(f"Grant access to {user_to_authorize}? (y/N): ").lower()[0] != "y":
+        print("Exiting without changes")
+        exit(2)
+    authorized_keys = open(Path(whoami) / ".ssh" / "authorized_keys", "a")
+else:
+    print(f"Dryrun of granting {user_to_authorize} SSH access to {whoami}.")
+    print("No changes will be made.")
+    authorized_keys = sys.stdout
+
+try:
+    ssh_glob = Path(f"~{user_to_authorize}/.ssh").expanduser() / "id_*.pub"
+    ssh_keys = glob(str(ssh_glob))
+except Exception as e:
+    print("Error globbing SSH keys:")
+    print(e)
+    exit(3)
+
+read_error = False
+
+for keyfile in ssh_keys:
+    try:
+        key = open(keyfile).read().strip()
+        print(f"+ {keyfile}")
+        authorized_keys.write(f"{key}\n")
+    except Exception as e:
+        print(f"Unable to read keyfile {keyfile}:")
+        print(e)
+        read_error = True
+
+
+if read_error:
+    exit(4)

@@ -356,7 +356,7 @@
     "editor.minimap.enabled": false,
     "screencastMode.fontSize": 32,
     "screencastMode.onlyKeyboardShortcuts": true,
-    "rust-analyzer.checkOnSave.command": "clippy",
+    // "rust-analyzer.checkOnSave.command": "clippy",
     "python.testing.pytestEnabled": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "diffEditor.ignoreTrimWhitespace": false,
