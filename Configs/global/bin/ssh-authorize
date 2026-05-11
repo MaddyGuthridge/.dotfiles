@@ -45,7 +45,7 @@ if not dryrun:
     if input(f"Grant access to {user_to_authorize}? (y/N): ").lower()[0] != "y":
         print("Exiting without changes")
         exit(2)
-    authorized_keys = open(Path(whoami) / ".ssh" / "authorized_keys", "a")
+    authorized_keys = open(Path.home() / ".ssh" / "authorized_keys", "a")
 else:
     print(f"Dryrun of granting {user_to_authorize} SSH access to {whoami}.")
     print("No changes will be made.")
