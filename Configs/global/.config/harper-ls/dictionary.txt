@@ -29,11 +29,13 @@ python3
 slopsquatting
 stdin
 stdout
+stocktake
 subclasses
 synthwave
 todo
 unrepresentable
 usr
+webpage
 yoink
 z1234567
 zID
