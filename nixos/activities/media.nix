@@ -23,5 +23,6 @@ in
     jellyfin-desktop
     mkvtoolnix
     handbrakeBd
+    yt-dlp
   ];
 }
