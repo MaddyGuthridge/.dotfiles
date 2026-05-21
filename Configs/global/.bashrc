@@ -41,6 +41,13 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# Source all the sources
+# This is done before setting the prompt to ensure that the prompt is colourful
+# in cases where we had to adjust terminal settings.
+for file in $DOTFILES/shell/sh/* ; do
+  source "$file"
+done
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -118,8 +125,3 @@ if [ `which powerline-daemon 2> /dev/null` ]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bindings/bash/powerline.sh
 fi
-
-# Source all the sources
-for file in $DOTFILES/shell/sh/* ; do
-  source "$file"
-done
