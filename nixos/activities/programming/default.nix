@@ -5,6 +5,7 @@
     ./containers.nix
     ./nix.nix
     ./zsh.nix
+    ./zed.nix
   ];
   environment.systemPackages = with pkgs; [
     # Software management
@@ -14,9 +15,6 @@
     # Text editors
     unstable.vscode
     unstable.vscodium
-    unstable.zed-editor
-    # zed is zeditor
-    (pkgs.writeShellScriptBin "zed" "exec -a $0 ${unstable.zed-editor}/bin/zeditor $@")
     # API clients
     insomnia
     unstable.bruno
