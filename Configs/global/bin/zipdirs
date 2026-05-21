@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # https://www.baeldung.com/linux/zip-multiple-directories-individual-files#using-a-shell-script
 
 # Change to the primary directory
