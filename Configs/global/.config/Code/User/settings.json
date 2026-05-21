@@ -12,7 +12,6 @@
     "[python]": {
         "editor.tabSize": 4,
         "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.autopep8",
     },
     "[javascript]": {
         "editor.tabSize": 2,
@@ -351,7 +350,6 @@
     "editor.guides.bracketPairs": "active",
     "editor.guides.highlightActiveBracketPair": false,
     "redhat.telemetry.enabled": true,
-    "typescript.updateImportsOnFileMove.enabled": "always",
     "jest.runMode": "on-demand",
     "editor.minimap.enabled": false,
     "screencastMode.fontSize": 32,
@@ -376,7 +374,6 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "lldb.suppressUpdateNotifications": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
     "jest.outputConfig": {
         "revealOn": "error",
         "revealWithFocus": "test-results",
@@ -418,7 +415,6 @@
             "indent": 4
         },
     },
-    "typescript.enablePromptUseWorkspaceTsdk": true,
     "eslint.codeActionsOnSave.mode": "problems",
     "eslint.run": "onSave",
     "window.autoDetectColorScheme": true,
@@ -431,7 +427,7 @@
     "workbench.colorTheme": "SynthWave '84",
     "terminal.integrated.cwd": "${workspaceFolder}",
     "terminal.integrated.scrollback": 10000,
-    "javascript.preferences.autoImportFileExcludePatterns": [
+    "js/ts.preferences.autoImportFileExcludePatterns": [
         "node:test"
     ],
     "window.customTitleBarVisibility": "auto",
@@ -460,4 +456,8 @@
     "cSpell.language": "en-GB",
     "autoDocstring.docstringFormat": "numpy",
     "workbench.editor.useModal": "off",
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "update.mode": "none",
+    "extensions.autoUpdate": false,
+    "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 }
