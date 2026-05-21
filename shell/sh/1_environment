@@ -17,10 +17,15 @@ if [ -z "$TERM_PROGRAM" ]; then
     fi
 fi
 
+# If terminfo is not available for ghostty, set it to be an xterm
+infocmp 2>&1 > /dev/null || ([ $TERM = xterm-ghostty ] && export TERM=xterm)
+
 # Set up editor variable
 # If terminal is running in VS Code, use it as the editor
 if [[ $TERM_PROGRAM = "vscode" ]]; then
     export EDITOR='code --wait'
+elif [[ $TERM_PROGRAM = "zed" ]]; then
+    export EDITOR='zed --wait'
 else
     export EDITOR='nano'
 fi
