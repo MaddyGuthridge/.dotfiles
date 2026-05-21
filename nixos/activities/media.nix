@@ -24,5 +24,6 @@ in
     mkvtoolnix
     handbrakeBd
     yt-dlp
+    imagemagick
   ];
 }
