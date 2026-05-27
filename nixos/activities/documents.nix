@@ -4,5 +4,6 @@
     unstable.obsidian
     libreoffice-qt6-fresh
     pinta
+    file-roller
   ];
 }
