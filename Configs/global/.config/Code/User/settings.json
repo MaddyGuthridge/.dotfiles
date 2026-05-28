@@ -460,4 +460,5 @@
     "update.mode": "none",
     "extensions.autoUpdate": false,
     "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
 }
