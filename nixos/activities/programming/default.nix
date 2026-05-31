@@ -6,6 +6,7 @@
     ./nix.nix
     ./zsh.nix
     ./zed.nix
+    ./vm.nix
   ];
   environment.systemPackages = with pkgs; [
     # Software management
