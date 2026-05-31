@@ -13,7 +13,7 @@
     unstable.mise
     # Terminal emulators
     ghostty
-    ratty
+    unstable.ratty
     # Text editors
     unstable.vscode
     unstable.vscodium
