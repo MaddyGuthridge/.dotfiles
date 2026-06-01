@@ -14,9 +14,13 @@ rebuild: copy-config
     nh os switch -f '<nixpkgs/nixos>' -a -t
 
 # Update nix-channel both for root and for my user
-update: && rebuild mise-update
+update: && mise-update
     sudo nix-channel --update
     nix-channel --update
+    # -f  =>  use whatever channel is configured for "nixos"
+    # -a  =>  prompt for confirmation
+    # -t  =>  show traces
+    nh os boot -f '<nixpkgs/nixos>' -a -t
 
 # Repair the nix store if things break
 repair:

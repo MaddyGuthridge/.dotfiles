@@ -32,7 +32,8 @@
     gh # GitHub CLI
     # Additional web browsers for testing
     ungoogled-chromium
-    ladybird
+    # Ladybird currently does not build on 26.05
+    # ladybird
     # Webdrivers
     geckodriver
     chromedriver

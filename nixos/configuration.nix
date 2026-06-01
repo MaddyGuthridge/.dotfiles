@@ -181,7 +181,7 @@
     jq
     tree
     ripgrep
-    wineWowPackages.stableFull
+    wineWow64Packages.stableFull
     fastfetch
     hyfetch
     gnome-power-manager
@@ -195,7 +195,7 @@
     just
     just-lsp
     # VPN
-    protonvpn-gui
+    proton-vpn
   ];
 
   # Make AppImages runnable

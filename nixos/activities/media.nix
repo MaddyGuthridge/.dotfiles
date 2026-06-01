@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 let
 
-  # https://discourse.nixos.org/t/new-to-nixos-and-cant-play-blu-rays/62560/5
-  # https://github.com/NixOS/nixpkgs/issues/75646#issuecomment-1832829819
-  libbluray = pkgs.libbluray.override {
-    withAACS = true;
-    withBDplus = true;
-    withJava = true;
-  };
-  vlcBd = pkgs.vlc.override { inherit libbluray; };
-  handbrakeBd = pkgs.handbrake.override { inherit libbluray; };
+  # # https://discourse.nixos.org/t/new-to-nixos-and-cant-play-blu-rays/62560/5
+  # # https://github.com/NixOS/nixpkgs/issues/75646#issuecomment-1832829819
+  # libbluray = pkgs.libbluray.override {
+  #   withAACS = true;
+  #   withBDplus = true;
+  #   withJava = true;
+  # };
+  # vlcBd = pkgs.vlc.override { inherit libbluray; };
+  # handbrakeBd = pkgs.handbrake.override { inherit libbluray; };
 in
 {
   boot.kernelModules = [
@@ -18,11 +18,14 @@ in
     "sg"
   ];
   environment.systemPackages = with pkgs; [
+    vlc
+    # vlcBd
+    handbrake
+    # handbrakeBd
+    # Keep above non-overridden until I fix build issues.
     makemkv
-    vlcBd
     jellyfin-desktop
     mkvtoolnix
-    handbrakeBd
     yt-dlp
     imagemagick
   ];
