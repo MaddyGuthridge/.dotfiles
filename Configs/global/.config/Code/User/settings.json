@@ -57,7 +57,7 @@
         "editor.tabSize": 4,
         "editor.rulers": [
             // Java moment
-            130
+            120
         ],
     },
     "[mips]": {
@@ -451,7 +451,8 @@
     "workbench.preferredDarkColorTheme": "SynthWave '84",
     "cSpell.userWords": [
         "Guthridge",
-        "Maddy"
+        "Maddy",
+        "nums"
     ],
     "cSpell.language": "en-GB",
     "autoDocstring.docstringFormat": "numpy",
