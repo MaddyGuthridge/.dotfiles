@@ -24,7 +24,9 @@ in
     # handbrakeBd
     # Keep above non-overridden until I fix build issues.
     makemkv
-    jellyfin-desktop
+    # Pinning to 25.11 due to visual glitches in 25.06
+    # https://github.com/NixOS/nixpkgs/issues/519073
+    nixos2511.jellyfin-desktop
     mkvtoolnix
     yt-dlp
     imagemagick

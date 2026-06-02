@@ -27,6 +27,9 @@
       unstable = import <nixos-unstable> {
         config = config.nixpkgs.config;
       };
+      nixos2511 = import <nixos-25.11> {
+        config = config.nixpkgs.config;
+      };
     };
   };
 
