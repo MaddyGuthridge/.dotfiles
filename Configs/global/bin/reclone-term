@@ -59,7 +59,11 @@ main() {
     # Back up
     mv "$REPO" "$REPO.bak"
     # Attempt to clone new repo, but restore backup if it failed
-    git clone "$NEW_ORIGIN" "$REPO" || (mv "$REPO.bak" "$REPO" && exit 4)
+    git clone "$NEW_ORIGIN" "$REPO" || {
+        mv "$REPO.bak" "$REPO"
+        echo "Failed to clone new repo. Restored previous contents."
+        exit 4
+    }
     # If it succeeded, remove the backup
     rm -rf "$REPO.bak"
 }
