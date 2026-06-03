@@ -1,0 +1,274 @@
+{
+  // Editor
+  // ======
+
+  // Auto-save, and basic tidy-ups on save
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Interaction
+  // -----------
+
+  // Ctrl+Click for multi-selection is the standard everywhere else
+  "editor.multiCursorModifier": "ctrlCmd",
+  // Don't put selection into clipboard (terrible Linux feature)
+  "editor.selectionClipboard": false,
+  // Overtype when a closing bracket was auto-completed
+  "editor.autoClosingOvertype": "always",
+  // Only tab for auto-completion
+  "editor.acceptSuggestionOnEnter": "off",
+  // Continue offering suggestions when filling out a snippet
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  // Also apply Ctrl+/ comment shortcut to empty lines
+  "editor.comments.ignoreEmptyLines": false,
+  // Improve scrolling behaviour
+  "scrollFaster.cursorFollowsScroll": true,
+  // Spell checker
+  "cSpell.language": "en-GB",
+
+  // Display
+  // -------
+
+  // Bracket pair colours
+  "editor.guides.bracketPairs": "active",
+  // But don't highlight activate bracket pair
+  "editor.guides.highlightActiveBracketPair": false,
+  // No minimap
+  "editor.minimap.enabled": false,
+  // Inlay hints are so freaking annoying
+  "editor.inlayHints.enabled": "offUnlessPressed",
+
+  // Explorer
+  // ========
+
+  // Don't confirm for basic file management, since I can always Ctrl+Z
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Hide unhelpful files
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.*_cache": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.venv": true,
+    "**/*.class": true,
+    "**/*.egg-info": true,
+    "**/node_modules": true,
+  },
+  "explorer.autoRevealExclude": {
+    "**/.env": true,
+    "**/.venv": true,
+  },
+
+  // Git
+  // ===
+
+  "git.branchPrefix": "maddy-",
+  "git.ignoreMissingGitWarning": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.autofetch": true,
+  // I know that "sync" means "pull and push"
+  "git.confirmSync": false,
+  // If nothing staged, commit everything
+  "git.enableSmartCommit": true,
+  // I can live with a rebase
+  "git.ignoreRebaseWarning": true,
+  // The three-pane diff editor never made sense to me
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.maxComputationTime": 0,
+
+  // Terminal
+  // ========
+  // Please no powershell I am begging
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // I have enough RAM to handle this amount of scrollback
+  "terminal.integrated.scrollback": 10000,
+
+  // Testing panel
+  // =============
+  // Only open it if something went wrong
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.openTesting": "openOnTestFailure",
+
+  // UI
+  // ==
+  // Full-screen
+  "window.newWindowDimensions": "maximized",
+  // Start empty so I don't get sidetracked
+  "window.restoreWindows": "none",
+  "workbench.startupEditor": "none",
+  // Don't close my command palette when I switch windows
+  "workbench.quickOpen.closeOnFocusLost": false,
+  // When I close tabs, focus an adjacent tab
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  // I prefer Ctrl+W
+  "workbench.editor.tabActionCloseVisibility": false,
+  // I don't use workspaces, so this prompt just annoys me
+  "window.confirmSaveUntitledWorkspace": false,
+  // I do not like the settings modal
+  "workbench.editor.useModal": "off",
+  // Disable AI slop
+  "chat.disableAIFeatures": true,
+  // Hide the remnants of the AI slop
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // Disable automatic updates
+  "update.mode": "none",
+  "extensions.autoUpdate": false,
+
+  // Aesthetics
+  // ==========
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "SynthWave '84",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.cursorStyle": "line",
+  "editor.fontFamily": "'hack', 'Droid Sans Mono', 'monospace', monospace",
+  // Smooth animations
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+
+  "workbench.colorCustomizations": {
+    // Disable labelling infos in the scrollbar
+    "editorOverviewRuler.infoForeground": "#00000000",
+  },
+
+  // Remote development
+  // ==================
+  "sshfs.configs": [
+    {
+      "name": "cse",
+      "host": "login.cse.unsw.edu.au",
+      "username": "z5312085",
+      "privateKeyPath": "$HOME/.ssh/id_ed25519",
+      "root": "/home/z5312085",
+    },
+  ],
+
+  // Language-specifics
+  // ==================
+
+  // JavaScript
+  // ----------
+  // Enable ESLint as a formatter
+  "eslint.format.enable": true,
+  "eslint.validate": ["js", "ts", "svelte"],
+  // Don't suggest importing from `node:test`, since I almost always use vitest.
+  "js/ts.preferences.autoImportFileExcludePatterns": ["node:test"],
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.rulers": [100],
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100],
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.rulers": [100],
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100],
+  },
+
+  // Svelte
+  // ======
+  "svelte.enable-ts-plugin": true,
+  // Single quotes please
+  "svelte.plugin.svelte.format.config.singleQuote": true,
+  "[svelte]": {
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.tabSize": 2,
+    "editor.rulers": [100],
+  },
+
+  // HTML
+  // ----
+  // When a tag is edited, also edit the other part of the pair
+  "editor.linkedEditing": true,
+  // Don't show a popup when live server is opened
+  "liveServer.settings.donotShowInfoMsg": true,
+  // Allow custom HTML tags
+  "liveServer.settings.donotVerifyTags": true,
+  "[html]": {
+    "editor.tabSize": 2,
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "compactBooleanAttributes": true,
+    },
+    "javascriptreact": {
+      // Does this work?
+      "compactBooleanAttributes": true,
+    },
+    "typescriptreact": {
+      // Does this work?
+      "compactBooleanAttributes": true,
+    },
+  },
+
+  // Rust
+  // ----
+  // Don't notify me when lldb can be updated
+  "lldb.suppressUpdateNotifications": true,
+
+  // Java
+  // ----
+  // Gradle wrappers cause me nothing but pain
+  "java.import.gradle.wrapper.enabled": false,
+  // Don't send Red Hat my data
+  "redhat.telemetry.enabled": false,
+  // When I use code-gen refactors, add todo comments automatically
+  "java.codeGeneration.generateComments": true,
+  "[java]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.rulers": [120], // Java moment
+  },
+
+  // Python
+  // ======
+  // Tell me data types when I hold Ctrl+Alt
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.autoFormatStrings": true,
+  // Docstring generation
+  "autoDocstring.generateDocstringOnEnter": false,
+  "autoDocstring.includeExtendedSummary": true,
+  // I use numpy-style docstrings
+  "autoDocstring.docstringFormat": "numpy",
+  // Activate venv on shell startup, otherwise it'll irreverently kill random
+  // processes.
+  "python-envs.terminal.autoActivationType": "shellStartup",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  // Other stuff
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnType": true,
+    "editor.rulers": [79],
+  },
+
+  // Config files and the like
+  // -------------------------
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+}
