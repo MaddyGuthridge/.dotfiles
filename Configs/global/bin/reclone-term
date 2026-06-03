@@ -33,8 +33,8 @@ main() {
     ORIGIN=$(git -C "$REPO" remote get-url origin)
 
     # I love sed expressions this totally doesn't melt my brain
-    OLD_TERM=$(echo $ORIGIN | sed -nE -e 's/.*\/([0-9][0-9]T[0-3])\/.*/\1/p')
-    NEW_ORIGIN=$(echo $ORIGIN | sed -nE -e "s/\\/([0-9][0-9]T[0-3])\\//\\/$NEW_TERM\\//p")
+    OLD_TERM=$(echo $ORIGIN | sed -nE -e 's/.*\/([0-9][0-9][Tt][0-3])\/.*/\1/p')
+    NEW_ORIGIN=$(echo $ORIGIN | sed -nE -e "s/\\/([0-9][0-9][Tt][0-3])\\//\\/$NEW_TERM\\//p")
 
     if [ -z "$OLD_TERM" ]; then
         echo "Given git repo does not have term number in origin URL"
