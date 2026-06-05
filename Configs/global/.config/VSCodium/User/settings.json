@@ -93,6 +93,7 @@
   // Only open it if something went wrong
   "testing.automaticallyOpenPeekView": "never",
   "testing.openTesting": "openOnTestFailure",
+  "testing.automaticallyOpenTestResults": "openOnTestFailure",
 
   // UI
   // ==
