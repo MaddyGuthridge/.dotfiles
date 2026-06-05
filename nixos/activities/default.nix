@@ -10,4 +10,8 @@
     ./music.nix
     ./streaming.nix
   ];
+
+  environment.systemPackages = [
+    (pkgs.callPackage ./fortune { })
+  ];
 }
