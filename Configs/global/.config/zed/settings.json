@@ -9,19 +9,19 @@
 {
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent": {
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
     "tree_view": true,
-    "dock": "left"
+    "dock": "left",
   },
   "diagnostics": {
     // Only show inline diagnostics for errors
@@ -168,6 +168,10 @@
       "formatter": [],
       "wrap_guides": [100],
       "tab_size": 2,
+    },
+    "CSS": {
+      "tab_size": 2,
+      "wrap_guides": [100],
     },
   },
 
