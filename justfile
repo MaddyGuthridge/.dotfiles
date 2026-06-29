@@ -6,12 +6,18 @@ default:
 copy-config:
     sudo cp -r ./nixos/* /etc/nixos
 
+switch: copy-config
+    # -f  =>  use whatever channel is configured for "nixos"
+    # -a  =>  prompt for confirmation
+    # -t  =>  show traces
+    nh os switch -f '<nixpkgs/nixos>' -a -t
+
 # Rebuild NixOS using the updated config
 rebuild: copy-config
     # -f  =>  use whatever channel is configured for "nixos"
     # -a  =>  prompt for confirmation
     # -t  =>  show traces
-    nh os switch -f '<nixpkgs/nixos>' -a -t
+    nh os boot -f '<nixpkgs/nixos>' -t
 
 # Update nix-channel both for root and for my user
 update: && mise-update
