@@ -13,4 +13,9 @@ in
     nextcloud-client
     zenBrowser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser
   ];
+
+  # Required for signal-desktop
+  nixpkgs.config.permittedInsecurePackages = [
+    "pnpm-10.29.2"
+  ];
 }
