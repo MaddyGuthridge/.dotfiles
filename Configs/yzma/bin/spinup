@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker compose -f "$DOTFILES/dockers/$1/docker-compose.yml" up
