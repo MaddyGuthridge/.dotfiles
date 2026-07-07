@@ -180,6 +180,11 @@
     "vtsls": {
       // @see https://github.com/yioneko/vtsls/blob/main/packages/service/configuration.schema.json
       "settings": {
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
         "typescript": {
           "tsserver": {
             "experimental": {
