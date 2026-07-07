@@ -149,6 +149,7 @@
       libxi
       libxft
       freetype
+      alsa-lib
     ];
   };
 

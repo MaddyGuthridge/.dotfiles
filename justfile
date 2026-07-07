@@ -6,6 +6,7 @@ default:
 copy-config:
     sudo cp -r ./nixos/* /etc/nixos
 
+# Rebuild NixOS and switch to the new generation
 switch: copy-config
     # -f  =>  use whatever channel is configured for "nixos"
     # -a  =>  prompt for confirmation
@@ -15,7 +16,6 @@ switch: copy-config
 # Rebuild NixOS using the updated config
 rebuild: copy-config
     # -f  =>  use whatever channel is configured for "nixos"
-    # -a  =>  prompt for confirmation
     # -t  =>  show traces
     nh os boot -f '<nixpkgs/nixos>' -t
 
