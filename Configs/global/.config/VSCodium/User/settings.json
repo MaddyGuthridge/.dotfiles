@@ -1,10 +1,12 @@
 {
   // Editor
   // ======
+
   // Auto-save, and basic tidy-ups on save
   "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+
   // Interaction
   // -----------
   // Ctrl+Click for multi-selection is the standard everywhere else
@@ -23,6 +25,7 @@
   "scrollFaster.cursorFollowsScroll": true,
   // Spell checker
   "cSpell.language": "en-GB",
+
   // Display
   // -------
   // Bracket pair colours
@@ -33,6 +36,7 @@
   "editor.minimap.enabled": false,
   // Inlay hints are so freaking annoying
   "editor.inlayHints.enabled": "offUnlessPressed",
+
   // Explorer
   // ========
   // Don't confirm for basic file management, since I can always Ctrl+Z
@@ -55,6 +59,7 @@
     "**/.env": true,
     "**/.venv": true,
   },
+
   // Git
   // ===
   "git.branchPrefix": "maddy-",
@@ -70,18 +75,21 @@
   // The three-pane diff editor never made sense to me
   "diffEditor.renderSideBySide": true,
   "diffEditor.maxComputationTime": 0,
+
   // Terminal
   // ========
   // Please no powershell I am begging
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // I have enough RAM to handle this amount of scrollback
   "terminal.integrated.scrollback": 10000,
+
   // Testing panel
   // =============
   // Only open it if something went wrong
   "testing.automaticallyOpenPeekView": "never",
   "testing.openTesting": "openOnTestFailure",
   "testing.automaticallyOpenTestResults": "openOnTestFailure",
+
   // UI
   // ==
   // Full-screen
@@ -106,6 +114,7 @@
   // Disable automatic updates
   "update.mode": "none",
   "extensions.autoUpdate": false,
+
   // Aesthetics
   // ==========
   "window.autoDetectColorScheme": true,
@@ -124,6 +133,7 @@
     // Disable labelling infos in the scrollbar
     "editorOverviewRuler.infoForeground": "#00000000",
   },
+
   // Remote development
   // ==================
   "sshfs.configs": [
@@ -135,52 +145,49 @@
       "root": "/home/z5312085",
     },
   ],
+
   // Language-specifics
   // ==================
+
+  // Configure editor modes
+  "workbench.editorAssociations": {
+    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+    "*.pdf": "open-with-system",
+    "*.md": "vscode.markdown.preview.editor",
+  },
+
   // JavaScript
   // ----------
   // Enable ESLint as a formatter
   "eslint.format.enable": true,
-  "eslint.validate": [
-    "js",
-    "ts",
-    "svelte"
-  ],
+  "eslint.validate": ["js", "ts", "svelte"],
   // Don't suggest importing from `node:test`, since I almost always use vitest.
-  "js/ts.preferences.autoImportFileExcludePatterns": [
-    "node:test"
-  ],
+  "js/ts.preferences.autoImportFileExcludePatterns": ["node:test"],
   "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
   },
   "[javascriptreact]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
   },
   "[typescript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
   },
   "[typescriptreact]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
   },
+
   // Svelte
-  // ======
+  // ------
   "svelte.enable-ts-plugin": true,
   // Single quotes please
   "svelte.plugin.svelte.format.config.singleQuote": true,
@@ -188,10 +195,9 @@
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "svelte.svelte-vscode",
     "editor.tabSize": 2,
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
   },
+
   // HTML
   // ----
   // When a tag is edited, also edit the other part of the pair
@@ -216,10 +222,12 @@
       "compactBooleanAttributes": true,
     },
   },
+
   // Rust
   // ----
   // Don't notify me when lldb can be updated
   "lldb.suppressUpdateNotifications": true,
+
   // Java
   // ----
   // Gradle wrappers cause me nothing but pain
@@ -231,10 +239,9 @@
   "[java]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
-    "editor.rulers": [
-      120
-    ], // Java moment
+    "editor.rulers": [120], // Java moment
   },
+
   // Python
   // ======
   // Tell me data types when I hold Ctrl+Alt
@@ -253,10 +260,15 @@
   "[python]": {
     "editor.tabSize": 4,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      79
-    ],
+    "editor.rulers": [79],
   },
+
+  // Markdown
+  // --------
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  "markdown.preview.scrollEditorWithPreview": false,
+  "markdown.preview.scrollPreviewWithEditor": false,
+
   // Config files and the like
   // -------------------------
   "[yaml]": {
