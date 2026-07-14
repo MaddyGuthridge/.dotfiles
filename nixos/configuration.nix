@@ -141,15 +141,18 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
+      alsa-lib
+      fontconfig
+      freetype
       glibc.static
-      libxext
+      libsigcxx
       libx11
+      libxext
+      libxft
+      libxi
       libxrender
       libxtst
-      libxi
-      libxft
-      freetype
-      alsa-lib
+      zlib
     ];
   };
 

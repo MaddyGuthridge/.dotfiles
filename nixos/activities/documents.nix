@@ -10,5 +10,6 @@
     nixos2511.pinta
     gimp
     file-roller
+    pandoc
   ];
 }
