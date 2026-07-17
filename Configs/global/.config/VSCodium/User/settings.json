@@ -284,10 +284,10 @@
     "[json]": {
         "editor.tabSize": 2,
     },
-
     // Spell checking
     // ==============
     "cSpell.userWords": [
-        "Guthridge"
+        "Guthridge",
+        "puppeteered",
     ],
 }
