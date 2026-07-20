@@ -175,6 +175,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    # Need to pin Obsidian to an old Electron version lest the Harper extension 
+    # break.
+    # Awaiting https://github.com/Automattic/harper/issues/3795
+    "electron-40.10.5"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
