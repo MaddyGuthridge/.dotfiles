@@ -70,6 +70,7 @@
     "git.ignoreMissingGitWarning": true,
     "git.openRepositoryInParentFolders": "always",
     "git.autofetch": true,
+    "git.blame.editorDecoration.enabled": true,
     // I know that "sync" means "pull and push"
     "git.confirmSync": false,
     // If nothing staged, commit everything
