@@ -116,6 +116,8 @@
     // Disable automatic updates
     "update.mode": "none",
     "extensions.autoUpdate": "off",
+    // Always prompt with workspace trust for new workspaces
+    "security.workspace.trust.startupPrompt": "once",
     // Aesthetics
     // ==========
     "window.autoDetectColorScheme": true,
