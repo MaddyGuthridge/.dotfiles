@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    # Audio and video routing
+    crosspipe
     # DSLR as webcam
     gphoto2
     ffmpeg
