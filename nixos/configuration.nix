@@ -205,6 +205,7 @@
     iperf
     resources
     usbutils
+    lsof
     # Just editor to build the system
     just
     just-lsp
