@@ -33,6 +33,9 @@ in
       options = ["nofail"];
     };
 
+    # Temporarily disable fprintd because FREAKING UBUNTU'S GIT SERVER IS DOWN AND I CANNOT UPDATE NIXOS WHAT THE FUCK
+    services.fprintd.enable = false;
+
     # Disable fingerprint for sudo and Gnome Polkit, as they mean I cannot enter a
     # password unless I first fail the fingerprint scan 3 times. Very annoying.
     # https://github.com/NixOS/nixpkgs/issues/171136
