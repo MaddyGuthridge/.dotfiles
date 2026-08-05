@@ -9,6 +9,8 @@
     # https://github.com/NixOS/nixpkgs/issues/527173
     nixos2511.pinta
     gimp
+    inkscape
+    krita
     file-roller
     pandoc
   ];
