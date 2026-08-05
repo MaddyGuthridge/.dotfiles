@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
 
   # # https://discourse.nixos.org/t/new-to-nixos-and-cant-play-blu-rays/62560/5
@@ -37,5 +37,13 @@ in
     mkvtoolnix
     yt-dlp
     imagemagick
+  ];
+
+  # Make gstreamer discoverable in Nautilus
+  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" [
+    pkgs.gst_all_1.gst-plugins-good
+    pkgs.gst_all_1.gst-plugins-bad
+    # pkgs.gst_all_1.gst-plugins-ugly
+    pkgs.gst_all_1.gst-libav
   ];
 }
