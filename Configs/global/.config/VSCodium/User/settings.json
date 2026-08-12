@@ -46,6 +46,7 @@
     // ========
     // Don't confirm for basic file management, since I can always Ctrl+Z
     "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
     "explorer.confirmDelete": false,
     // Hide unhelpful files
     "files.exclude": {
@@ -277,6 +278,9 @@
     "markdown.preview.doubleClickToSwitchToEditor": true,
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.scrollPreviewWithEditor": false,
+    "[mdx]": {
+        "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    },
     // Config files and the like
     // -------------------------
     "[yaml]": {
