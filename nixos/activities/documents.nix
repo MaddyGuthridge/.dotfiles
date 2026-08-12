@@ -13,5 +13,6 @@
     krita
     file-roller
     pandoc
+    ghostscript
   ];
 }
