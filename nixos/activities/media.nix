@@ -25,10 +25,10 @@ in
     # handbrakeBd
     # Keep above non-overridden until I fix build issues.
 
-    # MakeMKV's servers are once again acting up, so I need to pin it to an old
-    # version yet again.
-    # makemkv
-    (builtins.storePath "/nix/store/lpnqkxb9hmxiq1hlnn6d8q14ql8wfdmw-makemkv-1.18.3/")
+    makemkv
+    # When MakeMKV servers are down (frequent), you need to switch to using a cached version.
+    # Get the path: `readlink $(which makemkv) | xargs dirname | xargs dirname`
+    # (builtins.storePath "/nix/store/lpnqkxb9hmxiq1hlnn6d8q14ql8wfdmw-makemkv-1.18.3/")
 
     # Pinning to 25.11 due to visual glitches in 25.06
     # https://github.com/NixOS/nixpkgs/issues/519073
