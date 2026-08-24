@@ -20,6 +20,7 @@ all_compile = false
 
 "pipx:markten" = "latest"
 "pipx:slides-xp" = "latest"
+"cargo:flymark" = { version = "latest", locked = false }
 
 # COMP1531
 # --------
