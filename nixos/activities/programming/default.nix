@@ -4,6 +4,7 @@
     ./c.nix
     ./containers.nix
     ./nix.nix
+    ./rust.nix
     ./rpi.nix
     ./zsh.nix
     ./zed.nix
