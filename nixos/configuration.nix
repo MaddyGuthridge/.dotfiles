@@ -202,6 +202,7 @@
     fastfetch
     hyfetch
     gnome-power-manager
+    trash-cli
     # Debugging tools
     dig
     file
