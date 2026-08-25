@@ -28,6 +28,11 @@ update: && mise-update
     # -t  =>  show traces
     nh os boot -f '<nixpkgs/nixos>' -a -t
 
+# Rollback nix-channel to currently-running version
+# https://discourse.nixos.org/t/how-to-roll-back-channel-to-currently-active-version/43161/3
+rollback: copy-config
+    sudo nix-channel --rollback "$(grep --fixed-strings --files-with-matches "$(cut --delimiter=. --fields=3 /run/current-system/nixos-version)" /nix/var/nix/profiles/per-user/root/channels-*-link/nixos/svn-revision | tail --lines=1 | cut --delimiter=- --fields=3)"
+
 # Repair the nix store if things break
 repair:
     sudo nix-store --verify --check-contents --repair
