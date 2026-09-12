@@ -57,10 +57,10 @@
     ];
   };
 
-  # Pinned to 7.1 for now, since nvidia drivers are borked and do not compile.
+  # Pinned to 6.18 for now, since nvidia drivers are borked and do not compile.
   # https://github.com/NixOS/nixpkgs/issues/554125
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_7_1;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
