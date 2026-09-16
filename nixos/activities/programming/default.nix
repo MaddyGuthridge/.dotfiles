@@ -13,7 +13,7 @@
   environment.systemPackages = with pkgs; [
     # Software management
     unstable.mise
-    devenv
+    unstable.devenv
     # Git tools
     git-repo
     # Terminal emulators
