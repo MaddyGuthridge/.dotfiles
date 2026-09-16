@@ -14,6 +14,8 @@
     # Software management
     unstable.mise
     devenv
+    # Git tools
+    git-repo
     # Terminal emulators
     ghostty
     unstable.ratty
