@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     # Software management
     unstable.mise
+    devenv
     # Terminal emulators
     ghostty
     unstable.ratty
