@@ -138,6 +138,10 @@
 
   // Language-specific settings
   "languages": {
+    "Git Commit": {
+      // 
+      "wrap_guides": [50, 72],
+    },
     "Python": {
       "wrap_guides": [79],
     },
