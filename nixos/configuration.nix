@@ -169,6 +169,7 @@
       liberation_ttf
       raleway
       roboto
+      helvetica-neue-lt-std
     ];
   };
 
