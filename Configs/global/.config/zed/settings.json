@@ -139,7 +139,7 @@
   // Language-specific settings
   "languages": {
     "Git Commit": {
-      // 
+      // 50 for first line, 72 for following lines
       "wrap_guides": [50, 72],
     },
     "Python": {
@@ -177,6 +177,9 @@
       "tab_size": 2,
       "wrap_guides": [100],
     },
+    "C": {
+      "tab_size": 4,
+    }
   },
 
   // Language server settings
