@@ -13,8 +13,10 @@
   # Enable gamescope session as alternate login
   programs.steam.gamescopeSession.enable = true;
   programs.gamescope.enable = true;
-  # Mangohud shows FPS
   environment.systemPackages = with pkgs; [
+    # Mangohud shows FPS
     mangohud
+    # Puzzles
+    sgt-puzzles
   ];
 }
