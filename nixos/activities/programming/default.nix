@@ -33,6 +33,7 @@
     jdt-language-server
     android-tools
     eyedropper
+    share-preview
     bat
     gh # GitHub CLI
     # Additional web browsers for testing
