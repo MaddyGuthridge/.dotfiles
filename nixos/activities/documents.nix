@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  # dictionary
+  environment.etc."dict.conf".text = "server dict.org";
+  # Word list
+  environment.wordlist.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Force Electron 40 for Obsidian, since Harper plugin causes a crash.
     # https://github.com/NixOS/nixpkgs/issues/539153
@@ -12,5 +17,6 @@
     file-roller
     pandoc
     ghostscript
+    dict
   ];
 }
