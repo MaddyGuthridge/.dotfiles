@@ -98,8 +98,15 @@
 
   # Enable the GNOME Desktop Environment.
   services.desktopManager.gnome.enable = true;
-  # Amd also Cosmic
+  # And also KDE
+  services.desktopManager.plasma6.enable = true;
+  # And also Cosmic
   services.desktopManager.cosmic.enable = true;
+
+  # We need to force an SSH program, otherwise Plasma and Gnome fight each other
+  programs.ssh.askPassword = lib.mkForce "${pkgs.openssh-askpass.out}/bin/ssh-askpass";
+  # Or if we want the KDE one:
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass.out}/bin/ksshaskpass";
 
   # Configure keymap in X11
   services.xserver.xkb = {

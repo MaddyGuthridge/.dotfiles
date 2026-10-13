@@ -17,11 +17,7 @@
     gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
     gnomeExtensions.astra-monitor
     wl-clipboard
+    # Explicit gsconnect (avoid conflict with KDE)
+    gnomeExtensions.gsconnect
   ];
-
-  # Enable KDE Connect
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
-  };
 }
