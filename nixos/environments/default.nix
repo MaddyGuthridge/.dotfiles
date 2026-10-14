@@ -2,8 +2,17 @@
 {
   imports = [
     ./gnome.nix
-    ./plasma.nix
+    # Plasma fights with Gnome's layout too much! Resetting it is too painful.
+    # No more Plasma for me :(
+    # ./plasma.nix
   ];
+
+  # GDM login screen
+  services.displayManager.gdm.enable = true;
+  services.displayManager.defaultSession = "gnome";
+
+  # Cosmic
+  services.desktopManager.cosmic.enable = true;
 
   # We need to force an SSH program, otherwise Plasma and Gnome fight each other
   programs.ssh.askPassword = lib.mkForce "${pkgs.openssh-askpass.out}/bin/ssh-askpass";
@@ -20,4 +29,5 @@
   };
   # GUI secrets manager
   programs.seahorse.enable = true;
+
 }

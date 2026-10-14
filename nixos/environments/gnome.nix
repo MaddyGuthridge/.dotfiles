@@ -28,6 +28,7 @@
   ];
 
   # Force Gnome default icon and cursor settings
+  # Note: this doesn't work as KDE sets these values imperatively per-user.
   programs.dconf.profiles.user.databases = [
     {
       settings = {

@@ -92,13 +92,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # GDM login screen
-  services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "gnome";
-
-  # And also Cosmic
-  services.desktopManager.cosmic.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "au";
