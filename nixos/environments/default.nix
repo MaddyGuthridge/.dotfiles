@@ -30,4 +30,8 @@
   # GUI secrets manager
   programs.seahorse.enable = true;
 
+  # KDE Connect (open firewall explicitly)
+  programs.kdeconnect = {
+    enable = true;
+  };
 }
