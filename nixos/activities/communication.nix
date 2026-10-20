@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 let
-  zenBrowser = builtins.getFlake "github:youwen5/zen-browser-flake";
+  zenBrowser = builtins.getFlake "github:0xc000022070/zen-browser-flake";
 in
 {
+  programs.firefox.enable = true;
+
   environment.systemPackages = with pkgs; [
     thunderbird-esr
     unstable.teams-for-linux
@@ -11,6 +13,6 @@ in
     zoom-us
     signal-desktop
     nextcloud-client
-    zenBrowser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser
+    zenBrowser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
