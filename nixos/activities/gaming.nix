@@ -18,5 +18,7 @@
     mangohud
     # Puzzles
     sgt-puzzles
+    # Minecraft
+    prismlauncher
   ];
 }
