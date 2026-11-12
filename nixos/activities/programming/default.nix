@@ -43,7 +43,15 @@
     # Webdrivers
     geckodriver
     chromedriver
+    # Libraries missing for playwright :(
+    # https://wiki.nixos.org/wiki/Playwright
+    playwright-driver.browsers
   ];
+
+  environment.variables = {
+    PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers}";
+    PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS="true";
+  };
 
   # Fix uv python ssl.SSLCertVerificationError
   # https://discourse.nixos.org/t/71138

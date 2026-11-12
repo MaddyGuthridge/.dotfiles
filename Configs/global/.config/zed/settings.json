@@ -128,12 +128,13 @@
     {
       "host": "cse",
       "args": [],
-      "projects": [
-        {
-          "paths": ["/import/kamen/5/z5312085"],
-        },
-      ],
+      "projects": [],
     },
+    {
+      "host": "ursula",
+      "args": [],
+      "projects": [],
+    }
   ],
 
   // Language-specific settings
