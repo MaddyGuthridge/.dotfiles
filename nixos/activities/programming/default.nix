@@ -45,7 +45,7 @@
     chromedriver
     # Libraries missing for playwright :(
     # https://wiki.nixos.org/wiki/Playwright
-    playwright-driver.browsers
+    unstable.playwright-driver.browsers
   ];
 
   environment.variables = {
