@@ -27,9 +27,6 @@
       unstable = import <nixos-unstable> {
         config = config.nixpkgs.config;
       };
-      nixos2511 = import <nixos-25.11> {
-        config = config.nixpkgs.config;
-      };
     };
   };
 
@@ -48,13 +45,6 @@
   # Plymouth boot animation
   boot.plymouth = {
     enable = true;
-    theme = "rings_2";
-    themePackages = with pkgs; [
-      # By default we would install all themes
-      (adi1090x-plymouth-themes.override {
-        selected_themes = [ "rings_2" ];
-      })
-    ];
   };
 
   # Pinned to 6.18 for now, since nvidia drivers are borked and do not compile.
@@ -168,10 +158,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    # Need to pin Obsidian to an old Electron version lest the Harper extension 
-    # break.
-    # Awaiting https://github.com/Automattic/harper/issues/3795
-    "electron-40.10.5"
+    # Occasionally I need to pin old packages or they break
   ];
 
   # List packages installed in system profile. To search, run:
