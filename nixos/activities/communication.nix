@@ -14,5 +14,10 @@ in
     signal-desktop
     nextcloud-client
     zenBrowser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # Arrpc implements Discord's RPC server
+    arrpc
+  ];
+  systemd.packages = with pkgs; [
+    arrpc
   ];
 }
