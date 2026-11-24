@@ -39,7 +39,7 @@ java = "21"
 # Python
 # ------
 
-"pipx:comp1010" = "latest"
+# "pipx:comp1010" = "latest"
 poetry = "latest"
 uv = "latest"
 python = "latest"
