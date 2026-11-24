@@ -30,9 +30,7 @@ in
     # Get the path: `readlink $(which makemkv) | xargs dirname | xargs dirname`
     # (builtins.storePath "/nix/store/lpnqkxb9hmxiq1hlnn6d8q14ql8wfdmw-makemkv-1.18.3/")
 
-    # Pinning to 25.11 due to visual glitches in 25.06
-    # https://github.com/NixOS/nixpkgs/issues/519073
-    nixos2511.jellyfin-desktop
+    jellyfin-desktop
 
     mkvtoolnix
     yt-dlp
